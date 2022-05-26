@@ -75,6 +75,23 @@
       ></BlocksParagraph
     >
     <BlocksHeading>テーブル系</BlocksHeading>
+    <BlocksTable>
+      <template #tbody>
+        <tr>
+          <th>項目</th>
+          <td>セル</td>
+        </tr>
+        <tr>
+          <th>項目</th>
+          <td>セル</td>
+        </tr>
+        <tr>
+          <th>項目</th>
+          <td>セル</td>
+        </tr>
+      </template>
+    </BlocksTable>
+
     <BlocksHeading>特殊系</BlocksHeading>
     <BlocksHeading>モーダル系</BlocksHeading>
   </div>
