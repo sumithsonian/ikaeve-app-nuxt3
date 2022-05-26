@@ -49,5 +49,7 @@
       <li><ProjectsCard /></li>
       <li><ProjectsCard /></li>
     </BlocksList>
+
+    <ProjectsRanking />
   </div>
 </template>
