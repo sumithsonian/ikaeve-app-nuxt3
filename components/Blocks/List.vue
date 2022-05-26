@@ -20,14 +20,14 @@ export default {}
 
   &.-disc {
     gap: 0;
-    li {
+    ::v-deep(li) {
       list-style: disc;
       margin-left: 1.5em;
     }
   }
   &.-decimal {
     gap: 0;
-    li {
+    ::v-deep(li) {
       list-style: decimal;
       margin-left: 1.5em;
     }

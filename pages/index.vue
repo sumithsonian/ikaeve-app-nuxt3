@@ -51,8 +51,19 @@
       <li><ProjectsCard /></li>
       <li><ProjectsCard /></li>
     </BlocksList>
-
     <BlocksListTable />
+
+    <BlocksList class="-disc">
+      <li>リストリストリストリスト</li>
+      <li>リストリストリストリスト</li>
+      <li>リストリストリストリスト</li>
+    </BlocksList>
+    <BlocksList class="-decimal">
+      <li>リストリストリストリスト</li>
+      <li>リストリストリストリスト</li>
+      <li>リストリストリストリスト</li>
+    </BlocksList>
+
     <BlocksHeading>フォーム系</BlocksHeading>
     <BlocksHeading>テキスト系</BlocksHeading>
     <BlocksParagraph
