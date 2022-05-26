@@ -5,13 +5,13 @@
       <li>
         <nuxt-link href="/"
           ><span class="material-icons"> login </span
-          ><span>登録/ログイン</span></nuxt-link
+          ><ElementsTxt class="-xsmall">登録/ログイン</ElementsTxt></nuxt-link
         >
       </li>
       <li>
         <nuxt-link href="/"
           ><span class="material-icons"> account_circle </span
-          ><span>マイページ</span></nuxt-link
+          ><ElementsTxt class="-xsmall">マイページ</ElementsTxt></nuxt-link
         >
       </li>
     </ul>

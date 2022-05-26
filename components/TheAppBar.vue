@@ -4,30 +4,31 @@
       <li>
         <nuxt-link href="/"
           ><span class="material-icons"> home </span
-          ><span>ホーム</span></nuxt-link
+          ><ElementsTxt class="-xsmall">ホーム</ElementsTxt></nuxt-link
         >
       </li>
       <li>
         <nuxt-link href="/"
           ><span class="material-icons"> insights </span
-          ><span>ランキング</span></nuxt-link
+          ><ElementsTxt class="-xsmall">ランキング</ElementsTxt></nuxt-link
         >
       </li>
       <li>
         <nuxt-link href="/"
           ><span class="material-icons"> military_tech </span
-          ><span>大会</span></nuxt-link
+          ><ElementsTxt class="-xsmall">大会</ElementsTxt></nuxt-link
         >
       </li>
       <li>
         <nuxt-link href="/"
           ><span class="material-icons"> people </span
-          ><span>チーム/団体</span></nuxt-link
+          ><ElementsTxt class="-xsmall">チーム/団体</ElementsTxt></nuxt-link
         >
       </li>
       <li>
         <button>
-          <span class="material-icons"> menu </span><span>メニュー</span>
+          <span class="material-icons"> menu </span
+          ><ElementsTxt class="-xsmall">メニュー</ElementsTxt>
         </button>
       </li>
     </ul>
