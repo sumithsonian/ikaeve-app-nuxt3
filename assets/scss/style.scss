@@ -1,0 +1,14 @@
+@charset 'utf-8';
+
+/*
+  SMACSSに沿って管理
+*/
+
+// 0.setting
+@import '_variables.scss';
+
+// 1.base
+@import '_normalize.scss';
+
+// 2.layout
+@import '_globals.scss';
