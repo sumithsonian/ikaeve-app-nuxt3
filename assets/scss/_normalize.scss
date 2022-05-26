@@ -1,0 +1,215 @@
+@charset "utf-8";
+/*
+ * KUZIRA CSS Framework
+ * version: 1.1.1
+ *
+ * Copyright (c) 2010 Yutaka Sumi
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * Date: 2010-10-26
+ */
+
+/* ------------------------------------------------------------ normalize */
+html {
+  overflow-y: scroll;
+}
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+address,
+code,
+em,
+i,
+b,
+img,
+q,
+strong,
+sub,
+sup,
+dl,
+dt,
+dd,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+button {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-style: normal;
+  font-weight: 600;
+}
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+ol li,
+ul li {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+blockquote,
+q {
+  quotes: none;
+}
+a,
+img,
+fieldset {
+  border: 0;
+}
+img,
+input,
+textarea {
+  vertical-align: middle;
+}
+input[type='text'],
+textarea {
+  line-height: 1.4;
+}
+input,
+button {
+  outline: none;
+}
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+dt,
+dd,
+th,
+td,
+pre,
+caption,
+address,
+button {
+  line-height: 1.6;
+  font-size: 14px;
+}
+p input,
+p select,
+p textarea,
+li p,
+li li,
+li dt,
+li dd,
+li input,
+li select,
+li textarea,
+dd p,
+dd li,
+dd dt,
+dd dd,
+dd input,
+dd select,
+dd textarea,
+th p,
+th li,
+th dt,
+th dd,
+th input,
+th select,
+th textarea,
+td p,
+td li,
+td dt,
+td dd,
+td input,
+td select,
+td textarea {
+  font-size: 100%;
+}
+/* font */
+body {
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',
+    Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 10px;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+@include breakpointDown(medium) {
+  a:hover,
+  a:active {
+    text-decoration: none;
+  }
+}
+
+// placeholder
+input,
+textarea {
+  &::-webkit-input-placeholder {
+    color: #ccc;
+  }
+  &:-ms-input-placeholder {
+    color: #ccc;
+  }
+  &::-ms-input-placeholder {
+    color: #ccc;
+  }
+  &::placeholder {
+    color: #ccc;
+  }
+}
+
+/* EOF */

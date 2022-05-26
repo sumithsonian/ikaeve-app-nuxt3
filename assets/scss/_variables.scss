@@ -1,0 +1,57 @@
+// breakpoint
+$breakpoints: (
+  xsmall: 320px,
+  small: 640px,
+  medium: 800px,
+  large: 1024px,
+  xlarge: 1280px,
+  xxlarge: 1440px,
+);
+
+@mixin breakpointUp($breakpoint: medium) {
+  @media screen and (min-width: (map-get($breakpoints, $breakpoint) + 1px)) {
+    @content;
+  }
+}
+
+@mixin breakpointDown($breakpoint: medium) {
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin breakpointBetween($breakpointFrom: medium, $breakpointTo: medium) {
+  @media screen and (min-width: (map-get($breakpoints, $breakpointFrom) + 1px)) and (max-width: map-get($breakpoints, $breakpointTo)) {
+    @content;
+  }
+}
+
+// カラー
+$color-white: #fff;
+$color-gray-01: #f2f2f7;
+$color-gray-02: #e5e5ea;
+$color-gray-03: #d1d1d6;
+$color-gray-04: #c7c7cc;
+$color-gray-05: #aeaeb2;
+$color-gray-06: #8e8e93;
+$color-gray-07: #636366;
+$color-gray-08: #48484a;
+$color-gray-09: #3a3a3c;
+$color-gray-10: #1c1c1e;
+$color-black: #000;
+
+$color-primary: #e4fc3d;
+$color-secondary: #7854ff;
+
+// スペース
+$space-small: 8px;
+$space: 12px;
+$space-large: 16px;
+$space-xlarge: 24px;
+
+// フォントサイズ
+$font-xsmall: 12px;
+$font-small: 14px;
+$font: 16px;
+$font-large: 20px;
+$font-xlarge: 24px;
