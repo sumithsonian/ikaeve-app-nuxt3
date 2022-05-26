@@ -39,7 +39,7 @@ export default {}
     img {
       width: 100%;
       object-fit: cover;
-      aspect-ratio: 5 / 3;
+      aspect-ratio: 16 / 9;
     }
     ul {
       position: absolute;

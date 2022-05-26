@@ -52,6 +52,7 @@ export default {}
     position: relative;
     &__avatar {
       margin: calc($img-xlarge * -1 / 2) 0 0 $space;
+      z-index: 1;
     }
     &__title {
       margin: $space;
