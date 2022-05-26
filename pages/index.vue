@@ -6,6 +6,7 @@
     <BlocksTab />
     <BlocksIndexNav />
     <BlocksFilter />
+    <BlocksHeading>ボタン系</BlocksHeading>
     <BlocksList>
       <li><ElementsBtn class="-primary">大会を開催する</ElementsBtn></li>
       <li><ElementsBtn>全ての大会をみる</ElementsBtn></li>
@@ -42,6 +43,7 @@
       </li>
     </BlocksList>
 
+    <BlocksHeading>リスト系</BlocksHeading>
     <BlocksList class="-horizontal">
       <li><ProjectsCard /></li>
       <li><ProjectsCard /></li>
@@ -51,5 +53,18 @@
     </BlocksList>
 
     <BlocksListTable />
+    <BlocksHeading>フォーム系</BlocksHeading>
+    <BlocksHeading>テキスト系</BlocksHeading>
+    <BlocksParagraph
+      >通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト</BlocksParagraph
+    >
+    <BlocksParagraph
+      ><ElementsTxt class="-sub -small"
+        >注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト</ElementsTxt
+      ></BlocksParagraph
+    >
+    <BlocksHeading>テーブル系</BlocksHeading>
+    <BlocksHeading>特殊系</BlocksHeading>
+    <BlocksHeading>モーダル系</BlocksHeading>
   </div>
 </template>
