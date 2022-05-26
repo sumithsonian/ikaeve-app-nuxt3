@@ -21,8 +21,8 @@ export default {
 .avatar {
   display: inline-block;
   border-radius: $radius-xlarge;
-  width: $img-xlarge;
-  height: $img-xlarge;
+  width: $img;
+  height: $img;
   object-fit: cover;
   background: rgba(0, 0, 0, 0.5);
   &.-xsmall {
@@ -36,6 +36,10 @@ export default {
   &.-large {
     width: $img-large;
     height: $img-large;
+  }
+  &.-xlarge {
+    width: $img-xlarge;
+    height: $img-xlarge;
   }
 }
 </style>

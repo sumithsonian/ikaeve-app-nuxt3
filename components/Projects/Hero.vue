@@ -2,7 +2,7 @@
   <div class="hero">
     <div class="hero__text">
       <h3 class="hero__text__title">大会名</h3>
-      <ElementsAvatar class="hero__text__avatar" />
+      <ElementsAvatar class="-xlarge hero__text__avatar" />
       <ul class="hero__text__actions">
         <li>
           <button><span class="material-icons"> link </span></button>
