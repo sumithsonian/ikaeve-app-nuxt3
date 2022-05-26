@@ -50,6 +50,6 @@
       <li><ProjectsCard /></li>
     </BlocksList>
 
-    <ProjectsRanking />
+    <BlocksListTable />
   </div>
 </template>
