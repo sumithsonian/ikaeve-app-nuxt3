@@ -1,4 +1,8 @@
 body {
   background: $color-gray-09;
   color: $color-white;
+  a,
+  button {
+    color: $color-white;
+  }
 }

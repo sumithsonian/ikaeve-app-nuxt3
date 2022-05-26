@@ -47,7 +47,6 @@ nav ul {
     justify-content: center;
     a,
     button {
-      color: $color-white;
       display: flex;
       flex-direction: column;
       align-items: center;
