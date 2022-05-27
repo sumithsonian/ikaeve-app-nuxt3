@@ -1,12 +1,14 @@
 <template>
-  <table>
-    <thead v-if="this.$scopedSlots.thead">
-      <slot name="thead" />
-    </thead>
-    <tbody v-if="this.$scopedSlots.tbody">
-      <slot name="tbody" />
-    </tbody>
-  </table>
+  <div>
+    <table>
+      <thead>
+        <slot name="thead" />
+      </thead>
+      <tbody>
+        <slot name="tbody" />
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
