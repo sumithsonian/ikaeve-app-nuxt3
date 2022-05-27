@@ -1,10 +1,10 @@
 <template>
   <div>
     <table>
-      <thead>
+      <thead v-if="typeof $slots.thead === 'function' && $slots.thead()">
         <slot name="thead" />
       </thead>
-      <tbody>
+      <tbody v-if="typeof $slots.tbody === 'function' && $slots.tbody()">
         <slot name="tbody" />
       </tbody>
     </table>
