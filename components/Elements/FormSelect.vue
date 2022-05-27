@@ -1,5 +1,5 @@
 <template>
-  <button class="select">
+  <button class="formSelect">
     <slot /><span class="material-icons"> unfold_more </span>
   </button>
 </template>
@@ -11,7 +11,7 @@ export default {}
 <style scoped lang="scss">
 @import '@/assets/scss/_variables';
 
-.select {
+.formSelect {
   font-size: $font-small;
   display: inline-flex;
   align-items: center;

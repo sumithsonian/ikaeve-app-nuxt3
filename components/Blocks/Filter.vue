@@ -11,7 +11,7 @@
         <ElementsTag tag="button" class="-xsmall">フィルタ</ElementsTag>
         <ElementsTag tag="button" class="-xsmall">フィルタ</ElementsTag>
         <ElementsTag tag="button" class="-xsmall">フィルタ</ElementsTag>
-        <ElementsSelect> 新着順 </ElementsSelect>
+        <ElementsFormSelect> 新着順 </ElementsFormSelect>
         <ElementsDropdown> Splatoon 3 </ElementsDropdown>
         <ElementsDropdown> 2022 </ElementsDropdown>
         <ElementsDropdown> 春シーズン </ElementsDropdown>
