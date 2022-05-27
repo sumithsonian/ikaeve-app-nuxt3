@@ -65,6 +65,25 @@
     </BlocksList>
 
     <BlocksHeading>フォーム系</BlocksHeading>
+    <BlocksFormTable>
+      <tr>
+        <th>ゲームタイトル</th>
+        <td><ElementsFormInput placeholder="プレースホルダ" /></td>
+      </tr>
+      <tr>
+        <th>大会名</th>
+        <td><ElementsFormInput placeholder="プレースホルダ" /></td>
+      </tr>
+      <tr>
+        <th>大会概要</th>
+        <td><ElementsFormInput :rows="5" placeholder="プレースホルダ" /></td>
+      </tr>
+      <tr>
+        <th>大会画像</th>
+        <td>セル</td>
+      </tr>
+    </BlocksFormTable>
+
     <BlocksHeading>テキスト系</BlocksHeading>
     <BlocksParagraph
       >通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト</BlocksParagraph
