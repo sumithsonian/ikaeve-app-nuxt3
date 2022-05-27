@@ -68,7 +68,41 @@
     <BlocksFormTable>
       <tr>
         <th>ゲームタイトル</th>
-        <td><ElementsFormInput placeholder="プレースホルダ" /></td>
+        <td>
+          <ElementsFormSelectBtn
+            name="radio"
+            id="1"
+            type="radio"
+            v-model="radio"
+            >ゲームタイトル</ElementsFormSelectBtn
+          ><br />
+          <ElementsFormSelectBtn
+            name="radio"
+            id="2"
+            type="radio"
+            v-model="radio"
+            >ゲームタイトル</ElementsFormSelectBtn
+          >
+        </td>
+      </tr>
+      <tr>
+        <th>ゲームタイトル</th>
+        <td>
+          <ElementsFormSelectBtn
+            name="checkbox"
+            id="3"
+            type="checkbox"
+            v-model="check"
+            >ゲームタイトル</ElementsFormSelectBtn
+          ><br />
+          <ElementsFormSelectBtn
+            name="checkbox"
+            id="4"
+            type="checkbox"
+            v-model="check"
+            >ゲームタイトル</ElementsFormSelectBtn
+          >
+        </td>
       </tr>
       <tr>
         <th>大会名</th>
@@ -110,8 +144,18 @@
         </tr>
       </template>
     </BlocksTable>
-
     <BlocksHeading>特殊系</BlocksHeading>
     <BlocksHeading>モーダル系</BlocksHeading>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      radio: false,
+      check: false,
+    }
+  },
+}
+</script>
