@@ -1,6 +1,7 @@
 <template>
   <div class="player">
-    <ElementsAvatar class="-small" />ユーザー名<ElementsIcon> link </ElementsIcon>
+    <ElementsAvatar class="-small" />ユーザー名
+    <img src="@/assets/images/logo_twitter.svg" alt="Twitter" height="16" />
   </div>
 </template>
 
@@ -14,5 +15,7 @@ export default {}
 .player {
   display: flex;
   align-items: center;
+  display: flex;
+  gap: $space;
 }
 </style>
