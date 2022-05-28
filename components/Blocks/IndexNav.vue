@@ -3,14 +3,12 @@
     <ul>
       <li>
         <button>
-          <span>ナビ</span
-          ><span class="material-icons"> keyboard_arrow_down </span>
+          <span>ナビ</span><ElementsIcon> keyboard_arrow_down </ElementsIcon>
         </button>
       </li>
       <li>
         <button>
-          <span>ナビ</span
-          ><span class="material-icons"> keyboard_arrow_down </span>
+          <span>ナビ</span><ElementsIcon> keyboard_arrow_down </ElementsIcon>
         </button>
       </li>
     </ul>

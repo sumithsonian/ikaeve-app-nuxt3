@@ -10,21 +10,21 @@
     <tbody>
       <tr>
         <th class="ranking__rank">
-          <span class="material-icons"> arrow_upward </span>1
+          <ElementsIcon> arrow_upward </ElementsIcon>1
         </th>
         <td class="ranking__player"><ProjectsPlayer /></td>
         <td class="ranking__number">2000</td>
       </tr>
       <tr>
         <th class="ranking__rank">
-          <span class="material-icons"> arrow_downward </span>2
+          <ElementsIcon> arrow_downward </ElementsIcon>2
         </th>
         <td class="ranking__player"><ProjectsPlayer /></td>
         <td class="ranking__number">2000</td>
       </tr>
       <tr>
         <th class="ranking__rank">
-          <span class="material-icons"> arrow_forward </span>3
+          <ElementsIcon> arrow_forward </ElementsIcon>3
         </th>
         <td class="ranking__player"><ProjectsPlayer /></td>
         <td class="ranking__number">2000</td>
@@ -42,7 +42,8 @@ export default {}
 
 .ranking {
   width: 100%;
-  th,td {
+  th,
+  td {
     padding: $space-small;
     vertical-align: middle;
   }

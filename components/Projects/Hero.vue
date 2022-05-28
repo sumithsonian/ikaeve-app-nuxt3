@@ -5,10 +5,10 @@
       <ElementsAvatar class="-xlarge hero__text__avatar" />
       <ul class="hero__text__actions">
         <li>
-          <button><span class="material-icons"> link </span></button>
+          <button><ElementsIcon> link </ElementsIcon></button>
         </li>
         <li>
-          <button><span class="material-icons"> link </span></button>
+          <button><ElementsIcon> link </ElementsIcon></button>
         </li>
       </ul>
     </div>
@@ -23,12 +23,12 @@
       <ul class="hero__image__actions">
         <li>
           <nuxt-link href="/"
-            ><span class="material-icons"> arrow_back_ios </span></nuxt-link
+            ><ElementsIcon> arrow_back_ios </ElementsIcon></nuxt-link
           >
         </li>
         <li>
           <nuxt-link href="/"
-            ><span class="material-icons"> settings </span></nuxt-link
+            ><ElementsIcon> settings </ElementsIcon></nuxt-link
           >
         </li>
       </ul>

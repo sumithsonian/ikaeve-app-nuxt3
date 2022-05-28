@@ -1,6 +1,6 @@
 <template>
   <button class="formSelect">
-    <slot /><span class="material-icons"> unfold_more </span>
+    <slot /><ElementsIcon> unfold_more </ElementsIcon>
   </button>
 </template>
 

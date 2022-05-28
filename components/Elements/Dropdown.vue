@@ -1,6 +1,6 @@
 <template>
   <button class="dropdown">
-    <slot /><span class="material-icons"> keyboard_arrow_down </span>
+    <slot /><ElementsIcon> keyboard_arrow_down </ElementsIcon>
   </button>
 </template>
 

@@ -2,7 +2,7 @@
   <div class="filter">
     <ul>
       <li>
-        <span class="material-icons"> filter_alt </span>
+        <ElementsIcon> filter_alt </ElementsIcon>
       </li>
       <li>
         <ElementsTag tag="button" class="-xsmall is-active"

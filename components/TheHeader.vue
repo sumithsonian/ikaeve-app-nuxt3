@@ -4,13 +4,13 @@
     <ul>
       <li>
         <nuxt-link href="/"
-          ><span class="material-icons"> login </span
+          ><ElementsIcon> login </ElementsIcon
           ><ElementsTxt class="-xsmall">登録/ログイン</ElementsTxt></nuxt-link
         >
       </li>
       <li>
         <nuxt-link href="/"
-          ><span class="material-icons"> account_circle </span
+          ><ElementsIcon> account_circle </ElementsIcon
           ><ElementsTxt class="-xsmall">マイページ</ElementsTxt></nuxt-link
         >
       </li>

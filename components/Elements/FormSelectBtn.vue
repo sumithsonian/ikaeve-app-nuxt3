@@ -14,14 +14,14 @@
     />
     <label :for="name + '_' + id">
       <template v-if="type === 'checkbox'">
-        <span class="material-icons" v-if="localValue"> check_box_outline </span>
-        <span class="material-icons" v-else> check_box_outline_blank </span>
+        <ElementsIcon v-if="localValue"> check_box_outline </ElementsIcon>
+        <ElementsIcon v-else> check_box_outline_blank </ElementsIcon>
       </template>
       <template v-if="type === 'radio'">
-        <span class="material-icons" v-if="localValue === id">
+        <ElementsIcon v-if="localValue === id">
           radio_button_checked
-        </span>
-        <span class="material-icons" v-else> radio_button_unchecked </span>
+        </ElementsIcon>
+        <ElementsIcon v-else> radio_button_unchecked </ElementsIcon>
       </template>
       <span> <slot /></span>
     </label>

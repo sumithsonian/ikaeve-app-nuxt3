@@ -1,6 +1,6 @@
 <template>
   <div class="player">
-    <ElementsAvatar />ユーザー名<span class="material-icons"> link </span>
+    <ElementsAvatar />ユーザー名<ElementsIcon> link </ElementsIcon>
   </div>
 </template>
 
