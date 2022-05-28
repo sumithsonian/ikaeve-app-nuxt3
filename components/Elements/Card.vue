@@ -58,6 +58,7 @@ export default {}
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      gap: $space-xsmall 0;
       dt,
       dd {
         font-size: $font-xsmall;
