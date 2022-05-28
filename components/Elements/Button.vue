@@ -55,7 +55,14 @@ export default {
 .button {
   border: 1px solid $color-primary;
   padding: $space-small $space-large;
-  border-radius: $radius;
+  border-radius: $radius-xlarge;
+  display: inline-block;
+  line-height: 1.2;
+
+  &.-large {
+    padding: $space $space-xlarge;
+  }
+
   &.-primary {
     background: $color-primary;
     color: $color-black;
@@ -69,6 +76,10 @@ export default {
     padding: 0;
     height: $img;
     width: $img;
+    &.-large {
+      height: $img-large;
+      width: $img-large;
+    }
     &.-withText {
       display: inline-flex;
       flex-direction: column;
