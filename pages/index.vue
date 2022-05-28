@@ -18,13 +18,13 @@
       <li>
         <ElementsBtn class="-circle -withTxt"
           ><span class="material-icons"> ios_share </span
-          ><ElementsTxt class="-xxsmall">シェア</ElementsTxt></ElementsBtn
+          ><ElementsText class="-xxsmall">シェア</ElementsText></ElementsBtn
         >
       </li>
       <li>
         <ElementsBtn class="-circle -primary -withTxt"
           ><span class="material-icons"> add </span
-          ><ElementsTxt class="-xxsmall">大会開催</ElementsTxt></ElementsBtn
+          ><ElementsText class="-xxsmall">大会開催</ElementsText></ElementsBtn
         >
       </li>
       <li>
@@ -123,8 +123,8 @@
       >通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト</BlocksParagraph
     >
     <BlocksParagraph
-      ><ElementsTxt class="-sub -small"
-        >注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト</ElementsTxt
+      ><ElementsText class="-sub -small"
+        >注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト注釈テキスト</ElementsText
       ></BlocksParagraph
     >
     <BlocksHeading>テーブル系</BlocksHeading>

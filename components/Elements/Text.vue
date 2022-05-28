@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" class="txt"><slot /></component>
+  <component :is="tag" class="text"><slot /></component>
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/scss/_variables';
 
-.txt {
+.text {
   font-size: $font;
   &.-xxsmall {
     font-size: $font-xxsmall;
