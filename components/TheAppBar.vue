@@ -43,7 +43,7 @@ nav ul {
   background: $color-gray-10;
   li {
     flex: 1;
-    padding: $space;
+    padding: $space-small;
     display: flex;
     justify-content: center;
     a,
