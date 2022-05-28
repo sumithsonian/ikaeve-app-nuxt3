@@ -29,7 +29,7 @@ export default {}
     flex: 1;
     button {
       display: flex;
-      padding: $space;
+      padding: $space-small;
       width: 100%;
       box-sizing: border-box;
       flex-direction: column;
