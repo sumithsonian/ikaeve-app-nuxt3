@@ -26,7 +26,8 @@
     <BlocksHeading>エレメント: ナビ系</BlocksHeading>
     <BlocksTab />
     <BlocksIndexNav />
-    <BlocksFilter />
+    <ProjectsFiltersRanking />
+    <ProjectsFiltersTournament />
     <BlocksHeading>エレメント: ボタン系</BlocksHeading>
     <BlocksList>
       <li><ElementsButton class="-primary">大会を開催する</ElementsButton></li>
