@@ -1,7 +1,7 @@
 <template>
   <div>
     <BlocksHeading>エレメント: ヒーロー系</BlocksHeading>
-    <ProjectsHero />
+    <TheHero />
     <ProjectsHero
       name="大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名"
       image-url="https://placehold.jp/150x150.png"
