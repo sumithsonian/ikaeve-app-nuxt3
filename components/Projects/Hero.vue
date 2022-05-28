@@ -1,8 +1,13 @@
 <template>
   <div class="hero">
     <div class="hero__text">
-      <h3 class="hero__text__title">大会名</h3>
-      <ElementsAvatar class="-xlarge hero__text__avatar" />
+      <h3 class="hero__text__title">{{ name }}</h3>
+      <ElementsAvatar
+        v-if="imageUrl"
+        class="-xlarge hero__text__avatar"
+        :name="name"
+        :image-url="imageUrl"
+      />
       <ul class="hero__text__actions">
         <li>
           <button><ElementsIcon> link </ElementsIcon></button>
@@ -14,7 +19,7 @@
     </div>
     <div
       class="hero__image"
-      style="background-image: url('https://placehold.jp/150x150.png')"
+      :style="`background-image: url('${backgroundImageUrl}')`"
     >
       <ul class="hero__image__tags">
         <li><span>イカイベ公式</span></li>
@@ -37,7 +42,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    name: { type: String, required: true },
+    imageUrl: { type: String, default: null },
+    backgroundImageUrl: { type: String, default: null },
+  },
+}
 </script>
 
 <style scoped lang="scss">
@@ -70,7 +81,7 @@ export default {}
   }
   &__image {
     background-size: cover;
-    aspect-ratio: 24 / 9;
+    aspect-ratio: 3 / 1;
     position: relative;
     &__tags {
       position: absolute;

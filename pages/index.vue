@@ -2,6 +2,24 @@
   <div>
     <BlocksHeading>エレメント: ヒーロー系</BlocksHeading>
     <ProjectsHero />
+    <ProjectsHero
+      name="大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名"
+      image-url="https://placehold.jp/150x150.png"
+      background-image-url="https://placehold.jp/1080x360.png"
+    />
+    <ProjectsHero
+      name="大会主催団体名"
+      background-image-url="https://placehold.jp/1080x360.png"
+    />
+    <ProjectsHero
+      name="大会参加チーム名"
+      image-url="https://placehold.jp/150x150.png"
+      background-image-url="https://placehold.jp/1080x360.png"
+    />
+    <ProjectsHero
+      name="大会シリーズ名"
+      background-image-url=""
+    />
     <BlocksHeading>エレメント: 見出し系</BlocksHeading>
     <ProjectsLocalHeader>見出し</ProjectsLocalHeader>
     <BlocksHeading>小見出し</BlocksHeading>
