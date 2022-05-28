@@ -10,10 +10,22 @@
       />
       <ul class="hero__text__actions">
         <li>
-          <button><ElementsIcon> link </ElementsIcon></button>
+          <button>
+            <img
+              src="@/assets/images/logo_twitter.svg"
+              alt="Twitter"
+              height="24"
+            />
+          </button>
         </li>
         <li>
-          <button><ElementsIcon> link </ElementsIcon></button>
+          <button>
+            <img
+              src="@/assets/images/logo_discord.svg"
+              alt="Discord"
+              height="24"
+            />
+          </button>
         </li>
       </ul>
     </div>
