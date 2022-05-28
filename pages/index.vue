@@ -69,11 +69,11 @@
 
     <BlocksHeading>リスト系</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li><BlocksCard /></li>
-      <li><BlocksCard /></li>
-      <li><BlocksCard /></li>
-      <li><BlocksCard /></li>
-      <li><BlocksCard /></li>
+      <li><ElementsCard /></li>
+      <li><ElementsCard /></li>
+      <li><ElementsCard /></li>
+      <li><ElementsCard /></li>
+      <li><ElementsCard /></li>
     </BlocksList>
     <BlocksListTable />
 
