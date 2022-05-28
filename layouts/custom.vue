@@ -18,7 +18,7 @@
   flex-direction: column;
   position: relative;
   background: $color-gray-09;
-  box-shadow: 0 0 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 $space-large rgba(0, 0, 0, 0.4);
   &__footer {
     position: sticky;
     bottom: 0;
