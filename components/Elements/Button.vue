@@ -5,7 +5,7 @@
     :to="compTo"
     :href="compTo"
     :class="[
-      'btn',
+      'button',
       isActive ? 'is-active' : null,
       isDisabled ? 'is-disabled' : null,
     ]"
@@ -52,7 +52,7 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/scss/_variables';
 
-.btn {
+.button {
   border: 1px solid $color-primary;
   padding: $space-small $space-large;
   border-radius: $radius;

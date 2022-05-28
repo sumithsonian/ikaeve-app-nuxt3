@@ -8,37 +8,37 @@
     <BlocksFilter />
     <BlocksHeading>ボタン系</BlocksHeading>
     <BlocksList>
-      <li><ElementsBtn class="-primary">大会を開催する</ElementsBtn></li>
-      <li><ElementsBtn>全ての大会をみる</ElementsBtn></li>
+      <li><ElementsButton class="-primary">大会を開催する</ElementsButton></li>
+      <li><ElementsButton>全ての大会をみる</ElementsButton></li>
       <li>
-        <ElementsBtn class="-twitter"
-          >Twitterで新規会員登録 / ログイン</ElementsBtn
+        <ElementsButton class="-twitter"
+          >Twitterで新規会員登録 / ログイン</ElementsButton
         >
       </li>
       <li>
-        <ElementsBtn class="-circle -withTxt"
+        <ElementsButton class="-circle -withTxt"
           ><span class="material-icons"> ios_share </span
-          ><ElementsText class="-xxsmall">シェア</ElementsText></ElementsBtn
+          ><ElementsText class="-xxsmall">シェア</ElementsText></ElementsButton
         >
       </li>
       <li>
-        <ElementsBtn class="-circle -primary -withTxt"
+        <ElementsButton class="-circle -primary -withTxt"
           ><span class="material-icons"> add </span
-          ><ElementsText class="-xxsmall">大会開催</ElementsText></ElementsBtn
+          ><ElementsText class="-xxsmall">大会開催</ElementsText></ElementsButton
         >
       </li>
       <li>
-        <ElementsBtn class="-circle -primary"
+        <ElementsButton class="-circle -primary"
           ><span class="material-icons">
             keyboard_arrow_left
-          </span></ElementsBtn
+          </span></ElementsButton
         >
       </li>
       <li>
-        <ElementsBtn class="-circle -primary"
+        <ElementsButton class="-circle -primary"
           ><span class="material-icons">
             keyboard_arrow_right
-          </span></ElementsBtn
+          </span></ElementsButton
         >
       </li>
     </BlocksList>
