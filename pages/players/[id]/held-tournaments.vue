@@ -2,6 +2,11 @@
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsTabsPlayer />
+    <BlocksHeading>開催した大会・5</BlocksHeading>
+    <BlocksList class="-horizontal">
+      <li><ElementsCard /></li>
+      <li><ElementsCard /></li>
+    </BlocksList>
   </div>
 </template>
 
