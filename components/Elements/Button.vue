@@ -69,7 +69,7 @@ export default {
     padding: 0;
     height: $img;
     width: $img;
-    &.-withTxt {
+    &.-withText {
       display: inline-flex;
       flex-direction: column;
       justify-content: center;
