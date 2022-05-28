@@ -4,7 +4,7 @@
     <ul>
       <li>
         <nuxt-link href="/"
-          ><span class="material-icons"> arrow_back_ios </span></nuxt-link
+          ><ElementsIcon> arrow_back_ios </ElementsIcon></nuxt-link
         >
       </li>
     </ul>

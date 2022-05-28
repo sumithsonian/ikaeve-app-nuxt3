@@ -1,7 +1,7 @@
 <template>
-  <div class="card">
+  <nuxt-link to="/tournaments/1/" class="card">
     <div class="card__image">
-      <img src="https://placehold.jp/150x150.png" alt="大会名" />
+      <img src="https://placehold.jp/1080x360.png" alt="大会名" />
       <ul>
         <li><span>イカイベ公式</span></li>
         <li><span>募集中</span></li>
@@ -20,7 +20,7 @@
         <dd>イカイベ運営チーム</dd>
       </dl>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -30,6 +30,7 @@ export default {}
 <style scoped lang="scss">
 @import '@/assets/scss/_variables';
 .card {
+  display: block;
   background: $color-gray-08;
   border-radius: $space;
   overflow: hidden;
@@ -39,7 +40,7 @@ export default {}
     img {
       width: 100%;
       object-fit: cover;
-      aspect-ratio: 5 / 3;
+      aspect-ratio: 16 / 9;
     }
     ul {
       position: absolute;
@@ -51,10 +52,14 @@ export default {}
   }
   &__text {
     padding: $space;
+    p {
+      font-size: $font-large;
+    }
     dl {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      gap: $space-xsmall 0;
       dt,
       dd {
         font-size: $font-xsmall;

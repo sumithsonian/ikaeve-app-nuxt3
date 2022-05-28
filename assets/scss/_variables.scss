@@ -42,17 +42,36 @@ $color-black: #000;
 
 $color-primary: #e4fc3d;
 $color-secondary: #7854ff;
+$color-twitter: #1c9bf1;
 
 // スペース
+$space-xsmall: 4px;
 $space-small: 8px;
 $space: 12px;
 $space-large: 16px;
 $space-xlarge: 24px;
 
 // フォントサイズ
+$font-xxsmall: 10px;
 $font-xsmall: 12px;
 $font-small: 14px;
 $font: 16px;
-$font-large: 20px;
+$font-large: 18px;
 $font-xlarge: 24px;
-$font-xxlarge: 24px;
+$font-xxlarge: 32px;
+
+// イメージ
+$img-xsmall: 24px;
+$img-small: 32px;
+$img: 48px;
+$img-large: 64px;
+$img-xlarge: 96px;
+$img-xxlarge: 128px;
+
+// 角丸
+$radius-xsmall: 12px;
+$radius-small: 16px;
+$radius: 24px;
+$radius-large: 32px;
+$radius-xlarge: 48px;
+$radius-xxlarge: 64px;

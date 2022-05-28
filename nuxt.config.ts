@@ -7,10 +7,23 @@ export default defineNuxtConfig({
      ** Headers of the page
      */
     head: {
+      titleTemplate: `%s｜イカイベ`,
       link: [
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com',
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap',
         },
       ],
     },

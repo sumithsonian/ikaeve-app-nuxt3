@@ -1,4 +1,36 @@
+// font
+@font-face {
+  font-family: 'ikamodoki';
+  src: url(@/assets/fonts/ikamodoki1_0.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'paintball';
+  src: url(@/assets/fonts/Paintball_Beta_3.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'paintballNumber';
+  src: url(@/assets/fonts/Paintball_Beta_3.ttf) format('truetype');
+  unicode-range: U+0030-0039;
+}
+
 body {
   background: $color-gray-09;
   color: $color-white;
+  font-family: 'Noto Sans JP', sans-serif;
+
+  a,
+  button {
+    color: $color-white;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  // z-index
+  .platform__footer {
+    z-index: 100;
+  }
+  .modal {
+    z-index: 200;
+  }
 }
