@@ -3,15 +3,17 @@
     <ul>
       <li>
         <ElementsIcon> filter_alt </ElementsIcon>
-      </li>
-      <li>
         <ElementsTag tag="button" class="-xsmall is-active"
           >フィルタ</ElementsTag
         >
         <ElementsTag tag="button" class="-xsmall">フィルタ</ElementsTag>
         <ElementsTag tag="button" class="-xsmall">フィルタ</ElementsTag>
         <ElementsTag tag="button" class="-xsmall">フィルタ</ElementsTag>
+      </li>
+      <li>
         <ElementsFormSelect> 新着順 </ElementsFormSelect>
+      </li>
+      <li>
         <ElementsDropdown> Splatoon 3 </ElementsDropdown>
         <ElementsDropdown> 2022 </ElementsDropdown>
         <ElementsDropdown> 春シーズン </ElementsDropdown>
@@ -32,5 +34,9 @@ export default {}
   padding: $space-small;
   gap: $space-small;
   align-items: center;
+  li {
+    display: flex;
+    gap: $space-small;
+  }
 }
 </style>
