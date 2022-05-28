@@ -1,15 +1,15 @@
 <template>
   <header>
-    <h1>ロゴマーク</h1>
+    <h1><nuxt-link to="/">ロゴマーク</nuxt-link></h1>
     <ul>
       <li>
-        <nuxt-link href="/"
+        <nuxt-link to="/"
           ><ElementsIcon> login </ElementsIcon
           ><ElementsText class="-xsmall">登録/ログイン</ElementsText></nuxt-link
         >
       </li>
       <li>
-        <nuxt-link href="/"
+        <nuxt-link to="/players/1"
           ><ElementsIcon> account_circle </ElementsIcon
           ><ElementsText class="-xsmall">マイページ</ElementsText></nuxt-link
         >
@@ -29,9 +29,12 @@ header {
   justify-content: space-between;
   align-items: center;
   h1 {
-    font-family: ikamodoki;
-    font-size: $font-xxlarge;
-    line-height: 1;
+    a {
+      color: $color-black;
+      font-family: ikamodoki;
+      font-size: $font-xxlarge;
+      line-height: 1;
+    }
   }
   ul {
     display: flex;
@@ -39,7 +42,8 @@ header {
     li {
       display: flex;
       justify-content: center;
-      a {
+      a,
+      button {
         display: flex;
         flex-direction: column;
         align-items: center;

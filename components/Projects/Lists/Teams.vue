@@ -11,19 +11,19 @@
     <template #tbody>
       <tr>
         <th v-if="th">1</th>
-        <td><BlocksPlayer /></td>
+        <td><nuxt-link to="/teams/1"><BlocksPlayer /></nuxt-link></td>
         <td>プレイヤー名</td>
         <td>フレンドコード</td>
       </tr>
       <tr>
         <th v-if="th">1</th>
-        <td><BlocksPlayer /></td>
+        <td><nuxt-link to="/teams/1"><BlocksPlayer /></nuxt-link></td>
         <td>プレイヤー名</td>
         <td>フレンドコード</td>
       </tr>
       <tr>
         <th v-if="th">1</th>
-        <td><BlocksPlayer /></td>
+        <td><nuxt-link to="/teams/1"><BlocksPlayer /></nuxt-link></td>
         <td>プレイヤー名</td>
         <td>フレンドコード</td>
       </tr>
