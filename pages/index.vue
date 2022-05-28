@@ -18,7 +18,7 @@
     />
     <ProjectsHero
       name="大会シリーズ名"
-      background-image-url=""
+      background-image-url="https://placehold.jp/1080x360.png"
     />
     <BlocksHeading>エレメント: 見出し系</BlocksHeading>
     <ProjectsLocalHeader>見出し</ProjectsLocalHeader>
