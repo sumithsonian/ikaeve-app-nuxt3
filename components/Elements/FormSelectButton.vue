@@ -1,5 +1,5 @@
 <template>
-  <div class="formSelectBtn">
+  <div class="formSelectButton">
     <!-- keyは再描画用 -->
     <input
       v-model="localValue"
@@ -55,7 +55,7 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/scss/_variables';
 
-.formSelectBtn {
+.formSelectButton {
   display: inline-block;
 
   input {

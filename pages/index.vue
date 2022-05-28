@@ -16,13 +16,13 @@
         >
       </li>
       <li>
-        <ElementsButton class="-circle -withTxt"
+        <ElementsButton class="-circle -withText"
           ><span class="material-icons"> ios_share </span
           ><ElementsText class="-xxsmall">シェア</ElementsText></ElementsButton
         >
       </li>
       <li>
-        <ElementsButton class="-circle -primary -withTxt"
+        <ElementsButton class="-circle -primary -withText"
           ><span class="material-icons"> add </span
           ><ElementsText class="-xxsmall">大会開催</ElementsText></ElementsButton
         >
@@ -69,38 +69,38 @@
       <tr>
         <th>ゲームタイトル</th>
         <td>
-          <ElementsFormSelectBtn
+          <ElementsFormSelectButton
             name="radio"
             id="1"
             type="radio"
             v-model="radio"
-            >ゲームタイトル</ElementsFormSelectBtn
+            >ゲームタイトル</ElementsFormSelectButton
           ><br />
-          <ElementsFormSelectBtn
+          <ElementsFormSelectButton
             name="radio"
             id="2"
             type="radio"
             v-model="radio"
-            >ゲームタイトル</ElementsFormSelectBtn
+            >ゲームタイトル</ElementsFormSelectButton
           >
         </td>
       </tr>
       <tr>
         <th>ゲームタイトル</th>
         <td>
-          <ElementsFormSelectBtn
+          <ElementsFormSelectButton
             name="checkbox"
             id="3"
             type="checkbox"
             v-model="check"
-            >ゲームタイトル</ElementsFormSelectBtn
+            >ゲームタイトル</ElementsFormSelectButton
           ><br />
-          <ElementsFormSelectBtn
+          <ElementsFormSelectButton
             name="checkbox"
             id="4"
             type="checkbox"
             v-model="check"
-            >ゲームタイトル</ElementsFormSelectBtn
+            >ゲームタイトル</ElementsFormSelectButton
           >
         </td>
       </tr>
