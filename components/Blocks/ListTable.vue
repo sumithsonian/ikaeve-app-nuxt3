@@ -12,21 +12,21 @@
         <th class="ranking__rank">
           <ElementsIcon> arrow_upward </ElementsIcon>1
         </th>
-        <td class="ranking__player"><ProjectsPlayer /></td>
+        <td class="ranking__player"><BlocksPlayer /></td>
         <td class="ranking__number">2000</td>
       </tr>
       <tr>
         <th class="ranking__rank">
           <ElementsIcon> arrow_downward </ElementsIcon>2
         </th>
-        <td class="ranking__player"><ProjectsPlayer /></td>
+        <td class="ranking__player"><BlocksPlayer /></td>
         <td class="ranking__number">2000</td>
       </tr>
       <tr>
         <th class="ranking__rank">
           <ElementsIcon> arrow_forward </ElementsIcon>3
         </th>
-        <td class="ranking__player"><ProjectsPlayer /></td>
+        <td class="ranking__player"><BlocksPlayer /></td>
         <td class="ranking__number">2000</td>
       </tr>
     </tbody>
