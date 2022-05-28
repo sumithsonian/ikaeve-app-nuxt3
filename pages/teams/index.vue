@@ -1,6 +1,8 @@
 <template>
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
+    <ProjectsFiltersTournament />
+    <ProjectsListsTeams />
   </div>
 </template>
 
