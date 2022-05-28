@@ -1,12 +1,15 @@
 <template>
   <div>
+    <BlocksHeading>エレメント: ヒーロー系</BlocksHeading>
     <ProjectsHero />
+    <BlocksHeading>エレメント: 見出し系</BlocksHeading>
     <ProjectsLocalHeader>見出し</ProjectsLocalHeader>
     <BlocksHeading>小見出し</BlocksHeading>
+    <BlocksHeading>エレメント: ナビ系</BlocksHeading>
     <BlocksTab />
     <BlocksIndexNav />
     <BlocksFilter />
-    <BlocksHeading>ボタン系</BlocksHeading>
+    <BlocksHeading>エレメント: ボタン系</BlocksHeading>
     <BlocksList>
       <li><ElementsButton class="-primary">大会を開催する</ElementsButton></li>
       <li><ElementsButton>全ての大会をみる</ElementsButton></li>
@@ -24,7 +27,9 @@
       <li>
         <ElementsButton class="-circle -primary -withText"
           ><span class="material-icons"> add </span
-          ><ElementsText class="-xxsmall">大会開催</ElementsText></ElementsButton
+          ><ElementsText class="-xxsmall"
+            >大会開催</ElementsText
+          ></ElementsButton
         >
       </li>
       <li>
