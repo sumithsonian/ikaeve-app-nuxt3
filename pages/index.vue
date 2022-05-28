@@ -75,7 +75,12 @@
       <li><ElementsCard /></li>
       <li><ElementsCard /></li>
     </BlocksList>
-    <BlocksListTable />
+    <ProjectsListsPlayers kind="ranking" />
+    <ProjectsListsPlayers kind="list" />
+    <ProjectsListsTeams kind="result" />
+    <ProjectsListsTeams kind="tournament" />
+    <ProjectsListsTeams kind="list" />
+    <ProjectsListsProgress />
 
     <BlocksList class="-disc">
       <li>リストリストリストリスト</li>

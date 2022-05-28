@@ -1,34 +1,10 @@
 <template>
   <table class="ranking">
-    <thead>
-      <tr>
-        <th>ランク</th>
-        <th>プレイヤー</th>
-        <th>ポイント</th>
-      </tr>
+    <thead v-if="typeof $slots.thead === 'function' && $slots.thead()">
+      <slot name="thead" />
     </thead>
-    <tbody>
-      <tr>
-        <th class="ranking__rank">
-          <ElementsIcon> arrow_upward </ElementsIcon>1
-        </th>
-        <td class="ranking__player"><BlocksPlayer /></td>
-        <td class="ranking__number">2000</td>
-      </tr>
-      <tr>
-        <th class="ranking__rank">
-          <ElementsIcon> arrow_downward </ElementsIcon>2
-        </th>
-        <td class="ranking__player"><BlocksPlayer /></td>
-        <td class="ranking__number">2000</td>
-      </tr>
-      <tr>
-        <th class="ranking__rank">
-          <ElementsIcon> arrow_forward </ElementsIcon>3
-        </th>
-        <td class="ranking__player"><BlocksPlayer /></td>
-        <td class="ranking__number">2000</td>
-      </tr>
+    <tbody v-if="typeof $slots.tbody === 'function' && $slots.tbody()">
+      <slot name="tbody" />
     </tbody>
   </table>
 </template>
@@ -41,14 +17,18 @@ export default {}
 @import '@/assets/scss/_variables';
 
 .ranking {
-  width: 100%;
-  th,
-  td {
-    padding: $space-small;
+  margin: $space;
+  width: calc(100% -#{$space * 2});
+  ::v-deep(th),
+  ::v-deep(td) {
+    padding: $space-xsmall;
+    text-align: left;
     vertical-align: middle;
   }
-  &__number {
-    text-align: right;
+  thead ::v-deep(th) {
+    font-size: $font-small;
+    color: $color-gray-06;
+    border-bottom: 1px solid $color-gray-06;
   }
 }
 </style>
