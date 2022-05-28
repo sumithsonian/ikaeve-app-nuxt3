@@ -24,7 +24,7 @@
       background-image-url="https://placehold.jp/1080x360.png"
     />
     <BlocksHeading>エレメント: ナビ系</BlocksHeading>
-    <BlocksTab />
+    <ProjectsTabsTournament />
     <BlocksIndexNav />
     <ProjectsFiltersRanking />
     <ProjectsFiltersTournament />

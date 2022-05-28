@@ -1,11 +1,7 @@
 <template>
   <div class="tab">
     <ul>
-      <li><nuxt-link to="/" class="is-current">ナビ</nuxt-link></li>
-      <li><nuxt-link to="/">ナビ</nuxt-link></li>
-      <li><nuxt-link to="/">ナビ</nuxt-link></li>
-      <li><nuxt-link to="/">ナビ</nuxt-link></li>
-      <li><nuxt-link to="/">ナビ</nuxt-link></li>
+      <slot />
     </ul>
   </div>
 </template>
@@ -20,7 +16,7 @@ export default {}
   background: $color-gray-10;
   display: flex;
   justify-content: space-between;
-  li {
+  ::v-deep(li) {
     flex: 1;
     text-align: center;
     a {
@@ -29,7 +25,7 @@ export default {}
       border: 2px solid transparent;
       border-right: none;
       border-left: none;
-      &.is-current {
+      &.router-link-active {
         border-bottom-color: $color-primary;
       }
     }
