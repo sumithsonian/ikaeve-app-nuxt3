@@ -2,6 +2,7 @@
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsTabsTournament />
+    <ProjectsListsTeams kind="list" />
   </div>
 </template>
 

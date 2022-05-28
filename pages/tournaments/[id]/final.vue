@@ -2,6 +2,9 @@
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsTabsTournament />
+    <BlocksIndexNav />
+    <BlocksHeading>勝者サイド</BlocksHeading>
+    <BlocksHeading>敗者サイド</BlocksHeading>
   </div>
 </template>
 
