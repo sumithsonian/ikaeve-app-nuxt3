@@ -113,8 +113,12 @@
         <td><ElementsFormInput :rows="5" placeholder="プレースホルダ" /></td>
       </tr>
       <tr>
+        <th>大会概要</th>
+        <td><ElementsFormSelect /></td>
+      </tr>
+      <tr>
         <th>大会画像</th>
-        <td>セル</td>
+        <td><input type="file" /></td>
       </tr>
     </BlocksFormTable>
 
