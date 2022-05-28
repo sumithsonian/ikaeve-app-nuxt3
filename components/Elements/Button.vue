@@ -1,5 +1,4 @@
 <template>
-  <!-- hrefをnullにするとtoがあってもhrefが消えるのでそのままにしている -->
   <component
     :is="tag"
     :to="compTo"
@@ -34,7 +33,8 @@ export default {
       ) {
         return 'a'
       } else if (this.to && !this.to.includes('http') && !this.isDisabled) {
-        return 'nuxt-link'
+        // https://github.com/nuxt/framework/issues/3672
+        return resolveComponent('NuxtLink')
       } else {
         return 'button'
       }
