@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card__image">
-      <img src="https://placehold.jp/150x150.png" alt="大会名" />
+      <img src="https://placehold.jp/1080x360.png" alt="大会名" />
       <ul>
         <li><span>イカイベ公式</span></li>
         <li><span>募集中</span></li>
@@ -51,6 +51,9 @@ export default {}
   }
   &__text {
     padding: $space;
+    p {
+      font-size: $font-large;
+    }
     dl {
       width: 100%;
       display: flex;

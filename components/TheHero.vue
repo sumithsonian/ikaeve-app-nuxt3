@@ -37,9 +37,9 @@ header {
     color: $color-white;
   }
   h2 {
-    font-size: $font-xlarge;
+    font-size: $font-xxlarge;
     span {
-      font-size: $font-large;
+      font-size: $font-xlarge;
     }
   }
 }
