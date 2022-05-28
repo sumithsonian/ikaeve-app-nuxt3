@@ -5,4 +5,12 @@ body {
   button {
     color: $color-white;
   }
+
+  // z-index
+  .platform__footer {
+    z-index: 100;
+  }
+  .modal {
+    z-index: 200;
+  }
 }
