@@ -146,6 +146,11 @@
     </BlocksTable>
     <BlocksHeading>特殊系</BlocksHeading>
     <BlocksHeading>モーダル系</BlocksHeading>
+    <BlocksModal>
+      <BlocksParagraph
+        >通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト</BlocksParagraph
+      >
+    </BlocksModal>
   </div>
 </template>
 
