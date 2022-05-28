@@ -7,6 +7,7 @@ export default defineNuxtConfig({
      ** Headers of the page
      */
     head: {
+      titleTemplate: `%s｜イカイベ`,
       link: [
         {
           rel: 'stylesheet',
