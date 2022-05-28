@@ -8,19 +8,19 @@
         >
       </li>
       <li>
-        <nuxt-link href="/"
+        <nuxt-link href="/ranking/"
           ><ElementsIcon> insights </ElementsIcon
           ><ElementsText class="-xsmall">ランキング</ElementsText></nuxt-link
         >
       </li>
       <li>
-        <nuxt-link href="/"
+        <nuxt-link href="/tournaments/"
           ><ElementsIcon> military_tech </ElementsIcon
           ><ElementsText class="-xsmall">大会</ElementsText></nuxt-link
         >
       </li>
       <li>
-        <nuxt-link href="/"
+        <nuxt-link href="/teams/"
           ><ElementsIcon> people </ElementsIcon
           ><ElementsText class="-xsmall">チーム/団体</ElementsText></nuxt-link
         >
@@ -43,7 +43,6 @@ nav ul {
   background: $color-gray-10;
   li {
     flex: 1;
-    padding: $space-small;
     display: flex;
     justify-content: center;
     a,
@@ -51,6 +50,9 @@ nav ul {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: $space-small;
+      width: 100%;
+      box-sizing: border-box;
     }
   }
 }
