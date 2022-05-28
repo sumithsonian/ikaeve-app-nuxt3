@@ -46,7 +46,7 @@
       </BlocksList>
       <BlocksList class="-center">
         <li>
-          <ElementsButton to="/tournaments">全ての大会をみる</ElementsButton>
+          <ElementsButton to="/teams/1/tournaments">全ての大会をみる</ElementsButton>
         </li>
       </BlocksList>
       <BlocksHeading>所属メンバー</BlocksHeading>
