@@ -6,7 +6,7 @@
 
 <script setup>
 const route = useRoute()
-const title = 'プレイヤー詳細'
+const title = 'プレイヤーの編集'
 useHead({
   title: title,
 })
