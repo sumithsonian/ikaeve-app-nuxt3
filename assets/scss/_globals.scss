@@ -14,3 +14,20 @@ body {
     z-index: 200;
   }
 }
+
+// font
+@font-face {
+  font-family: 'ikamodoki';
+  src: url(@/assets/fonts/ikamodoki1_0.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'paintball';
+  src: url(@/assets/fonts/Paintball_Beta_3.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'paintballNumber';
+  src: url(@/assets/fonts/Paintball_Beta_3.ttf) format('truetype');
+  unicode-range: U+0030-0039;
+}

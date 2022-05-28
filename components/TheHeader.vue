@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>ロゴ</h1>
+    <h1>ロゴマーク</h1>
     <ul>
       <li>
         <nuxt-link href="/"
@@ -28,6 +28,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  h1 {
+    font-family: ikamodoki;
+    font-size: $font-xxlarge;
+    line-height: 1;
+  }
   ul {
     display: flex;
     gap: $space;
