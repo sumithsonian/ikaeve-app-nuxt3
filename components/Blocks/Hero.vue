@@ -45,7 +45,7 @@
           </button>
         </li>
         <li>
-          <nuxt-link to="/"><ElementsIcon> settings </ElementsIcon></nuxt-link>
+          <nuxt-link to="/{}/{}/edit"><ElementsIcon> settings </ElementsIcon></nuxt-link>
         </li>
       </ul>
     </div>
