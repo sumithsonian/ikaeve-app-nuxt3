@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ProjectsListsProgress />
+    <ProjectsListsProgress :items="matchs" />
   </div>
 </template>
 
@@ -10,4 +10,5 @@ const title = '進行表｜大会'
 useHead({
   title: title,
 })
+const matchs = (await $fetch('/api/matchs')).data
 </script>
