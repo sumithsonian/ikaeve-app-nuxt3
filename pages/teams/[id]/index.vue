@@ -21,7 +21,7 @@
         </template>
       </BlocksTable>
       <BlocksHeading>所属メンバー</BlocksHeading>
-      <ProjectsListsPlayers />
+      <ProjectsListsPlayers :items="players.data" />
       <BlocksHeading>最近参加した大会</BlocksHeading>
       <BlocksList class="-horizontal">
         <li><ElementsCard /></li>
@@ -50,7 +50,7 @@
         </li>
       </BlocksList>
       <BlocksHeading>所属メンバー</BlocksHeading>
-      <ProjectsListsPlayers />
+      <ProjectsListsPlayers :items="players.data" />
     </template>
   </div>
 </template>
@@ -61,4 +61,6 @@ const title = 'チーム詳細'
 useHead({
   title: title,
 })
+
+const players = await $fetch('/api/users')
 </script>

@@ -2,7 +2,7 @@
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsFiltersRanking />
-    <ProjectsListsPlayers kind="ranking" />
+    <ProjectsListsPlayers :items="players.data" kind="ranking" />
   </div>
 </template>
 
@@ -11,4 +11,5 @@ const title = '2022 - 春シーズンランキング'
 useHead({
   title: title,
 })
+const players = await $fetch('/api/users')
 </script>

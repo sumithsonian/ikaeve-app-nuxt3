@@ -8,20 +8,16 @@
       </tr>
     </template>
     <template #tbody>
-      <tr>
-        <th v-if="th"><ElementsIcon> arrow_upward </ElementsIcon>1</th>
-        <td><nuxt-link to="/players/1"><BlocksPlayer /></nuxt-link></td>
-        <td>2000</td>
-      </tr>
-      <tr>
-        <th v-if="th"><ElementsIcon> arrow_downward </ElementsIcon>2</th>
-        <td><nuxt-link to="/players/1"><BlocksPlayer /></nuxt-link></td>
-        <td>2000</td>
-      </tr>
-      <tr>
-        <th v-if="th"><ElementsIcon> arrow_forward </ElementsIcon>3</th>
-        <td><nuxt-link to="/players/1"><BlocksPlayer /></nuxt-link></td>
-        <td>2000</td>
+      <tr v-for="(item, i) of items" :key="item.id">
+        <th v-if="th">
+          <ElementsRank :position="item.ranks.position">{{ i + 1 }}</ElementsRank>
+        </th>
+        <td>
+          <nuxt-link :to="`/players/${item.id}/`"
+            ><BlocksPlayer :item="item"
+          /></nuxt-link>
+        </td>
+        <td>{{ item.points.season }}</td>
       </tr>
     </template>
   </BlocksListTable>
@@ -31,6 +27,7 @@
 export default {
   props: {
     kind: { type: String, default: null },
+    items: { type: Array, default: null },
   },
   computed: {
     th() {

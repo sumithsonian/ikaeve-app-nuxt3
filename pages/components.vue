@@ -75,8 +75,8 @@
       <li><ElementsCard /></li>
       <li><ElementsCard /></li>
     </BlocksList>
-    <ProjectsListsPlayers kind="ranking" />
-    <ProjectsListsPlayers kind="list" />
+    <ProjectsListsPlayers :items="players.data" kind="ranking" />
+    <ProjectsListsPlayers :items="players.data" kind="list" />
     <ProjectsListsTeams kind="result" />
     <ProjectsListsTeams kind="tournament" />
     <ProjectsListsTeams kind="list" />
@@ -186,6 +186,10 @@
     </BlocksModal>
   </div>
 </template>
+
+<script setup>
+const players = await $fetch('/api/users')
+</script>
 
 <script>
 export default {
