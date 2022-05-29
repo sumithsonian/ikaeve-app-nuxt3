@@ -1,7 +1,5 @@
 <template>
   <div>
-    <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsTabsPlayer />
     <BlocksHeading>プロフィール</BlocksHeading>
     <BlocksParagraph
       >プロフィールプロフィールプロフィールプロフィールプロフィール</BlocksParagraph
