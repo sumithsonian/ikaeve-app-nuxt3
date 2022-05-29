@@ -6,7 +6,7 @@ export default defineEventHandler((event) => {
       kind: 'tournament',
       id: i,
       name: `第${i}回○○杯`,
-      image_url: '',
+      background_image_url: 'https://placehold.jp/1080x360.png',
       started_at: '2022-09-09 09:00',
       ended_at: '2022-09-09 09:00',
       opened_at: '2022-09-09 09:00',
