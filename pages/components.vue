@@ -7,11 +7,11 @@
     <TheHero />
     <BlocksHero
       name="大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名"
-      image-url="https://placehold.jp/150x150.png"
       background-image-url="https://placehold.jp/1080x360.png"
     />
     <BlocksHero
       name="大会主催団体名"
+      image-url="https://placehold.jp/150x150.png"
       background-image-url="https://placehold.jp/1080x360.png"
     />
     <BlocksHero
