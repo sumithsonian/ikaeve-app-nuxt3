@@ -25,6 +25,13 @@ export default defineEventHandler((event) => {
       created_at: '2022-07-21 09:00',
       updated_at: '2022-07-21 09:00',
       tags: [{ name: 'イカイベ公認' }, { name: '募集中' }],
+      team: {
+        kind: 'team',
+        id: i,
+        name: `チーム${i}`,
+        image_url: 'https://placehold.jp/150x150.png',
+        background_image_url: 'https://placehold.jp/1080x360.png',
+      },
     })
   }
 
