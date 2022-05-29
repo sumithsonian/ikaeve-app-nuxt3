@@ -21,7 +21,7 @@
     </BlocksTable>
     <BlocksHeading>最近参加した大会</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments.data" :key="tournament.id">
+      <li v-for="tournament of tournaments" :key="tournament.id">
         <ElementsCard :item="tournament" />
       </li>
     </BlocksList>
@@ -34,7 +34,7 @@
     </BlocksList>
     <BlocksHeading>最近開催した大会</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments.data" :key="tournament.id">
+      <li v-for="tournament of tournaments" :key="tournament.id">
         <ElementsCard :item="tournament" />
       </li>
     </BlocksList>
@@ -54,5 +54,5 @@ const title = 'プレイヤー詳細'
 useHead({
   title: title,
 })
-const tournaments = await $fetch('/api/tournaments')
+const tournaments = (await $fetch('/api/tournaments')).data
 </script>

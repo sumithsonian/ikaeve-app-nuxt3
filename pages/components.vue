@@ -69,15 +69,15 @@
 
     <BlocksHeading>リスト系</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments.data" :key="tournament.id">
+      <li v-for="tournament of tournaments" :key="tournament.id">
         <ElementsCard :item="tournament" />
       </li>
     </BlocksList>
-    <ProjectsListsPlayers :items="players.data" kind="ranking" />
-    <ProjectsListsPlayers :items="players.data" kind="list" />
-    <ProjectsListsTeams :items="teams.data" kind="result" />
-    <ProjectsListsTeams :items="teams.data" kind="tournament" />
-    <ProjectsListsTeams :items="teams.data" kind="list" />
+    <ProjectsListsPlayers :items="players" kind="ranking" />
+    <ProjectsListsPlayers :items="players" kind="list" />
+    <ProjectsListsTeams :items="teams" kind="result" />
+    <ProjectsListsTeams :items="teams" kind="tournament" />
+    <ProjectsListsTeams :items="teams" kind="list" />
     <ProjectsListsProgress />
 
     <BlocksList class="-disc">
@@ -186,9 +186,9 @@
 </template>
 
 <script setup>
-const players = await $fetch('/api/users')
-const tournaments = await $fetch('/api/tournaments')
-const teams = await $fetch('/api/teams')
+const players = (await $fetch('/api/users')).data
+const tournaments = (await $fetch('/api/tournaments')).data
+const teams = (await $fetch('/api/teams')).data
 </script>
 
 <script>

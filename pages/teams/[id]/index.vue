@@ -17,10 +17,10 @@
         </template>
       </BlocksTable>
       <BlocksHeading>所属メンバー</BlocksHeading>
-      <ProjectsListsPlayers :items="players.data" />
+      <ProjectsListsPlayers :items="players" />
       <BlocksHeading>最近参加した大会</BlocksHeading>
       <BlocksList class="-horizontal">
-        <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <li v-for="tournament of tournaments" :key="tournament.id">
           <ElementsCard :item="tournament" />
         </li>
       </BlocksList>
@@ -33,13 +33,13 @@
     <template v-if="team.type === 'organizer'">
       <BlocksHeading>主催大会</BlocksHeading>
       <BlocksList class="-horizontal">
-        <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <li v-for="tournament of tournaments" :key="tournament.id">
           <ElementsCard :item="tournament" />
         </li>
       </BlocksList>
       <BlocksHeading>最近開催した大会</BlocksHeading>
       <BlocksList class="-horizontal">
-        <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <li v-for="tournament of tournaments" :key="tournament.id">
           <ElementsCard :item="tournament" />
         </li>
       </BlocksList>
@@ -51,15 +51,15 @@
         </li>
       </BlocksList>
       <BlocksHeading>所属メンバー</BlocksHeading>
-      <ProjectsListsPlayers :items="players.data" />
+      <ProjectsListsPlayers :items="players" />
     </template>
   </div>
 </template>
 
 <script setup>
 const title = 'チーム詳細'
-const players = await $fetch('/api/users')
-const tournaments = await $fetch('/api/tournaments')
+const players = (await $fetch('/api/users')).data
+const tournaments = (await $fetch('/api/tournaments')).data
 
 useHead({
   title: title,

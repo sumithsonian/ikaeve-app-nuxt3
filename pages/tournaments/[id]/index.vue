@@ -1,7 +1,7 @@
 <template>
   <div>
     <BlocksHeading>試合結果</BlocksHeading>
-    <ProjectsListsTeams :items="teams.data" kind="result" />
+    <ProjectsListsTeams :items="teams" kind="result" />
     <BlocksHeading>大会詳細</BlocksHeading>
     <BlocksParagraph
       >大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細大会詳細</BlocksParagraph
@@ -19,5 +19,5 @@ const title = '大会詳細'
 useHead({
   title: title,
 })
-const teams = await $fetch('/api/teams')
+const teams = (await $fetch('/api/teams')).data
 </script>

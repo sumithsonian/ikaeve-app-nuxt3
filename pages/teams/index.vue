@@ -2,7 +2,7 @@
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsFiltersTournament />
-    <ProjectsListsTeams :items="teams.data" />
+    <ProjectsListsTeams :items="teams" />
   </div>
 </template>
 
@@ -11,5 +11,5 @@ const title = 'チーム/団体一覧'
 useHead({
   title: title,
 })
-const teams = await $fetch('/api/teams')
+const teams = (await $fetch('/api/teams')).data
 </script>

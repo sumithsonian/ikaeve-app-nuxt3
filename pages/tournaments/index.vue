@@ -3,7 +3,7 @@
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsFiltersTournament />
     <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments.data" :key="tournament.id">
+      <li v-for="tournament of tournaments" :key="tournament.id">
         <ElementsCard :item="tournament" />
       </li>
     </BlocksList>
@@ -15,5 +15,5 @@ const title = '大会一覧'
 useHead({
   title: title,
 })
-const tournaments = await $fetch('/api/tournaments')
+const tournaments = (await $fetch('/api/tournaments')).data
 </script>

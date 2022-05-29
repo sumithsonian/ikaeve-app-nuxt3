@@ -3,7 +3,7 @@
     <TheHero />
     <BlocksHeading>募集中の大会</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments.data" :key="tournament.id">
+      <li v-for="tournament of tournaments" :key="tournament.id">
         <ElementsCard :item="tournament" />
       </li>
     </BlocksList>
@@ -14,7 +14,7 @@
     </BlocksList>
     <BlocksHeading>開催中の大会</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments.data" :key="tournament.id">
+      <li v-for="tournament of tournaments" :key="tournament.id">
         <ElementsCard :item="tournament" />
       </li>
     </BlocksList>
@@ -32,5 +32,5 @@ useHead({
   titleTemplate: null,
 })
 
-const tournaments = await $fetch('/api/tournaments')
+const tournaments = (await $fetch('/api/tournaments')).data
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ProjectsListsTeams :items="teams.data" kind="list" />
+    <ProjectsListsTeams :items="teams" kind="list" />
   </div>
 </template>
 
@@ -10,5 +10,5 @@ const title = '参加チーム一覧｜大会'
 useHead({
   title: title,
 })
-const teams = await $fetch('/api/teams')
+const teams = (await $fetch('/api/teams')).data
 </script>
