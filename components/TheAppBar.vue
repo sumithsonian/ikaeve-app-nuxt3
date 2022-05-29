@@ -128,6 +128,12 @@ export default {
         padding: $space-small;
         width: 100%;
         box-sizing: border-box;
+        border: 2px solid transparent;
+        border-right: none;
+        border-left: none;
+        &.router-link-exact-active {
+          border-top-color: $color-primary;
+        }
       }
     }
   }
