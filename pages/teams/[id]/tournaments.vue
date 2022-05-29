@@ -1,19 +1,22 @@
 <template>
   <div>
-    <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsTabsTeam />
     <BlocksHeading>最近参加した大会・2</BlocksHeading>
-    <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-    </BlocksList>
+    <ProjectsCardsTournament :items="tournaments" />
   </div>
 </template>
 
 <script setup>
-const route = useRoute()
 const title = '開催した大会｜チーム詳細'
 useHead({
   title: title,
 })
+const tournaments = (await $fetch('/api/tournaments')).data
+</script>
+
+<script>
+export default {
+  props: {
+    team: { type: Object, required: true },
+  },
+}
 </script>

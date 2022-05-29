@@ -7,11 +7,11 @@
     <TheHero />
     <BlocksHero
       name="大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名大会名"
-      image-url="https://placehold.jp/150x150.png"
       background-image-url="https://placehold.jp/1080x360.png"
     />
     <BlocksHero
       name="大会主催団体名"
+      image-url="https://placehold.jp/150x150.png"
       background-image-url="https://placehold.jp/1080x360.png"
     />
     <BlocksHero
@@ -68,18 +68,12 @@
     </BlocksList>
 
     <BlocksHeading>リスト系</BlocksHeading>
-    <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-    </BlocksList>
-    <ProjectsListsPlayers kind="ranking" />
-    <ProjectsListsPlayers kind="list" />
-    <ProjectsListsTeams kind="result" />
-    <ProjectsListsTeams kind="tournament" />
-    <ProjectsListsTeams kind="list" />
+    <ProjectsCardsTournament :items="tournaments" />
+    <ProjectsListsPlayers :items="players" kind="ranking" />
+    <ProjectsListsPlayers :items="players" kind="list" />
+    <ProjectsListsTeams :items="teams" kind="result" />
+    <ProjectsListsTeams :items="teams" kind="tournament" />
+    <ProjectsListsTeams :items="teams" kind="list" />
     <ProjectsListsProgress />
 
     <BlocksList class="-disc">
@@ -186,6 +180,12 @@
     </BlocksModal>
   </div>
 </template>
+
+<script setup>
+const players = (await $fetch('/api/users')).data
+const tournaments = (await $fetch('/api/tournaments')).data
+const teams = (await $fetch('/api/teams')).data
+</script>
 
 <script>
 export default {

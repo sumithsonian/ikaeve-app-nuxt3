@@ -20,10 +20,7 @@
       </template>
     </BlocksTable>
     <BlocksHeading>最近参加した大会</BlocksHeading>
-    <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-    </BlocksList>
+    <ProjectsCardsTournament :items="tournaments" />
     <BlocksList class="-center">
       <li>
         <ElementsButton to="/players/1/entred-tournaments"
@@ -32,10 +29,7 @@
       </li>
     </BlocksList>
     <BlocksHeading>最近開催した大会</BlocksHeading>
-    <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-    </BlocksList>
+    <ProjectsCardsTournament :items="tournaments" />
     <BlocksList class="-center">
       <li>
         <ElementsButton to="/players/1/held-tournaments"
@@ -52,4 +46,5 @@ const title = 'プレイヤー詳細'
 useHead({
   title: title,
 })
+const tournaments = (await $fetch('/api/tournaments')).data
 </script>

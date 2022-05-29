@@ -9,23 +9,23 @@
         :image-url="imageUrl"
       />
       <ul class="hero__text__actions">
-        <li>
-          <button>
+        <li v-if="twitterUrl">
+          <nuxt-link :to="twitterUrl">
             <img
               src="@/assets/images/logo_twitter.svg"
               alt="Twitter"
               height="24"
             />
-          </button>
+          </nuxt-link>
         </li>
-        <li>
-          <button>
+        <li v-if="discordUrl">
+          <nuxt-link :to="discordUrl">
             <img
               src="@/assets/images/logo_discord.svg"
               alt="Discord"
               height="24"
             />
-          </button>
+          </nuxt-link>
         </li>
       </ul>
     </div>
@@ -33,20 +33,19 @@
       class="hero__image"
       :style="`background-image: url('${backgroundImageUrl}')`"
     >
-      <ul class="hero__image__tags">
-        <li><span>イカイベ公式</span></li>
-        <li><span>募集中</span></li>
+      <ul v-if="tags" class="hero__image__tags">
+        <li v-for="(tag, i) of tags" :key="i">
+          <span>{{ tag.name }}</span>
+        </li>
       </ul>
       <ul class="hero__image__actions">
         <li>
-          <nuxt-link href="/"
-            ><ElementsIcon> arrow_back_ios </ElementsIcon></nuxt-link
-          >
+          <button @click="$router.go(-1)">
+            <ElementsIcon> arrow_back_ios </ElementsIcon>
+          </button>
         </li>
         <li>
-          <nuxt-link href="/"
-            ><ElementsIcon> settings </ElementsIcon></nuxt-link
-          >
+          <nuxt-link to="/{}/{}/edit"><ElementsIcon> settings </ElementsIcon></nuxt-link>
         </li>
       </ul>
     </div>
@@ -59,6 +58,9 @@ export default {
     name: { type: String, required: true },
     imageUrl: { type: String, default: null },
     backgroundImageUrl: { type: String, default: null },
+    twitterUrl: { type: String, default: null },
+    discordUrl: { type: String, default: null },
+    tags: { type: Array, default: null },
   },
 }
 </script>

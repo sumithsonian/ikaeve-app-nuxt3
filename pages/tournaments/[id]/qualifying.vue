@@ -1,7 +1,5 @@
 <template>
   <div>
-    <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsTabsTournament />
     <BlocksIndexNav />
     <section v-for="block of ['A', 'B', 'C', 'D', 'E']" :key="block">
       <BlocksHeading>{{ block }}ブロック</BlocksHeading>

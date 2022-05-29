@@ -3,25 +3,25 @@
     <nav>
       <ul>
         <li>
-          <nuxt-link href="/"
+          <nuxt-link to="/" exact
             ><ElementsIcon> home </ElementsIcon
             ><ElementsText class="-xsmall">ホーム</ElementsText></nuxt-link
           >
         </li>
         <li>
-          <nuxt-link href="/ranking/"
+          <nuxt-link to="/ranking/"
             ><ElementsIcon> insights </ElementsIcon
             ><ElementsText class="-xsmall">ランキング</ElementsText></nuxt-link
           >
         </li>
         <li>
-          <nuxt-link href="/tournaments/"
+          <nuxt-link to="/tournaments/"
             ><ElementsIcon> military_tech </ElementsIcon
             ><ElementsText class="-xsmall">大会</ElementsText></nuxt-link
           >
         </li>
         <li>
-          <nuxt-link href="/teams/"
+          <nuxt-link to="/teams/"
             ><ElementsIcon> people </ElementsIcon
             ><ElementsText class="-xsmall">チーム/団体</ElementsText></nuxt-link
           >
@@ -128,6 +128,12 @@ export default {
         padding: $space-small;
         width: 100%;
         box-sizing: border-box;
+        border: 2px solid transparent;
+        border-right: none;
+        border-left: none;
+        &.router-link-active {
+          border-top-color: $color-primary;
+        }
       }
     }
   }
