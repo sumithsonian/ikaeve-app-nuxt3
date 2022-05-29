@@ -6,7 +6,7 @@
       :tags="tournament.tags"
     />
     <ProjectsTabsTournament />
-    <NuxtPage :page-key="route.path" />
+    <NuxtPage :page-key="route.path" :tournament="tournament" />
   </div>
 </template>
 

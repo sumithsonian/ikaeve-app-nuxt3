@@ -21,3 +21,11 @@ useHead({
 })
 const teams = (await $fetch('/api/teams')).data
 </script>
+
+<script>
+export default {
+  props: {
+    team: { type: Object, required: true },
+  },
+}
+</script>
