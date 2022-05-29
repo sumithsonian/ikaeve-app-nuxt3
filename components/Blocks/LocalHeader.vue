@@ -3,9 +3,9 @@
     <h2><slot /></h2>
     <ul>
       <li>
-        <nuxt-link to="/"
-          ><ElementsIcon> arrow_back_ios </ElementsIcon></nuxt-link
-        >
+        <button @click="$router.go(-1)">
+          <ElementsIcon> arrow_back_ios </ElementsIcon>
+        </button>
       </li>
     </ul>
   </header>

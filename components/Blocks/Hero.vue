@@ -40,9 +40,9 @@
       </ul>
       <ul class="hero__image__actions">
         <li>
-          <nuxt-link to="/"
-            ><ElementsIcon> arrow_back_ios </ElementsIcon></nuxt-link
-          >
+          <button @click="$router.go(-1)">
+            <ElementsIcon> arrow_back_ios </ElementsIcon>
+          </button>
         </li>
         <li>
           <nuxt-link to="/"><ElementsIcon> settings </ElementsIcon></nuxt-link>
