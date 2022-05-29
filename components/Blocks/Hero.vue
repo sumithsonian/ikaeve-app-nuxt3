@@ -9,23 +9,23 @@
         :image-url="imageUrl"
       />
       <ul class="hero__text__actions">
-        <li>
-          <button>
+        <li v-if="twitterUrl">
+          <nuxt-link :to="twitterUrl">
             <img
               src="@/assets/images/logo_twitter.svg"
               alt="Twitter"
               height="24"
             />
-          </button>
+          </nuxt-link>
         </li>
-        <li>
-          <button>
+        <li v-if="discordUrl">
+          <nuxt-link :to="discordUrl">
             <img
               src="@/assets/images/logo_discord.svg"
               alt="Discord"
               height="24"
             />
-          </button>
+          </nuxt-link>
         </li>
       </ul>
     </div>
@@ -44,9 +44,7 @@
           >
         </li>
         <li>
-          <nuxt-link to="/"
-            ><ElementsIcon> settings </ElementsIcon></nuxt-link
-          >
+          <nuxt-link to="/"><ElementsIcon> settings </ElementsIcon></nuxt-link>
         </li>
       </ul>
     </div>
@@ -59,6 +57,8 @@ export default {
     name: { type: String, required: true },
     imageUrl: { type: String, default: null },
     backgroundImageUrl: { type: String, default: null },
+    twitterUrl: { type: String, default: null },
+    discordUrl: { type: String, default: null },
   },
 }
 </script>

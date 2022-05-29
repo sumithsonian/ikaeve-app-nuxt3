@@ -3,6 +3,8 @@
     <BlocksHero
       :name="team.name"
       :background-image-url="team.background_image_url"
+      :twitter-url="team.twitter_url"
+      :discord-url="team.discord_url"
     />
     <ProjectsTabsTeam />
     <NuxtPage :page-key="route.path" :team="team" />
