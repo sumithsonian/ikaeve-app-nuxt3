@@ -13,7 +13,7 @@
 
 <script setup>
 const route = useRoute()
-const user = (await $fetch('/api/users/1')).data
+const user = (await $fetch(`/api/users/${route.params.id}`)).data
 const title = user.name
 useHead({
   title: title,

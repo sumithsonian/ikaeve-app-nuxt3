@@ -12,7 +12,7 @@
 
 <script setup>
 const route = useRoute()
-const tournament = (await $fetch('/api/tournaments/1')).data
+const tournament = (await $fetch(`/api/tournaments/${route.params.id}`)).data
 const title = tournament.name
 useHead({
   title: title,

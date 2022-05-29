@@ -14,7 +14,7 @@
 
 <script setup>
 const route = useRoute()
-const team = (await $fetch('/api/teams/1')).data
+const team = (await $fetch(`/api/teams/${route.params.id}`)).data
 const title = team.name
 useHead({
   title: title,
