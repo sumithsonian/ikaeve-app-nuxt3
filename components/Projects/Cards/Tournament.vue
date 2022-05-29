@@ -1,7 +1,7 @@
 <template>
   <BlocksList class="tournaments -horizontal">
     <li v-for="item of items" :key="item.id">
-      <ElementsCard>
+      <ElementsCard :to="`/tournaments/${item.id}/`">
         <template #image>
           <img :src="item.background_image_url" :alt="item.name" />
           <ul>
