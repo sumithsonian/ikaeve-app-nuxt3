@@ -68,11 +68,7 @@
     </BlocksList>
 
     <BlocksHeading>リスト系</BlocksHeading>
-    <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments" :key="tournament.id">
-        <ElementsCard :item="tournament" />
-      </li>
-    </BlocksList>
+    <ProjectsCardsTournament :items="tournaments" />
     <ProjectsListsPlayers :items="players" kind="ranking" />
     <ProjectsListsPlayers :items="players" kind="list" />
     <ProjectsListsTeams :items="teams" kind="result" />

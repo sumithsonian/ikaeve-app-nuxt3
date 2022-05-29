@@ -1,30 +1,20 @@
 <template>
   <nuxt-link to="/tournaments/1/" class="card">
     <div class="card__image">
-      <img src="https://placehold.jp/1080x360.png" alt="大会名" />
-      <ul>
-        <li><span>イカイベ公式</span></li>
-        <li><span>募集中</span></li>
-      </ul>
+      <slot name="image" />
     </div>
     <div class="card__text">
-      <p>大会名</p>
-      <dl>
-        <dt>募集期間</dt>
-        <dd>YYYY/MM/DD〜YYYY/MM/DD</dd>
-        <dt>開催日時</dt>
-        <dd>YYYY/MM/DD</dd>
-        <dt>募集数</dt>
-        <dd>128チーム</dd>
-        <dt>主催</dt>
-        <dd>イカイベ運営チーム</dd>
-      </dl>
+      <slot name="text" />
     </div>
   </nuxt-link>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    item: { type: Object, required: true },
+  },
+}
 </script>
 
 <style scoped lang="scss">
@@ -37,12 +27,12 @@ export default {}
   max-width: 240px;
   &__image {
     position: relative;
-    img {
+    ::v-deep(img) {
       width: 100%;
       object-fit: cover;
       aspect-ratio: 16 / 9;
     }
-    ul {
+    ::v-deep(ul) {
       position: absolute;
       top: $space-small;
       right: $space-small;
@@ -52,10 +42,10 @@ export default {}
   }
   &__text {
     padding: $space;
-    p {
+    ::v-deep(p) {
       font-size: $font-large;
     }
-    dl {
+    ::v-deep(dl) {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
