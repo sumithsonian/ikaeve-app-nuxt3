@@ -125,7 +125,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: $space-small;
+        padding: $space-small $space-xsmall;
         width: 100%;
         box-sizing: border-box;
         border: 2px solid transparent;
