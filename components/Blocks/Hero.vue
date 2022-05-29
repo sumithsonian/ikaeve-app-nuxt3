@@ -39,12 +39,12 @@
       </ul>
       <ul class="hero__image__actions">
         <li>
-          <nuxt-link href="/"
+          <nuxt-link to="/"
             ><ElementsIcon> arrow_back_ios </ElementsIcon></nuxt-link
           >
         </li>
         <li>
-          <nuxt-link href="/"
+          <nuxt-link to="/"
             ><ElementsIcon> settings </ElementsIcon></nuxt-link
           >
         </li>

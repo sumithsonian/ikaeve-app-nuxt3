@@ -3,7 +3,7 @@
     <h2><slot /></h2>
     <ul>
       <li>
-        <nuxt-link href="/"
+        <nuxt-link to="/"
           ><ElementsIcon> arrow_back_ios </ElementsIcon></nuxt-link
         >
       </li>
