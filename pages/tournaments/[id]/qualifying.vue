@@ -17,7 +17,12 @@
         </template>
         <template #tbody>
           <tr>
-            <th><BlocksPlayer /></th>
+            <th>
+              <ElementsPlayer
+                :name="`プレイヤー名`"
+                :image-url="`https://placehold.jp/1080x360.png`"
+              />
+            </th>
             <td></td>
             <td>2-1</td>
             <td>2-1</td>
