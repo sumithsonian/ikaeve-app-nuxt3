@@ -1,7 +1,7 @@
 export default defineEventHandler((event) => {
   const users = []
 
-  for (let i = 1; i <= 90; i++) {
+  for (let i = 1; i <= 5; i++) {
     users.push({
       id: i,
       name: `プレイヤー${i}さん`,
