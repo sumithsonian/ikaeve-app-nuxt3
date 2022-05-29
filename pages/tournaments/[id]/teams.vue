@@ -1,7 +1,5 @@
 <template>
   <div>
-    <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsTabsTournament />
     <ProjectsListsTeams :items="teams.data" kind="list" />
   </div>
 </template>
