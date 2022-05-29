@@ -9,23 +9,15 @@
       </tr>
     </template>
     <template #tbody>
-      <tr>
+      <tr v-for="(item, i) of items" :key="item.id">
         <th v-if="th">1</th>
-        <td><nuxt-link to="/teams/1"><BlocksPlayer /></nuxt-link></td>
-        <td>プレイヤー名</td>
-        <td>フレンドコード</td>
-      </tr>
-      <tr>
-        <th v-if="th">1</th>
-        <td><nuxt-link to="/teams/1"><BlocksPlayer /></nuxt-link></td>
-        <td>プレイヤー名</td>
-        <td>フレンドコード</td>
-      </tr>
-      <tr>
-        <th v-if="th">1</th>
-        <td><nuxt-link to="/teams/1"><BlocksPlayer /></nuxt-link></td>
-        <td>プレイヤー名</td>
-        <td>フレンドコード</td>
+        <td>
+          <nuxt-link :to="`/teams/${item.id}/`"
+            ><BlocksPlayer :item="item"
+          /></nuxt-link>
+        </td>
+        <td>{{ item.representatived_user.name }}</td>
+        <td>{{ item.representatived_user.friend_code }}</td>
       </tr>
     </template>
   </BlocksListTable>
@@ -35,6 +27,7 @@
 export default {
   props: {
     kind: { type: String, default: null },
+    items: { type: Array, default: null },
   },
   computed: {
     th() {

@@ -75,9 +75,9 @@
     </BlocksList>
     <ProjectsListsPlayers :items="players.data" kind="ranking" />
     <ProjectsListsPlayers :items="players.data" kind="list" />
-    <ProjectsListsTeams kind="result" />
-    <ProjectsListsTeams kind="tournament" />
-    <ProjectsListsTeams kind="list" />
+    <ProjectsListsTeams :items="teams.data" kind="result" />
+    <ProjectsListsTeams :items="teams.data" kind="tournament" />
+    <ProjectsListsTeams :items="teams.data" kind="list" />
     <ProjectsListsProgress />
 
     <BlocksList class="-disc">
@@ -188,6 +188,7 @@
 <script setup>
 const players = await $fetch('/api/users')
 const tournaments = await $fetch('/api/tournaments')
+const teams = await $fetch('/api/teams')
 </script>
 
 <script>
