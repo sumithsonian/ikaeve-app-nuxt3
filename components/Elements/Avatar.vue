@@ -1,17 +1,12 @@
 <template>
-  <img
-    src="https://placehold.jp/150x150.png"
-    class="avatar"
-    :alt="alt"
-  />
+  <img :src="imageUrl" class="avatar" :alt="name" />
 </template>
 
 <script>
 export default {
   props: {
-    src: { type: String, required: true },
-    alt: { type: String, default: 'img' },
-    size: { type: String, default: null },
+    imageUrl: { type: String, required: true },
+    name: { type: String, default: 'img' },
   },
 }
 </script>

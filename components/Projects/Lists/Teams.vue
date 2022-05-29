@@ -13,7 +13,11 @@
         <th v-if="th">1</th>
         <td>
           <nuxt-link :to="`/teams/${item.id}/`"
-            ><BlocksPlayer :item="item"
+            ><ElementsPlayer
+              :name="item.name"
+              :image-url="item.image_url"
+              :twitter-url="item.twitter_url"
+              :discord-url="item.discord"
           /></nuxt-link>
         </td>
         <td>{{ item.representatived_user.name }}</td>
