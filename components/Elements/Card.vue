@@ -24,7 +24,7 @@ export default {
   background: $color-gray-08;
   border-radius: $space;
   overflow: hidden;
-  max-width: 240px;
+  max-width: 480px;
   &__image {
     position: relative;
     ::v-deep(img) {
