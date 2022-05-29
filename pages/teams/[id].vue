@@ -2,6 +2,7 @@
   <div>
     <BlocksHero
       :name="team.name"
+      :image-url="team.image_url"
       :background-image-url="team.background_image_url"
       :twitter-url="team.twitter_url"
       :discord-url="team.discord_url"
