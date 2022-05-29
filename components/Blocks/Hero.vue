@@ -33,9 +33,10 @@
       class="hero__image"
       :style="`background-image: url('${backgroundImageUrl}')`"
     >
-      <ul class="hero__image__tags">
-        <li><span>イカイベ公式</span></li>
-        <li><span>募集中</span></li>
+      <ul v-if="tags" class="hero__image__tags">
+        <li v-for="(tag, i) of tags" :key="i">
+          <span>{{ tag.name }}</span>
+        </li>
       </ul>
       <ul class="hero__image__actions">
         <li>
@@ -59,6 +60,7 @@ export default {
     backgroundImageUrl: { type: String, default: null },
     twitterUrl: { type: String, default: null },
     discordUrl: { type: String, default: null },
+    tags: { type: Array, default: null },
   },
 }
 </script>

@@ -24,6 +24,7 @@ export default defineEventHandler((event) => {
       status: '募集中',
       created_at: '2022-07-21 09:00',
       updated_at: '2022-07-21 09:00',
+      tags: [{ name: 'イカイベ公認' }, { name: '募集中' }],
     },
   }
 })

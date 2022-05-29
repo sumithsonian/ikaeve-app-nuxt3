@@ -1,8 +1,9 @@
 <template>
   <div>
     <BlocksHero
-      :name="tournament.data.name"
-      :background-image-url="tournament.data.background_image_url"
+      :name="tournament.name"
+      :background-image-url="tournament.background_image_url"
+      :tags="tournament.tags"
     />
     <ProjectsTabsTournament />
     <NuxtPage :page-key="route.path" />
@@ -11,8 +12,8 @@
 
 <script setup>
 const route = useRoute()
-const tournament = await $fetch('/api/tournaments/1')
-const title = tournament.data.name
+const tournament = (await $fetch('/api/tournaments/1')).data
+const title = tournament.name
 useHead({
   title: title,
 })
