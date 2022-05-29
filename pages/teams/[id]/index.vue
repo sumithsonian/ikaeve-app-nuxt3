@@ -1,20 +1,18 @@
 <template>
   <div>
     <BlocksHeading>チーム/団体概要</BlocksHeading>
-    <BlocksParagraph
-      >紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。</BlocksParagraph
-    >
+    <BlocksParagraph>{{ team.comment }}</BlocksParagraph>
     <template v-if="team.type === 'player'">
       <BlocksHeading>戦績</BlocksHeading>
       <BlocksTable>
         <template #tbody>
           <tr>
             <th>今シーズン</th>
-            <td>1000ポイント</td>
+            <td>{{ team.points.season }}ポイント</td>
           </tr>
           <tr>
             <th>年間</th>
-            <td>1000ポイント</td>
+            <td>{{ team.points.annual }}ポイント</td>
           </tr>
         </template>
       </BlocksTable>
