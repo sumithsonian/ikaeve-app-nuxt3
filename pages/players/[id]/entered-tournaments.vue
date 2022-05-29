@@ -3,11 +3,7 @@
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsTabsPlayer />
     <BlocksHeading>参加した大会・5</BlocksHeading>
-    <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments" :key="tournament.id">
-        <ElementsCard :item="tournament" />
-      </li>
-    </BlocksList>
+    <ProjectsCardsTournament :items="tournaments" />
   </div>
 </template>
 

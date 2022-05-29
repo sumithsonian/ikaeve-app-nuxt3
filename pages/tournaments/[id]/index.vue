@@ -18,7 +18,7 @@
           <td>{{ tournament.opened_at }} 〜 {{ tournament.closed_at }}</td>
         </tr>
         <tr>
-          <th>募集チーム</th>
+          <th>募集数</th>
           <td>
             {{ tournament.team_num_min }} 〜
             {{ tournament.team_num_max }}（1チーム：{{

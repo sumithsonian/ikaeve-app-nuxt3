@@ -2,22 +2,14 @@
   <div>
     <TheHero />
     <BlocksHeading>募集中の大会</BlocksHeading>
-    <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments" :key="tournament.id">
-        <ElementsCard :item="tournament" />
-      </li>
-    </BlocksList>
+    <ProjectsCardsTournament :items="tournaments" />
     <BlocksList class="-center">
       <li>
         <ElementsButton to="/tournaments">全ての大会をみる</ElementsButton>
       </li>
     </BlocksList>
     <BlocksHeading>開催中の大会</BlocksHeading>
-    <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments" :key="tournament.id">
-        <ElementsCard :item="tournament" />
-      </li>
-    </BlocksList>
+    <ProjectsCardsTournament :items="tournaments" />
     <BlocksList class="-center">
       <li>
         <ElementsButton to="/tournaments">全ての大会をみる</ElementsButton>

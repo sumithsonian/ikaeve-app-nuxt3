@@ -19,11 +19,7 @@
       <BlocksHeading>所属メンバー</BlocksHeading>
       <ProjectsListsPlayers :items="players" />
       <BlocksHeading>最近参加した大会</BlocksHeading>
-      <BlocksList class="-horizontal">
-        <li v-for="tournament of tournaments" :key="tournament.id">
-          <ElementsCard :item="tournament" />
-        </li>
-      </BlocksList>
+      <ProjectsCardsTournament :items="tournaments" />
       <BlocksList class="-center">
         <li>
           <ElementsButton to="/tournaments">全ての大会をみる</ElementsButton>
@@ -32,17 +28,9 @@
     </template>
     <template v-if="team.type === 'organizer'">
       <BlocksHeading>主催大会</BlocksHeading>
-      <BlocksList class="-horizontal">
-        <li v-for="tournament of tournaments" :key="tournament.id">
-          <ElementsCard :item="tournament" />
-        </li>
-      </BlocksList>
+      <ProjectsCardsTournament :items="tournaments" />
       <BlocksHeading>最近開催した大会</BlocksHeading>
-      <BlocksList class="-horizontal">
-        <li v-for="tournament of tournaments" :key="tournament.id">
-          <ElementsCard :item="tournament" />
-        </li>
-      </BlocksList>
+      <ProjectsCardsTournament :items="tournaments" />
       <BlocksList class="-center">
         <li>
           <ElementsButton to="/teams/1/tournaments"
