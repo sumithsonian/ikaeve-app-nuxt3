@@ -3,11 +3,9 @@
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsFiltersTournament />
     <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
+      <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <ElementsCard :item="tournament" />
+      </li>
     </BlocksList>
   </div>
 </template>
@@ -17,4 +15,5 @@ const title = '大会一覧'
 useHead({
   title: title,
 })
+const tournaments = await $fetch('/api/tournaments')
 </script>

@@ -69,11 +69,9 @@
 
     <BlocksHeading>リスト系</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
+      <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <ElementsCard :item="tournament" />
+      </li>
     </BlocksList>
     <ProjectsListsPlayers :items="players.data" kind="ranking" />
     <ProjectsListsPlayers :items="players.data" kind="list" />
@@ -189,6 +187,7 @@
 
 <script setup>
 const players = await $fetch('/api/users')
+const tournaments = await $fetch('/api/tournaments')
 </script>
 
 <script>

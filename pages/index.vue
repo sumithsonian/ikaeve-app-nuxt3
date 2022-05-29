@@ -3,11 +3,9 @@
     <TheHero />
     <BlocksHeading>募集中の大会</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
+      <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <ElementsCard :item="tournament" />
+      </li>
     </BlocksList>
     <BlocksList class="-center">
       <li>
@@ -16,11 +14,9 @@
     </BlocksList>
     <BlocksHeading>開催中の大会</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
+      <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <ElementsCard :item="tournament" />
+      </li>
     </BlocksList>
     <BlocksList class="-center">
       <li>
@@ -35,4 +31,6 @@ useHead({
   title: 'イカイベ',
   titleTemplate: null,
 })
+
+const tournaments = await $fetch('/api/tournaments')
 </script>

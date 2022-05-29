@@ -24,8 +24,9 @@
       <ProjectsListsPlayers :items="players.data" />
       <BlocksHeading>最近参加した大会</BlocksHeading>
       <BlocksList class="-horizontal">
-        <li><ElementsCard /></li>
-        <li><ElementsCard /></li>
+        <li v-for="tournament of tournaments.data" :key="tournament.id">
+          <ElementsCard :item="tournament" />
+        </li>
       </BlocksList>
       <BlocksList class="-center">
         <li>
@@ -36,17 +37,21 @@
     <template v-else>
       <BlocksHeading>主催大会</BlocksHeading>
       <BlocksList class="-horizontal">
-        <li><ElementsCard /></li>
-        <li><ElementsCard /></li>
+        <li v-for="tournament of tournaments.data" :key="tournament.id">
+          <ElementsCard :item="tournament" />
+        </li>
       </BlocksList>
       <BlocksHeading>最近開催した大会</BlocksHeading>
       <BlocksList class="-horizontal">
-        <li><ElementsCard /></li>
-        <li><ElementsCard /></li>
+      <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <ElementsCard :item="tournament" />
+      </li>
       </BlocksList>
       <BlocksList class="-center">
         <li>
-          <ElementsButton to="/teams/1/tournaments">全ての大会をみる</ElementsButton>
+          <ElementsButton to="/teams/1/tournaments"
+            >全ての大会をみる</ElementsButton
+          >
         </li>
       </BlocksList>
       <BlocksHeading>所属メンバー</BlocksHeading>
@@ -63,4 +68,5 @@ useHead({
 })
 
 const players = await $fetch('/api/users')
+const tournaments = await $fetch('/api/tournaments')
 </script>

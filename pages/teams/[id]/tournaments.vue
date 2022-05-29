@@ -4,16 +4,17 @@
     <ProjectsTabsTeam />
     <BlocksHeading>最近参加した大会・2</BlocksHeading>
     <BlocksList class="-horizontal">
-      <li><ElementsCard /></li>
-      <li><ElementsCard /></li>
+      <li v-for="tournament of tournaments.data" :key="tournament.id">
+        <ElementsCard :item="tournament" />
+      </li>
     </BlocksList>
   </div>
 </template>
 
 <script setup>
-const route = useRoute()
 const title = '開催した大会｜チーム詳細'
 useHead({
   title: title,
 })
+const tournaments = await $fetch('/api/tournaments')
 </script>
