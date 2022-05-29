@@ -1,7 +1,5 @@
 <template>
   <div>
-    <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsTabsTeam />
     <BlocksHeading>最近参加した大会・2</BlocksHeading>
     <BlocksList class="-horizontal">
       <li v-for="tournament of tournaments.data" :key="tournament.id">
@@ -17,4 +15,12 @@ useHead({
   title: title,
 })
 const tournaments = await $fetch('/api/tournaments')
+</script>
+
+<script>
+export default {
+  props: {
+    team: { type: Object, required: true },
+  },
+}
 </script>

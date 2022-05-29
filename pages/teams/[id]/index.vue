@@ -1,12 +1,10 @@
 <template>
   <div>
-    <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsTabsTeam />
     <BlocksHeading>チーム/団体概要</BlocksHeading>
     <BlocksParagraph
       >紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。</BlocksParagraph
     >
-    <template v-if="true">
+    <template v-if="team.type === 'player'">
       <BlocksHeading>戦績</BlocksHeading>
       <BlocksTable>
         <template #tbody>
@@ -34,7 +32,7 @@
         </li>
       </BlocksList>
     </template>
-    <template v-else>
+    <template v-if="team.type === 'organizer'">
       <BlocksHeading>主催大会</BlocksHeading>
       <BlocksList class="-horizontal">
         <li v-for="tournament of tournaments.data" :key="tournament.id">
@@ -43,9 +41,9 @@
       </BlocksList>
       <BlocksHeading>最近開催した大会</BlocksHeading>
       <BlocksList class="-horizontal">
-      <li v-for="tournament of tournaments.data" :key="tournament.id">
-        <ElementsCard :item="tournament" />
-      </li>
+        <li v-for="tournament of tournaments.data" :key="tournament.id">
+          <ElementsCard :item="tournament" />
+        </li>
       </BlocksList>
       <BlocksList class="-center">
         <li>
@@ -61,12 +59,19 @@
 </template>
 
 <script setup>
-const route = useRoute()
 const title = 'チーム詳細'
+const players = await $fetch('/api/users')
+const tournaments = await $fetch('/api/tournaments')
+
 useHead({
   title: title,
 })
+</script>
 
-const players = await $fetch('/api/users')
-const tournaments = await $fetch('/api/tournaments')
+<script>
+export default {
+  props: {
+    team: { type: Object, required: true },
+  },
+}
 </script>
