@@ -10,5 +10,5 @@ const title = '進行表｜大会'
 useHead({
   title: title,
 })
-const matchs = (await $fetch('/api/matchs')).data
+const matchs = (await $fetch('/api/tournaments/1/matchs')).data
 </script>

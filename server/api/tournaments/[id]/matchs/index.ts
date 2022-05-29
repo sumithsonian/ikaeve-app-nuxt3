@@ -90,9 +90,9 @@ export default defineEventHandler((event) => {
           match: j,
           alpha_team_result: 0,
           bravo_team_result: 0,
+          status: '試合開始前',
           created_at: '2022-09-09 09:00',
           updated_at: '2022-09-09 09:00',
-          status: '試合開始前',
           alpha_team: {
             name: alphaTeam,
           },
