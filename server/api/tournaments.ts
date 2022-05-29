@@ -3,6 +3,7 @@ export default defineEventHandler((event) => {
 
   for (let i = 1; i <= 6; i++) {
     tournaments.push({
+      kind: 'tournament',
       id: i,
       name: `第${i}回○○杯`,
       image_url: '',

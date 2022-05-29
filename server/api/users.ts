@@ -3,6 +3,7 @@ export default defineEventHandler((event) => {
 
   for (let i = 1; i <= 5; i++) {
     users.push({
+      kind: 'user',
       id: i,
       name: `プレイヤー${i}さん`,
       image_url: '',
@@ -18,6 +19,8 @@ export default defineEventHandler((event) => {
         rank: i,
         position: 'keep',
       },
+      created_at: '2022-07-21 09:00',
+      updated_at: '2022-07-21 09:00',
     })
   }
 
