@@ -3,6 +3,7 @@
     <TheHeader class="platform__header" />
     <main class="platform__contents"><slot /></main>
     <TheAppBar class="platform__footer" />
+    <TheFloatingActionButtons class="platform__actionBtns" />
   </div>
 </template>
 

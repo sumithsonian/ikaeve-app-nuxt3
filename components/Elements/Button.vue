@@ -76,6 +76,7 @@ export default {
     padding: 0;
     height: $img;
     width: $img;
+    text-align: center;
     &.-large {
       height: $img-large;
       width: $img-large;
