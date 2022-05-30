@@ -1,37 +1,9 @@
 <template>
   <div>
     <BlocksIndexNav />
-    <section v-for="block of ['A', 'B', 'C', 'D', 'E']" :key="block">
-      <BlocksHeading>{{ block }}ブロック</BlocksHeading>
-      <BlocksMatcheTable>
-        <template #thead>
-          <tr>
-            <th></th>
-            <th>Aチーム</th>
-            <th>Bチーム</th>
-            <th>Cチーム</th>
-            <th>Dチーム</th>
-            <th>勝敗</th>
-            <th>順位</th>
-          </tr>
-        </template>
-        <template #tbody>
-          <tr>
-            <th>
-              <ElementsPlayer
-                :name="`プレイヤー名`"
-                :image-url="`https://placehold.jp/1080x360.png`"
-              />
-            </th>
-            <td></td>
-            <td>2-1</td>
-            <td>2-1</td>
-            <td>2-1</td>
-            <td>2勝1敗</td>
-            <td>1位</td>
-          </tr></template
-        >
-      </BlocksMatcheTable>
+    <section v-for="(teams, i) of teamsByBlock" :key="i">
+      <BlocksHeading>{{ teams.block }}ブロック</BlocksHeading>
+      <ProjectsListsRoundRobin :teams="teams.teams" />
     </section>
   </div>
 </template>
@@ -42,4 +14,32 @@ const title = '予選｜大会'
 useHead({
   title: title,
 })
+const teams = (
+  await $fetch(`/api/tournaments/${route.params.id}/matchs_by_team`)
+).data
+</script>
+
+<script>
+export default {
+  props: {
+    tournament: { type: Object, required: true },
+  },
+  computed: {
+    blocks() {
+      const blocks = []
+      this.teams.forEach((team) => blocks.push(team.block))
+      return [...new Set(blocks)] // 重複削除
+    },
+    teamsByBlock() {
+      const teamsByBlock = []
+      this.blocks.forEach((block) => {
+        teamsByBlock.push({
+          block: block,
+          teams: this.teams.filter((team) => team.block === block),
+        })
+      })
+      return teamsByBlock
+    },
+  },
+}
 </script>
