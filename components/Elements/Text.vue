@@ -15,6 +15,7 @@ export default {
 
 .text {
   font-size: $font;
+  display: inline-block;
   &.-xxsmall {
     font-size: $font-xxsmall;
   }
