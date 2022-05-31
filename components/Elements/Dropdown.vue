@@ -1,19 +1,71 @@
 <template>
-  <button class="dropdown">
-    <slot /><ElementsIcon> keyboard_arrow_down </ElementsIcon>
-  </button>
+  <div class="dropdown">
+    <button class="dropdown__actionBtn" @click.stop="doDropdown">
+      {{ items[0] }}<ElementsIcon> keyboard_arrow_down </ElementsIcon>
+    </button>
+    <div v-if="isActive" class="dropdown__contents">
+      <ul>
+        <li v-for="(item, i) of items" :key="i">
+          <button>{{ item }}</button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    items: { type: Array, default: [] },
+  },
+  data() {
+    return {
+      isActive: false,
+    }
+  },
+  methods: {
+    doDropdown() {
+      this.isActive = !this.isActive
+    },
+    hideDropdown() {
+      this.isActive = false
+    },
+  },
+  mounted() {
+    window.addEventListener('click', this.hideDropdown)
+  },
+  beforeDestroy() {
+    window.removeEventListener('click', this.hideDropdown)
+  },
+}
 </script>
 
 <style scoped lang="scss">
 @import '@/assets/scss/_variables';
 
 .dropdown {
-  font-size: $font-small;
-  display: inline-flex;
-  align-items: center;
+  position: relative;
+  &__actionBtn {
+    font-size: $font-small;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 $space;
+  }
+  &__contents {
+    position: absolute;
+    background: $color-gray-10;
+    border-radius: $radius-small;
+    box-shadow: 0 0 $space-large rgba(0, 0, 0, 0.4);
+    li {
+      border-bottom: 1px solid $color-gray-07;
+      &:last-child {
+        border: none;
+      }
+      button {
+        white-space: nowrap;
+        padding: $space;
+      }
+    }
+  }
 }
 </style>
