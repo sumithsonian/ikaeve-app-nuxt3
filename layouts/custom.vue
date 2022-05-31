@@ -4,6 +4,7 @@
     <main class="platform__contents"><slot /></main>
     <TheAppBar class="platform__footer" />
     <TheFloatingActionButtons class="platform__actionBtns" />
+    <ProjectsModalsLogin />
   </div>
 </template>
 
