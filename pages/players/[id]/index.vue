@@ -15,6 +15,8 @@
         </tr>
       </template>
     </BlocksTable>
+    <BlocksHeading>所属チーム/団体</BlocksHeading>
+    <ProjectsListsTeams :items="teams" />
     <BlocksHeading>最近参加した大会</BlocksHeading>
     <ProjectsCardsTournament :items="tournaments" />
     <BlocksList class="-center">
@@ -43,6 +45,7 @@ useHead({
   title: title,
 })
 const tournaments = (await $fetch('/api/tournaments')).data
+const teams = (await $fetch('/api/teams')).data
 </script>
 
 <script>
