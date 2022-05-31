@@ -22,7 +22,7 @@
       <ProjectsCardsTournament :items="tournaments" />
       <BlocksList class="-center">
         <li>
-          <ElementsButton to="/tournaments">全ての大会をみる</ElementsButton>
+          <ElementsButton :to="`/teams/${team.id}/tournaments`">全ての大会をみる</ElementsButton>
         </li>
       </BlocksList>
     </template>
@@ -33,7 +33,7 @@
       <ProjectsCardsTournament :items="tournaments" />
       <BlocksList class="-center">
         <li>
-          <ElementsButton to="/teams/1/tournaments"
+          <ElementsButton :to="`/teams/${team.id}/tournaments`"
             >全ての大会をみる</ElementsButton
           >
         </li>

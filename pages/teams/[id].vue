@@ -6,8 +6,9 @@
       :background-image-url="team.background_image_url"
       :twitter-url="team.twitter_url"
       :discord-url="team.discord_url"
+      :detail-url="`/teams/${team.id}`"
     />
-    <ProjectsTabsTeam />
+    <ProjectsTabsTeam :id="team.id" />
     <NuxtPage :page-key="route.path" :team="team" />
   </div>
 </template>
