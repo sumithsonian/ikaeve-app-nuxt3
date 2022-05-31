@@ -3,6 +3,7 @@
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsFiltersTournament />
     <ProjectsCardsTournament :items="tournaments" />
+    <ProjectsPagination />
   </div>
 </template>
 
