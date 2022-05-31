@@ -45,7 +45,7 @@
           </button>
         </li>
         <li>
-          <nuxt-link to="/{}/{}/edit"
+          <nuxt-link v-if="detailUrl" :to="`${detailUrl}/edit`"
             ><ElementsIcon> settings </ElementsIcon></nuxt-link
           >
         </li>
@@ -62,6 +62,7 @@ export default {
     backgroundImageUrl: { type: String, default: null },
     twitterUrl: { type: String, default: null },
     discordUrl: { type: String, default: null },
+    detailUrl: { type: String, default: null },
     tags: { type: Array, default: null },
   },
 }
