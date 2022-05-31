@@ -32,6 +32,35 @@ export default defineEventHandler((event) => {
         image_url: 'https://placehold.jp/150x150.png',
         background_image_url: 'https://placehold.jp/1080x360.png',
       },
+      rules: {
+        qualifying: {
+          system: 'リーグ戦（ラウンドロビン）',
+          first_to: 2,
+          pass_order: 2,
+          rules: {
+            1: 'ヒメヤグラ・おまかせロスト',
+            2: 'ナワバリ・おまかせロスト',
+            3: 'ホコ・おまかせロスト',
+          },
+        },
+        finals: {
+          system: 'シングルエリミネーション',
+          first_to: 2,
+          rules: {
+            1: 'ヒメヤグラ・おまかせロスト',
+            2: 'ナワバリ・おまかせロスト',
+            3: 'ホコ・おまかせロスト',
+          },
+        },
+        final: {
+          first_to: 3,
+          rules: {
+            1: 'ヒメヤグラ・おまかせロスト',
+            2: 'ナワバリ・おまかせロスト',
+            3: 'ホコ・おまかせロスト',
+          },
+        },
+      },
     })
   }
 
