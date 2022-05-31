@@ -4,8 +4,9 @@
       :name="tournament.name"
       :background-image-url="tournament.background_image_url"
       :tags="tournament.tags"
+      :detail-url="`/tournaments/${tournament.id}`"
     />
-    <ProjectsTabsTournament />
+    <ProjectsTabsTournament :id="tournament.id" />
     <NuxtPage :page-key="route.path" :tournament="tournament" />
   </div>
 </template>
