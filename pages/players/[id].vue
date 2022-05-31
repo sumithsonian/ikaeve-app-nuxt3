@@ -1,20 +1,21 @@
 <template>
   <div>
     <BlocksHero
-      :name="user.name"
-      :image-url="user.image_url"
-      :background-image-url="user.background_image_url"
-      :twitter-url="user.twitter_url"
+      :name="player.name"
+      :image-url="player.image_url"
+      :background-image-url="player.background_image_url"
+      :twitter-url="player.twitter_url"
+      :detail-url="`/players/${player.id}`"
     />
-    <ProjectsTabsPlayer />
-    <NuxtPage :page-key="route.path" :user="user" />
+    <ProjectsTabsPlayer :id="player.id" />
+    <NuxtPage :page-key="route.path" :player="player" />
   </div>
 </template>
 
 <script setup>
 const route = useRoute()
-const user = (await $fetch(`/api/users/${route.params.id}`)).data
-const title = user.name
+const player = (await $fetch(`/api/users/${route.params.id}`)).data
+const title = player.name
 useHead({
   title: title,
 })
