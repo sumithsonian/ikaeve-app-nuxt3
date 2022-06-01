@@ -8,6 +8,27 @@
     />
     <ProjectsTabsTournament :id="tournament.id" />
     <NuxtPage :page-key="route.path" :tournament="tournament" />
+    <BlocksInformation>
+      <BlocksParagraph class="-center">募集チームが揃いました</BlocksParagraph>
+      <BlocksList class="-horizontal -center">
+        <li>
+          <ElementsButton class="-primary">大会を開始する</ElementsButton>
+        </li>
+      </BlocksList>
+    </BlocksInformation>
+    <BlocksInformation>
+      <BlocksParagraph class="-center"
+        >募集チームが定員に達しませんでした</BlocksParagraph
+      >
+      <BlocksList class="-horizontal -center">
+        <li>
+          <ElementsButton class="-primary">期限を延ばす</ElementsButton>
+        </li>
+        <li>
+          <ElementsButton class="-primary">大会を中止する</ElementsButton>
+        </li>
+      </BlocksList>
+    </BlocksInformation>
   </div>
 </template>
 
