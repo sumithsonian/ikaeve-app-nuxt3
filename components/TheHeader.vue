@@ -3,7 +3,7 @@
     <h1><nuxt-link to="/">ロゴマーク</nuxt-link></h1>
     <ul>
       <li>
-        <button @click="loginModalState = true">
+        <button @click="modalState = true">
           <ElementsIcon> login </ElementsIcon
           ><ElementsText class="-xsmall">登録/ログイン</ElementsText>
         </button>
@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-const loginModalState = useLoginModalState()
+const modalState = useLoginModalState()
 </script>
 
 <style lang="scss" scoped>
