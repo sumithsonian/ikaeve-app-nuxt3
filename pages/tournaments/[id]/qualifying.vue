@@ -4,11 +4,17 @@
     <section v-for="(teams, i) of teamsByBlock" :key="i">
       <BlocksHeading>{{ teams.block }}ブロック</BlocksHeading>
       <ProjectsListsRoundRobin :teams="teams.teams" />
+      <BlocksParagraph class="-right"
+        ><ElementsButton @click="modalState = true" class="-link"
+          >ルールをみる</ElementsButton
+        ></BlocksParagraph
+      >
     </section>
   </div>
 </template>
 
 <script setup>
+const modalState = useTournamentRuleModalState()
 const route = useRoute()
 const title = '予選｜大会'
 useHead({

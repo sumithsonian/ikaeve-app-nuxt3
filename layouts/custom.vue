@@ -5,6 +5,7 @@
     <TheAppBar class="platform__footer" />
     <TheFloatingActionButtons class="platform__actionBtns" />
     <ProjectsModalsLogin />
+    <ProjectsModalsTournamentRule />
   </div>
 </template>
 
