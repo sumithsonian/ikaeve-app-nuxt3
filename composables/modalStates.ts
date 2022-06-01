@@ -1,16 +1,27 @@
 // 大会関連
-export const useTournamentRuleModalState = () => useState<boolean>('tournamentRuleModalState', () => false)
-export const useTournamentResultReportState = () => useState<boolean>('tournamentResultReportState', () => false)
-export const useEntryTournamentModalState = () => useState<boolean>('entryTournamentModalState', () => false)
-export const useDeleteTournamentModalState = () => useState<boolean>('deleteTournamentModalState', () => false)
-export const useCancelTournamentModalState = () => useState<boolean>('cancelTournamentModalState', () => false)
+export const useTournamentRuleModalState = () =>
+  useState<boolean>('tournamentRuleModalState', () => false)
+export const useTournamentResultReportState = () =>
+  useState<boolean>('tournamentResultReportState', () => false)
+export const useEntryTournamentModalState = () =>
+  useState<boolean>('entryTournamentModalState', () => false)
+export const useDeleteTournamentModalState = () =>
+  useState<boolean>('deleteTournamentModalState', () => false)
+export const useCancelTournamentModalState = () =>
+  useState<boolean>('cancelTournamentModalState', () => false)
 
 // team関連
-export const useEntryTeamModalState = () => useState<boolean>('entryTeamModalState', () => false)
-export const useApprovalTeamMemberModalState = () => useState<boolean>('approvalTeamMemberModalState', () => false)
-export const useDeleteTeamMemberModalState = () => useState<boolean>('deleteTeamMemberModalState', () => false)
-export const useDeleteTeamModalState = () => useState<boolean>('deleteTeamModalState', () => false)
+export const useEntryTeamModalState = () =>
+  useState<boolean>('entryTeamModalState', () => false)
+export const useApprovalTeamMemberModalState = () =>
+  useState<boolean>('approvalTeamMemberModalState', () => false)
+export const useDeleteTeamMemberModalState = () =>
+  useState<boolean>('deleteTeamMemberModalState', () => false)
+export const useDeleteTeamModalState = () =>
+  useState<boolean>('deleteTeamModalState', () => false)
 
 // プレイヤー関連
-export const useDeletePlayerModalState = () => useState<boolean>('deletePlayerModalState', () => false)
-export const useLoginModalState = () => useState<boolean>('loginModalState', () => false)
+export const useDeletePlayerModalState = () =>
+  useState<boolean>('deletePlayerModalState', () => false)
+export const useLoginModalState = () =>
+  useState<boolean>('loginModalState', () => false)
