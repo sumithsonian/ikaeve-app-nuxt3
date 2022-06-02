@@ -5,8 +5,8 @@
         <template #image>
           <img :src="item.background_image_url" :alt="item.name" />
           <ul>
-            <li><span>イカイベ公式</span></li>
-            <li><span>募集中</span></li>
+            <li><ElementsTag class="-xxsmall -tip">イカイベ公式</ElementsTag></li>
+            <li><ElementsTag class="-xxsmall -tip">募集中</ElementsTag></li>
           </ul>
         </template>
         <template #text>

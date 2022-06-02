@@ -37,7 +37,7 @@ export default {
       top: $space-small;
       right: $space-small;
       display: flex;
-      gap: $space-small;
+      gap: $space-xsmall;
     }
   }
   &__text {

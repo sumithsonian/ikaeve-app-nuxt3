@@ -18,6 +18,7 @@ export default {
   border: 1px solid $color-primary;
   padding: $space-xsmall $space-small;
   border-radius: $radius;
+
   &.-xxsmall {
     font-size: $font-xxsmall;
   }
@@ -35,6 +36,12 @@ export default {
   }
   &.is-active {
     background-color: rgba($color-primary, 0.4);
+  }
+
+  &.-tip {
+    border: none;
+    background: rgba($color-black, 0.4);
+    border-radius: $radius-xxsmall;
   }
 }
 </style>
