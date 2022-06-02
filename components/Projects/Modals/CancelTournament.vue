@@ -10,7 +10,9 @@
           <ElementsButton class="-primary -large">取り消す</ElementsButton>
         </li>
         <li>
-          <ElementsButton class="-large">キャンセル</ElementsButton>
+          <ElementsButton @click="close" class="-large"
+            >キャンセル</ElementsButton
+          >
         </li>
       </BlocksList>
     </template>

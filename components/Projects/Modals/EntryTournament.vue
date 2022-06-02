@@ -15,7 +15,9 @@
           <ElementsButton class="-primary -large">エントリする</ElementsButton>
         </li>
         <li>
-          <ElementsButton class="-large">キャンセルする</ElementsButton>
+          <ElementsButton @click="close" class="-large"
+            >キャンセルする</ElementsButton
+          >
         </li>
       </BlocksList>
     </template>

@@ -11,7 +11,7 @@
           <ElementsButton class="-primary -large">承認する</ElementsButton>
         </li>
         <li>
-          <ElementsButton class="-large">キャンセルする</ElementsButton>
+          <ElementsButton @click="close" class="-large">キャンセルする</ElementsButton>
         </li>
       </BlocksList>
       <BlocksParagraph class="-center"

@@ -11,7 +11,9 @@
           <ElementsButton class="-primary -large">確定する</ElementsButton>
         </li>
         <li>
-          <ElementsButton class="-large">キャンセル</ElementsButton>
+          <ElementsButton @click="close" class="-large"
+            >キャンセル</ElementsButton
+          >
         </li>
         <li>
           <nuxt-link>棄権する</nuxt-link>
