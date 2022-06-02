@@ -1,12 +1,16 @@
 <template>
   <div>
     <BlocksHero
+      v-if="!route.path.includes('edit')"
       :name="tournament.name"
       :background-image-url="tournament.background_image_url"
       :tags="tournament.tags"
       :detail-url="`/tournaments/${tournament.id}`"
     />
-    <ProjectsTabsTournament :id="tournament.id" />
+    <ProjectsTabsTournament
+      v-if="!route.path.includes('edit')"
+      :id="tournament.id"
+    />
     <NuxtPage :page-key="route.path" :tournament="tournament" />
     <BlocksInformation>
       <BlocksParagraph class="-center">募集チームが揃いました</BlocksParagraph>
