@@ -55,7 +55,6 @@ export default {
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
-    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
 }
