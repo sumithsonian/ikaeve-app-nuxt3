@@ -9,7 +9,7 @@
       />
       <ProjectsTabsTournament :id="tournament.id" />
     </template>
-    <NuxtPage :page-key="route.path" :tournament="tournament" />
+    <NuxtPage :tournament="tournament" />
     <template v-if="!route.path.includes('edit')">
       <BlocksInformation v-if="!route.path.includes('edit')">
         <BlocksParagraph class="-center"

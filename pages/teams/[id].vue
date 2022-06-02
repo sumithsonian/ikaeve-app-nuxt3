@@ -11,7 +11,7 @@
       />
       <ProjectsTabsTeam :id="team.id" />
     </template>
-    <NuxtPage :page-key="route.path" :team="team" />
+    <NuxtPage :team="team" />
   </div>
 </template>
 

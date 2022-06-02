@@ -10,7 +10,7 @@
       />
       <ProjectsTabsPlayer :id="player.id" />
     </template>
-    <NuxtPage :page-key="route.path" :player="player" />
+    <NuxtPage :player="player" />
   </div>
 </template>
 
