@@ -58,6 +58,8 @@ export default {
   border-radius: $radius-xlarge;
   display: inline-block;
   line-height: 1.2;
+  background: $color-gray-09;
+  color: $color-primary;
 
   &.-large {
     padding: $space $space-xlarge;
