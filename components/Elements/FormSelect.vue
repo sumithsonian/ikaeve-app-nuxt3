@@ -1,19 +1,72 @@
 <template>
-  <button class="formSelect">
-    <slot /><ElementsIcon> unfold_more </ElementsIcon>
-  </button>
+  <div class="formSelect">
+    <button class="formSelect__actionBtn" @click.stop="doFormSelect">
+      {{ items[0] }}<ElementsIcon> unfold_more </ElementsIcon>
+    </button>
+    <div v-if="isActive" class="formSelect__contents">
+      <ul>
+        <li v-for="(item, i) of items" :key="i">
+          <button>{{ item }}</button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    items: { type: Array, default: [] },
+  },
+  data() {
+    return {
+      isActive: false,
+    }
+  },
+  methods: {
+    doFormSelect() {
+      this.isActive = !this.isActive
+    },
+    hideFormSelect() {
+      this.isActive = false
+    },
+  },
+  mounted() {
+    window.addEventListener('click', this.hideFormSelect)
+  },
+  beforeDestroy() {
+    window.removeEventListener('click', this.hideFormSelect)
+  },
+}
 </script>
 
 <style scoped lang="scss">
 @import '@/assets/scss/_variables';
 
 .formSelect {
-  font-size: $font-small;
-  display: inline-flex;
-  align-items: center;
+  position: relative;
+
+  &__actionBtn {
+    font-size: $font-small;
+    display: inline-flex;
+    align-items: center;
+  }
+  &__contents {
+    z-index: 1;
+    position: absolute;
+    background: $color-gray-10;
+    border-radius: $radius-small;
+    box-shadow: 0 0 $space-large rgba(0, 0, 0, 0.4);
+    li {
+      border-bottom: 1px solid $color-gray-07;
+      &:last-child {
+        border: none;
+      }
+      button {
+        white-space: nowrap;
+        padding: $space;
+      }
+    }
+  }
 }
 </style>
