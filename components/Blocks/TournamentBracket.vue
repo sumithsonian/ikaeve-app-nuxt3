@@ -8,59 +8,45 @@
           class="tb__round__contents__match"
           :key="j"
         >
-          <table ref="matchs" :id="match.id" :next="match.next">
-            <tr :class="{ 'is-winner': match.alpha.is_winner }">
-              <th>
-                {{ match.alpha.name }}
-              </th>
-              <td>{{ match.alpha.win }}</td>
-            </tr>
-            <tr :class="{ 'is-winner': match.bravo.is_winner }">
-              <th>
-                {{ match.bravo.name }}
-              </th>
-              <td>{{ match.bravo.win }}</td>
-            </tr>
-          </table>
-          <ul>
-            <li>
-              <ElementsButton
-                class="-link"
-                @click="tournamentResultReportModalState = true"
-                ><ElementsText class="-xsmall"
-                  >報告</ElementsText
-                ></ElementsButton
-              >
-            </li>
-            <li>
-              <ElementsButton
-                class="-link"
-                @click="tournamentRuleModalState = true"
-                ><ElementsText class="-xsmall"
-                  >ルール</ElementsText
-                ></ElementsButton
-              >
-            </li>
-          </ul>
-          <ClientOnly>
-            <svg
-              v-if="brackets.length > 0 && brackets[match.id - 1].height"
-              widht="48"
-              :height="brackets[match.id - 1].height"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill="none"
-                stroke="#F00"
-                stroke-width="1"
-                :d="
-                  j % 2 === 0
-                    ? `M0,0 H24 V${brackets[match.id - 1].height} H48`
-                    : `M0,${brackets[match.id - 1].height} H24 V0 H48`
-                "
-              />
-            </svg>
-          </ClientOnly>
+          <span v-if="i > 0" class="tb__round__contents__match__fromLine"></span>
+          <div class="tb__round__contents__match__contents">
+            <table ref="matchs" :id="match.id" :next="match.next">
+              <tr :class="{ 'is-winner': match.alpha.is_winner }">
+                <th>
+                  {{ match.alpha.name }}
+                </th>
+                <td>{{ match.alpha.win }}</td>
+              </tr>
+              <tr :class="{ 'is-winner': match.bravo.is_winner }">
+                <th>
+                  {{ match.bravo.name }}
+                </th>
+                <td>{{ match.bravo.win }}</td>
+              </tr>
+            </table>
+            <ul>
+              <li>
+                <ElementsButton
+                  class="-link"
+                  @click="tournamentResultReportModalState = true"
+                  ><ElementsText class="-xsmall"
+                    >報告</ElementsText
+                  ></ElementsButton
+                >
+              </li>
+              <li>
+                <ElementsButton
+                  class="-link"
+                  @click="tournamentRuleModalState = true"
+                  ><ElementsText class="-xsmall"
+                    >ルール</ElementsText
+                  ></ElementsButton
+                >
+              </li>
+            </ul>
+          </div>
+          <span v-if="i !== rounds.length - 1" class="tb__round__contents__match__toLine"></span>
+          <span v-if="i !== rounds.length - 1" class="tb__round__contents__match__toLineV"></span>
         </div>
       </div>
     </div>
@@ -140,38 +126,7 @@ export default {
   data() {
     return {
       rounds: rounds,
-      brackets: [],
     }
-  },
-  async mounted() {
-    await this.$nextTick(() => {})
-
-    const brackets = []
-    this.$refs.matchs.forEach((match) => {
-      const from = match.getAttribute('id')
-      const to = match.getAttribute('next')
-      const fromRef = match
-      const fromRect = fromRef.getBoundingClientRect()
-
-      const toRef =
-        to > 0
-          ? this.$refs.matchs.find((match) => match.getAttribute('id') === to)
-          : null
-      const toRect = toRef ? toRef.getBoundingClientRect() : null
-
-      brackets.push({
-        from: { id: from, height: fromRect.height, top: fromRect.top },
-        to: toRect ? { id: to, height: toRect.height, top: toRect.top } : null,
-        height: toRect
-          ? Math.abs(
-              fromRect.top +
-                fromRect.height / 2 -
-                (toRect.top + toRect.height / 2),
-            )
-          : null,
-      })
-    })
-    this.brackets = brackets
   },
 }
 </script>
@@ -199,48 +154,76 @@ export default {
       justify-content: space-around;
       height: 100%;
       &__match {
+        flex: 1;
+        display: flex;
+        align-items: center;
         margin: $space-large 0;
         position: relative;
-        svg {
+
+        &__fromLine,
+        &__toLine,
+        &__toLineV {
+          display: block;
+          background: $color-gray-07;
           position: absolute;
+        }
+        &__fromLine {
+          height: 1px;
+          width: 24px;
+          top: calc(50% - 11px);
+          left: -24px;
+        }
+        &__toLine {
+          height: 1px;
+          width: 24px;
+          top: calc(50% - 11px);
           left: 100%;
         }
-        &:nth-child(2n + 1) svg {
-          top: calc(50% - 11px);
+        &__toLineV {
+          height: 100%;
+          width: 1px;
+          left: calc(100% + 23px);
         }
-        &:nth-child(2n) svg {
-          bottom: calc(50% + 11px);
+        &:nth-child(2n + 1) &__toLineV {
+          top: calc(50% - 10px);
         }
-        table {
-          background: $color-gray-10;
-          width: 100%;
-          border-collapse: separate;
+        &:nth-child(2n) &__toLineV {
+          bottom: calc(50% + 10px);
+        }
 
-          th,
-          td {
-            text-align: left;
-            border: 1px solid $color-gray-07;
-            padding: $space-small;
-            font-size: $font-xsmall;
-          }
-          th {
-            background: $color-gray-08;
-            border-right: none;
-          }
-          td {
-            background: $color-gray-09;
-            border-left: none;
-          }
-          .is-winner {
+        &__contents {
+          width: 100%;
+          table {
+            background: $color-gray-10;
+            width: 100%;
+            border-collapse: separate;
+
             th,
             td {
-              border-color: $color-up;
+              text-align: left;
+              border: 1px solid $color-gray-07;
+              padding: $space-small;
+              font-size: $font-xsmall;
+            }
+            th {
+              background: $color-gray-08;
+              border-right: none;
+            }
+            td {
+              background: $color-gray-09;
+              border-left: none;
+            }
+            .is-winner {
+              th,
+              td {
+                border-color: $color-up;
+              }
             }
           }
-        }
-        ul {
-          display: flex;
-          justify-content: space-between;
+          ul {
+            display: flex;
+            justify-content: space-between;
+          }
         }
       }
     }
