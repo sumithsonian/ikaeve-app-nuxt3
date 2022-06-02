@@ -47,7 +47,7 @@
             :twitter-url="player.twitter_url"
             :key="i"
           />
-          <ElementsText class="-sub -small"
+          <ElementsText class="-sub -xsmall"
             >登録後にメンバー募集リンクが表示されます。メンバーにリンクを送り、チーム参加申請をお願いしましょう。</ElementsText
           >
         </td>
@@ -65,11 +65,15 @@
         </td>
       </tr>
     </BlocksFormTable>
-    <BlocksList class="-center">
-      <li>
-        <ElementsButton class="-primary -large">{{ btnLabel }}</ElementsButton>
-      </li></BlocksList
-    >
+    <BlocksInformation>
+      <BlocksList class="-center">
+        <li>
+          <ElementsButton class="-primary -large">{{
+            btnLabel
+          }}</ElementsButton>
+        </li></BlocksList
+      >
+    </BlocksInformation>
   </div>
 </template>
 

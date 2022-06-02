@@ -65,7 +65,7 @@ export default {
     flex: 1;
     border: none;
     padding: $space;
-    background: $color-gray-05;
+    background: $color-gray-07;
   }
 
   input:-webkit-autofill {

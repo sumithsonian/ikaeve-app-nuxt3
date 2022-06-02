@@ -185,11 +185,15 @@
         </td>
       </tr>
     </BlocksFormTable>
-    <BlocksList class="-center">
-      <li>
-        <ElementsButton class="-primary -large">{{ btnLabel }}</ElementsButton>
-      </li></BlocksList
-    >
+    <BlocksInformation>
+      <BlocksList class="-center">
+        <li>
+          <ElementsButton class="-primary -large">{{
+            btnLabel
+          }}</ElementsButton>
+        </li></BlocksList
+      >
+    </BlocksInformation>
   </div>
 </template>
 

@@ -14,16 +14,22 @@ export default {}
 @import '@/assets/scss/_variables';
 
 table {
-  width: calc(100% - #{$space} * 2);
-  margin: $space;
+  max-width: 640px;
+  margin: $space auto;
   ::v-deep(th),
   ::v-deep(td) {
     padding: $space-small;
     vertical-align: middle;
+
+    .formInput {
+      width: 100%;
+    }
   }
   ::v-deep(th) {
     font-size: $font-xsmall;
     color: $color-gray-05;
+    text-align: left;
+    white-space: nowrap;
   }
   ::v-deep(td) {
     font-size: $font-small;

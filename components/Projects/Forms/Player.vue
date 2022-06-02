@@ -32,10 +32,12 @@
         </td>
       </tr>
     </BlocksFormTable>
-    <BlocksList class="-center">
-      <li>
-        <ElementsButton class="-primary -large">保存する</ElementsButton>
-      </li></BlocksList
-    >
+    <BlocksInformation>
+      <BlocksList class="-center">
+        <li>
+          <ElementsButton class="-primary -large">保存する</ElementsButton>
+        </li></BlocksList
+      >
+    </BlocksInformation>
   </div>
 </template>
