@@ -29,11 +29,28 @@
         </li>
       </BlocksList>
     </BlocksInformation>
+    <BlocksInformation>
+      <BlocksList class="-horizontal -center">
+        <li>
+          <ElementsButton class="-primary"
+            >大会へのエントリーを募集する</ElementsButton
+          >
+        </li>
+      </BlocksList>
+    </BlocksInformation>
+    <BlocksInformation>
+      <BlocksList class="-horizontal -center">
+        <li>
+          <ElementsButton @click="modalState = true" class="-primary">大会にエントリーする</ElementsButton>
+        </li>
+      </BlocksList>
+    </BlocksInformation>
   </div>
 </template>
 
 <script setup>
 const route = useRoute()
+const modalState = useEntryTournamentModalState()
 const tournament = (await $fetch(`/api/tournaments/${route.params.id}`)).data
 const title = tournament.name
 useHead({
