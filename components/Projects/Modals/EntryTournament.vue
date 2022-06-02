@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-const isActive = useEntryTournamentlModalState()
+const isActive = useEntryTournamentModalState()
 </script>
 
 <script>
