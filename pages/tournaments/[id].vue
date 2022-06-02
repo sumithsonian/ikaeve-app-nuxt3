@@ -22,10 +22,10 @@
       >
       <BlocksList class="-horizontal -center">
         <li>
-          <ElementsButton class="-primary">期限を延ばす</ElementsButton>
+          <ElementsButton class="-primary" :to="`/tournaments/${tournament.id}/edit`">期限を延ばす</ElementsButton>
         </li>
         <li>
-          <ElementsButton class="-primary">大会を中止する</ElementsButton>
+          <ElementsButton class="-primary" :to="`/tournaments/${tournament.id}/edit`">大会を中止する</ElementsButton>
         </li>
       </BlocksList>
     </BlocksInformation>
