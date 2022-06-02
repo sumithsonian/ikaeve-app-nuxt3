@@ -72,6 +72,7 @@ export default {
   &.-twitter {
     background: $color-twitter;
     border-color: $color-twitter;
+    color: $color-white;
   }
 
   &.-link {

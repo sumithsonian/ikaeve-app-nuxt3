@@ -8,7 +8,7 @@
       >
       <BlocksList class="-center">
         <li>
-          <ElementsButton class="-primary -large"
+          <ElementsButton class="-twitter -large"
             >Twitterで新規会員登録/ログイン</ElementsButton
           >
         </li>
