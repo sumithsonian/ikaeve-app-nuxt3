@@ -14,6 +14,7 @@ export default {
 @import '@/assets/scss/_variables';
 
 .tag {
+  display: inline-block;
   font-size: $font;
   border: 1px solid $color-primary;
   padding: $space-xsmall $space-small;
