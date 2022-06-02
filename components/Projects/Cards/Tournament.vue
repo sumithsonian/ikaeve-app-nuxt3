@@ -46,5 +46,17 @@ export default {
   > li {
     width: calc(50% - #{$space} / 2);
   }
+
+  &.-scroll {
+    > li {
+      width: 60%;
+      flex-shrink: 0;
+    }
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 </style>

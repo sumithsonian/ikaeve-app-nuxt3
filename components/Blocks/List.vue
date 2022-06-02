@@ -34,7 +34,6 @@ export default {}
   }
 
   &.-horizontal {
-    flex-wrap: wrap;
     flex-direction: row;
   }
   &.-center {
