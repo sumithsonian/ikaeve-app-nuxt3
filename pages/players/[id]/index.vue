@@ -18,7 +18,7 @@
     <BlocksHeading>所属チーム/団体</BlocksHeading>
     <ProjectsListsTeams :items="teams" />
     <BlocksHeading>最近参加した大会</BlocksHeading>
-    <ProjectsCardsTournament :items="tournaments" />
+    <ProjectsCardsTournament :items="tournaments" class="-scroll" />
     <BlocksList class="-center">
       <li>
         <ElementsButton :to="`/players/${player.id}/entered-tournaments`"
@@ -27,7 +27,7 @@
       </li>
     </BlocksList>
     <BlocksHeading>最近開催した大会</BlocksHeading>
-    <ProjectsCardsTournament :items="tournaments" />
+    <ProjectsCardsTournament :items="tournaments" class="-scroll" />
     <BlocksList class="-center">
       <li>
         <ElementsButton :to="`/players/${player.id}/held-tournaments`"
