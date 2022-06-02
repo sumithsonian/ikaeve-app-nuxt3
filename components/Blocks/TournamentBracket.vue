@@ -8,7 +8,7 @@
           class="tb__round__contents__match"
           :key="j"
         >
-          <table :ref="`from_${match.id}_to_${match.next}`" :id="match.id">
+          <table ref="matchs" :id="match.id" :next="match.next">
             <tr :class="{ 'is-winner': match.alpha.is_winner }">
               <th>
                 {{ match.alpha.name }}
@@ -147,23 +147,21 @@ export default {
     await this.$nextTick(() => {})
 
     const brackets = []
-    Object.keys(this.$refs).forEach((key) => {
-      const fromTo = key.split('_')
-      const fromRef = this.$refs[key][0]
+    this.$refs.matchs.forEach((match) => {
+      const from = match.getAttribute('id')
+      const to = match.getAttribute('next')
+      const fromRef = match
       const fromRect = fromRef.getBoundingClientRect()
-      const toRefKey =
-        fromTo[3] > 0
-          ? Object.keys(this.$refs).find(
-              (key) => this.$refs[key][0].getAttribute('id') === fromTo[3],
-            )
+
+      const toRef =
+        to > 0
+          ? this.$refs.matchs.find((match) => match.getAttribute('id') === to)
           : null
-      const toRef = toRefKey ? this.$refs[toRefKey][0] : null
       const toRect = toRef ? toRef.getBoundingClientRect() : null
+
       brackets.push({
-        from: { id: fromTo[1], height: fromRect.height, top: fromRect.top },
-        to: toRect
-          ? { id: fromTo[3], height: toRect.height, top: toRect.top }
-          : null,
+        from: { id: from, height: fromRect.height, top: fromRect.top },
+        to: toRect ? { id: to, height: toRect.height, top: toRect.top } : null,
         height: toRect
           ? Math.abs(
               fromRect.top +
