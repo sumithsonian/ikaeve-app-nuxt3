@@ -1,15 +1,16 @@
 <template>
   <div>
-    <BlocksHero
-      v-if="!route.path.includes('edit')"
-      :name="team.name"
-      :image-url="team.image_url"
-      :background-image-url="team.background_image_url"
-      :twitter-url="team.twitter_url"
-      :discord-url="team.discord_url"
-      :detail-url="`/teams/${team.id}`"
-    />
-    <ProjectsTabsTeam v-if="!route.path.includes('edit')" :id="team.id" />
+    <template v-if="!route.path.includes('edit')">
+      <BlocksHero
+        :name="team.name"
+        :image-url="team.image_url"
+        :background-image-url="team.background_image_url"
+        :twitter-url="team.twitter_url"
+        :discord-url="team.discord_url"
+        :detail-url="`/teams/${team.id}`"
+      />
+      <ProjectsTabsTeam :id="team.id" />
+    </template>
     <NuxtPage :page-key="route.path" :team="team" />
   </div>
 </template>
