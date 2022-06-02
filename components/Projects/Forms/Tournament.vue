@@ -187,8 +187,21 @@
     </BlocksFormTable>
     <BlocksList class="-center">
       <li>
-        <ElementsButton class="-primary -large">作成する</ElementsButton>
+        <ElementsButton class="-primary -large">{{ btnLabel }}</ElementsButton>
       </li></BlocksList
     >
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    kind: { type: String, default: null },
+  },
+  computed: {
+    btnLabel() {
+      return this.kind === 'edit' ? '保存する' : '作成する'
+    },
+  },
+}
+</script>
