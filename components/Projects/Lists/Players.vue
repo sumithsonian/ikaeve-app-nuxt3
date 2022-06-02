@@ -10,9 +10,12 @@
     <template #tbody>
       <tr v-for="(item, i) of items" :key="item.id">
         <th v-if="th">
-          <ElementsRank :position="item.ranks.position">{{
-            i + 1
-          }}</ElementsRank>
+          <ElementsRank
+            v-if="kind === 'ranking'"
+            :position="item.ranks.position"
+            >{{ i + 1 }}</ElementsRank
+          >
+          <template v-else> {{ i + 1 }} </template>
         </th>
         <td>
           <nuxt-link :to="`/players/${item.id}/`"
