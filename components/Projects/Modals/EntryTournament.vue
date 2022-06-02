@@ -7,7 +7,7 @@
       >
       <BlocksParagraph class="-center"
         ><ElementsText class="-sub -xsmall"
-          >エントリするにはチーム作成が必要です。</ElementsText
+          >エントリするには<nuxt-link to="/teams/create">チーム作成</nuxt-link>が必要です。</ElementsText
         ></BlocksParagraph
       >
       <BlocksList class="-center">
