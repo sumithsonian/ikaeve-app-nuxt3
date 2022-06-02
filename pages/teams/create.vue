@@ -1,6 +1,7 @@
 <template>
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
+    <ProjectsFormsTeam />
   </div>
 </template>
 

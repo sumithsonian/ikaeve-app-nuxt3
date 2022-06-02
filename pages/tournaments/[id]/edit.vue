@@ -1,7 +1,7 @@
 <template>
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsFormsTournament />
+    <ProjectsFormsTournament kind="edit" />
   </div>
 </template>
 

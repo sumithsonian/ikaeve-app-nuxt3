@@ -1,11 +1,11 @@
 <template>
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
+    <ProjectsFormsPlayer />
   </div>
 </template>
 
 <script setup>
-const route = useRoute()
 const title = 'プレイヤーの編集'
 useHead({
   title: title,
