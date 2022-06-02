@@ -2,7 +2,9 @@
   <div>
     <BlocksIndexNav />
     <BlocksHeading>勝者サイド</BlocksHeading>
+    <BlocksTournamentBracket />
     <BlocksHeading>敗者サイド</BlocksHeading>
+    <BlocksTournamentBracket />
   </div>
 </template>
 

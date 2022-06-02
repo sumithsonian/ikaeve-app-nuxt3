@@ -1,6 +1,6 @@
 <template>
   <BlocksModal v-if="isActive" @close-from-child="close">
-    <template #heading>バトルルール</template>
+    <template #heading>試合ルール</template>
     <template #contents>
       <BlocksList>
         <li>試合形式：リーグ戦（ラウンドロビン）</li>

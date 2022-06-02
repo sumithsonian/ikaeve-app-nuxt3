@@ -1,8 +1,8 @@
 // 大会関連
 export const useTournamentRuleModalState = () =>
   useState<boolean>('tournamentRuleModalState', () => false)
-export const useTournamentResultReportState = () =>
-  useState<boolean>('tournamentResultReportState', () => false)
+export const useTournamentResultReportModalState = () =>
+  useState<boolean>('tournamentResultReportModalState', () => false)
 export const useEntryTournamentModalState = () =>
   useState<boolean>('entryTournamentModalState', () => false)
 export const useDeleteTournamentModalState = () =>
