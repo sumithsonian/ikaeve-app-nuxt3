@@ -1,7 +1,7 @@
 <template>
-  <BlocksList class="-horizontal">
+  <BlocksList class="tournaments -horizontal">
     <li v-for="item of items" :key="item.id">
-      <ElementsCard>
+      <ElementsCard :to="`/tournaments/${item.id}/`">
         <template #image>
           <img :src="item.background_image_url" :alt="item.name" />
           <ul>
@@ -38,3 +38,13 @@ export default {
   },
 }
 </script>
+
+<style scoped lang="scss">
+@import '@/assets/scss/_variables';
+.tournaments {
+  margin: $space;
+  > li {
+    width: calc(50% - #{$space} / 2);
+  }
+}
+</style>

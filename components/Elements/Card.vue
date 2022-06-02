@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/tournaments/1/" class="card">
+  <nuxt-link :to="to" class="card">
     <div class="card__image">
       <slot name="image" />
     </div>
@@ -12,7 +12,7 @@
 <script>
 export default {
   props: {
-    item: { type: Object, required: true },
+    to: { type: String, required: true },
   },
 }
 </script>
@@ -24,7 +24,7 @@ export default {
   background: $color-gray-08;
   border-radius: $space;
   overflow: hidden;
-  max-width: 240px;
+  max-width: 480px;
   &__image {
     position: relative;
     ::v-deep(img) {

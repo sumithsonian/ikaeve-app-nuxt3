@@ -40,9 +40,41 @@
     <BlocksHeading>大会詳細</BlocksHeading>
     <BlocksParagraph>{{ tournament.description }}</BlocksParagraph>
     <BlocksHeading>大会ルール</BlocksHeading>
-    <BlocksParagraph
-      >大会ルール大会ルール大会ルール大会ルール大会ルール大会ルール</BlocksParagraph
-    >
+    <BlocksTable>
+      <template #tbody>
+        <tr v-if="tournament.rules.qualifying">
+          <th>予選</th>
+          <td>
+            試合形式：{{ tournament.rules.qualifying.system }}<br />
+            通過順位：{{ tournament.rules.qualifying.pass_order }}<br />
+            先取点：{{ tournament.rules.qualifying.first_to }}<br />
+            <template v-for="(rule, key) of tournament.rules.qualifying.rules">
+              第{{ key }}ゲーム：{{ rule }}<br />
+            </template>
+          </td>
+        </tr>
+        <tr v-if="tournament.rules.finals">
+          <th>本戦</th>
+          <td>
+            試合形式：{{ tournament.rules.finals.system }}<br />
+            試合形式：{{ tournament.rules.finals.system }}<br />
+            先取点：{{ tournament.rules.finals.first_to }}<br />
+            <template v-for="(rule, key) of tournament.rules.finals.rules">
+              第{{ key }}ゲーム：{{ rule }}<br />
+            </template>
+          </td>
+        </tr>
+        <tr v-if="tournament.rules.final">
+          <th>決勝戦</th>
+          <td>
+            先取点：{{ tournament.rules.final.first_to }}<br />
+            <template v-for="(rule, key) of tournament.rules.final.rules">
+              第{{ key }}ゲーム：{{ rule }}<br />
+            </template>
+          </td>
+        </tr>
+      </template>
+    </BlocksTable>
   </div>
 </template>
 

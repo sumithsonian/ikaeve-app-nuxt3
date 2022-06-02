@@ -3,10 +3,10 @@
     <h1><nuxt-link to="/">ロゴマーク</nuxt-link></h1>
     <ul>
       <li>
-        <nuxt-link to="/"
-          ><ElementsIcon> login </ElementsIcon
-          ><ElementsText class="-xsmall">登録/ログイン</ElementsText></nuxt-link
-        >
+        <button @click="modalState = true">
+          <ElementsIcon> login </ElementsIcon
+          ><ElementsText class="-xsmall">登録/ログイン</ElementsText>
+        </button>
       </li>
       <li>
         <nuxt-link to="/players/1"
@@ -17,6 +17,10 @@
     </ul>
   </header>
 </template>
+
+<script setup>
+const modalState = useLoginModalState()
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/_variables';

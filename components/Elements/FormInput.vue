@@ -55,7 +55,7 @@ export default {
 @import '@/assets/scss/_variables';
 
 .formInput {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   border-radius: $radius-small;
   border: 1px solid transparent;

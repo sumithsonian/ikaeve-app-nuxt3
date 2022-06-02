@@ -34,7 +34,7 @@
         </li>
       </ul>
     </nav>
-    <div @click="close" v-if="isActive" class="appNav__overlay"></div>
+    <BlocksOverlay @click="close" v-if="isActive" />
     <div v-if="isActive" class="appNav__drawer">
       <div class="appNav__drawer__actions">
         <button @click="close"><ElementsIcon>close</ElementsIcon></button>
@@ -125,7 +125,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: $space-small;
+        padding: $space-small $space-xsmall;
         width: 100%;
         box-sizing: border-box;
         border: 2px solid transparent;
@@ -136,14 +136,6 @@ export default {
         }
       }
     }
-  }
-  &__overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba($color-black, 0.5);
   }
   &__drawer {
     position: fixed;

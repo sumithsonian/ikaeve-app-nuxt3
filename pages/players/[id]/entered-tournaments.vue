@@ -1,7 +1,5 @@
 <template>
   <div>
-    <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsTabsPlayer />
     <BlocksHeading>参加した大会・5</BlocksHeading>
     <ProjectsCardsTournament :items="tournaments" />
   </div>

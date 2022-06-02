@@ -71,11 +71,18 @@ export default {
     background: $color-twitter;
     border-color: $color-twitter;
   }
+
+  &.-link {
+    border: none;
+    padding: 0 $space-xsmall;
+    color: $color-primary;
+  }
   &.-circle {
     line-height: 0;
     padding: 0;
     height: $img;
     width: $img;
+    text-align: center;
     &.-large {
       height: $img-large;
       width: $img-large;
