@@ -71,6 +71,11 @@
           <ElementsButton class="-primary -large">{{
             btnLabel
           }}</ElementsButton>
+        </li>
+        <li v-if="kind === 'edit'">
+          <ElementsButton @click="modalState = true" class="-link"
+            >チームを削除する</ElementsButton
+          >
         </li></BlocksList
       >
     </BlocksInformation>
@@ -79,6 +84,7 @@
 
 <script setup>
 const players = (await $fetch('/api/users')).data
+const modalState = useDeleteTeamModalState()
 </script>
 
 <script>

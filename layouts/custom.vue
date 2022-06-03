@@ -9,6 +9,8 @@
     <ProjectsModalsTournamentRule />
     <ProjectsModalsDeleteTournament />
     <ProjectsModalsEntryTournament />
+    <ProjectsModalsDeleteTeam />
+    <ProjectsModalsDeletePlayer />
   </div>
 </template>
 

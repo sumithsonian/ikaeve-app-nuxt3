@@ -36,8 +36,17 @@
       <BlocksList class="-center">
         <li>
           <ElementsButton class="-primary -large">保存する</ElementsButton>
+        </li>
+        <li>
+          <ElementsButton @click="modalState = true" class="-link"
+            >退会する</ElementsButton
+          >
         </li></BlocksList
       >
     </BlocksInformation>
   </div>
 </template>
+
+<script setup>
+const modalState = useDeletePlayerModalState()
+</script>
