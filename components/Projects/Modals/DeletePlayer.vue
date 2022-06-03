@@ -10,7 +10,9 @@
           >
         </li>
         <li>
-          <ElementsButton class="-large">キャンセル</ElementsButton>
+          <ElementsButton @click="close" class="-large"
+            >キャンセル</ElementsButton
+          >
         </li>
       </BlocksList>
       <BlocksParagraph class="-center"
