@@ -79,6 +79,7 @@ export default {
     border: none;
     padding: 0 $space-xsmall;
     color: $color-primary;
+    background: transparent;
   }
   &.-circle {
     line-height: 0;
