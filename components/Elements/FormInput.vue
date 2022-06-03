@@ -1,5 +1,5 @@
 <template>
-  <div class="formInput">
+  <div class="formInput" :class="$attrs.class">
     <template v-if="rows === 1">
       <input
         v-model="localValue"
@@ -72,6 +72,9 @@ export default {
     // 色が変わらないように、変化までの時間を長くした
     transition: background-color 86400s ease-in-out 0s,
       color 86400s ease-in-out 0s;
+  }
+  &.-block {
+    width: 100%;
   }
 }
 </style>

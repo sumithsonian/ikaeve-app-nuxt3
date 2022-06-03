@@ -20,10 +20,6 @@ table {
   ::v-deep(td) {
     padding: $space-small;
     vertical-align: middle;
-
-    .formInput {
-      width: 100%;
-    }
   }
   ::v-deep(th) {
     font-size: $font-xsmall;

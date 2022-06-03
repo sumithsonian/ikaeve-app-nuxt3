@@ -15,15 +15,15 @@
       </tr>
       <tr>
         <th>主催者</th>
-        <td><ElementsFormSelect /></td>
+        <td><ElementsFormSelect :items="['イカイベ運営チーム']" /></td>
       </tr>
       <tr>
         <th>大会シリーズ</th>
-        <td><ElementsFormSelect /></td>
+        <td><ElementsFormSelect :items="['エリア杯', 'ヤグラ杯', 'ホコ杯']" /></td>
       </tr>
       <tr>
         <th>大会名</th>
-        <td><ElementsFormInput /></td>
+        <td><ElementsFormInput class="-block" /></td>
       </tr>
       <tr>
         <th>大会画像</th>
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <th>大会概要</th>
-        <td><ElementsFormInput rows="5" /></td>
+        <td><ElementsFormInput rows="5" class="-block" /></td>
       </tr>
       <tr>
         <th>募集チーム数</th>
@@ -51,7 +51,7 @@
       </tr>
       <tr>
         <th>配信URL</th>
-        <td><ElementsFormInput /></td>
+        <td><ElementsFormInput class="-block" /></td>
       </tr>
     </BlocksFormTable>
     <BlocksHeading>試合形式</BlocksHeading>
