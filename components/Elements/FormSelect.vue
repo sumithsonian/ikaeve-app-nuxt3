@@ -1,12 +1,12 @@
 <template>
   <div class="formSelect">
     <button class="formSelect__actionBtn" @click.stop="doFormSelect">
-      {{ items[0] }}<ElementsIcon> unfold_more </ElementsIcon>
+      {{ selectedItem }}<ElementsIcon> unfold_more </ElementsIcon>
     </button>
     <div v-if="isActive" class="formSelect__contents">
       <ul>
         <li v-for="(item, i) of items" :key="i">
-          <button>{{ item }}</button>
+          <button @click="selectItem(i)">{{ item }}</button>
         </li>
       </ul>
     </div>
@@ -21,6 +21,7 @@ export default {
   data() {
     return {
       isActive: false,
+      selectedItem: this.items[0],
     }
   },
   methods: {
@@ -29,6 +30,9 @@ export default {
     },
     hideFormSelect() {
       this.isActive = false
+    },
+    selectItem(i) {
+      this.selectedItem = this.items[i]
     },
   },
   mounted() {
