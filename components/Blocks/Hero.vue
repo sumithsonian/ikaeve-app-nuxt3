@@ -35,7 +35,7 @@
     >
       <ul v-if="tags" class="hero__image__tags">
         <li v-for="(tag, i) of tags" :key="i">
-          <span>{{ tag.name }}</span>
+          <ElementsTag class="-xsmall -tip">{{ tag.name }}</ElementsTag>
         </li>
       </ul>
       <ul class="hero__image__actions">
