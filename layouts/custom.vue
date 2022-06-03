@@ -7,6 +7,7 @@
     <ProjectsModalsLogin />
     <ProjectsModalsTournamentResultReport />
     <ProjectsModalsTournamentRule />
+    <ProjectsModalsDeleteTournament />
     <ProjectsModalsEntryTournament />
   </div>
 </template>

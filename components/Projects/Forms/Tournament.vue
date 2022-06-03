@@ -19,7 +19,9 @@
       </tr>
       <tr>
         <th>大会シリーズ</th>
-        <td><ElementsFormSelect :items="['エリア杯', 'ヤグラ杯', 'ホコ杯']" /></td>
+        <td>
+          <ElementsFormSelect :items="['エリア杯', 'ヤグラ杯', 'ホコ杯']" />
+        </td>
       </tr>
       <tr>
         <th>大会名</th>
@@ -191,11 +193,18 @@
           <ElementsButton class="-primary -large">{{
             btnLabel
           }}</ElementsButton>
+        </li>
+        <li v-if="kind === 'edit'">
+          <ElementsButton @click="modalState = true" class="-link">大会を削除</ElementsButton>
         </li></BlocksList
       >
     </BlocksInformation>
   </div>
 </template>
+
+<script setup>
+const modalState = useDeleteTournamentModalState()
+</script>
 
 <script>
 export default {
