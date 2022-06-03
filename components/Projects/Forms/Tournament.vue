@@ -195,7 +195,7 @@
           }}</ElementsButton>
         </li>
         <li v-if="kind === 'edit'">
-          <ElementsButton @click="modalState = true" class="-link">大会を削除</ElementsButton>
+          <ElementsButton @click="modalState = true" class="-link">大会を削除する</ElementsButton>
         </li></BlocksList
       >
     </BlocksInformation>
