@@ -27,6 +27,7 @@
 export default {
   inheritAttrs: false,
   props: {
+    modelValue: { type: [String, Number], default: null },
     type: { type: String, default: 'text' },
     value: { type: [String, Number], default: null },
     rows: { type: Number, default: 1 },
@@ -34,18 +35,11 @@ export default {
   computed: {
     localValue: {
       get() {
-        return this.value
+        return this.modelValue
       },
-    },
-    // フォーカスイベントを使うために必要
-    // see: https://jp.vuejs.org/v2/guide/components-custom-events.html
-    inputListeners() {
-      const vm = this
-      return Object.assign({}, this.$listeners, {
-        input(event) {
-          vm.$emit('input', event.target.value)
-        },
-      })
+      set(value) {
+        this.$emit('update:modelValue', value)
+      },
     },
   },
 }

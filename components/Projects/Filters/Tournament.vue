@@ -8,17 +8,37 @@
       <ElementsTag tag="button" class="-xsmall">終了</ElementsTag>
     </li>
     <li>
-      <ElementsFormSelect :items="sorts" />
+      <ElementsFormSelect v-model="localValue.sort" :items="sorts" />
     </li>
   </BlocksFilter>
 </template>
 
 <script>
 export default {
+  props: {
+    modelValue: { type: [String, Number, Boolean, Array], default: null },
+  },
   data() {
     return {
-      sorts: ['新着順', '人気順', 'ウデマエ順'],
+      sorts: [
+        { value: null, name: '新着順' },
+        { value: 'popular', name: '人気順' },
+        { value: 'udemae', name: 'ウデマエ順' },
+      ],
     }
+  },
+  computed: {
+    // @memo: deepな変化がとれてない
+    localValue: {
+      get: () => {
+        return this.modelValue
+      },
+      set: (value) => {
+        console.log(1)
+        console.log(value)
+        this.$emit('update:modelValue', value)
+      },
+    },
   },
 }
 </script>

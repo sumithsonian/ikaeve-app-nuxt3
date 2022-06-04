@@ -1,12 +1,12 @@
 <template>
   <div class="formSelect">
     <button class="formSelect__actionBtn" @click.stop="doFormSelect">
-      {{ selectedItem }}<ElementsIcon> unfold_more </ElementsIcon>
+      {{ selectedItem.name }}<ElementsIcon> unfold_more </ElementsIcon>
     </button>
     <div v-if="isActive" class="formSelect__contents">
       <ul>
         <li v-for="(item, i) of items" :key="i">
-          <button @click="selectItem(i)">{{ item }}</button>
+          <button @click="selectItem(i)">{{ item.name }}</button>
         </li>
       </ul>
     </div>
@@ -16,6 +16,7 @@
 <script>
 export default {
   props: {
+    modelValue: { type: [String, Number], default: null },
     items: { type: Array, default: [] },
   },
   data() {
@@ -33,6 +34,7 @@ export default {
     },
     selectItem(i) {
       this.selectedItem = this.items[i]
+      this.$emit('update:modelValue', this.items[i].value)
     },
   },
   mounted() {

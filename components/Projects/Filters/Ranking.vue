@@ -12,6 +12,9 @@
 
 <script>
 export default {
+  props: {
+    modelValue: { type: [String, Number, Boolean, Array], default: null },
+  },
   data() {
     return {
       gameTitles: ['Splatoon 3', 'Splatoon 2'],
@@ -24,6 +27,16 @@ export default {
         '年間',
       ],
     }
+  },
+  computed: {
+    localValue: {
+      get() {
+        return this.modelValue
+      },
+      set(value) {
+        this.$emit('update:modelValue', value)
+      },
+    },
   },
 }
 </script>
