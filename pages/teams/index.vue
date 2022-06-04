@@ -1,7 +1,7 @@
 <template>
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsFiltersTournament />
+    <ProjectsFiltersTeam />
     <ProjectsListsTeams :items="teams" />
     <ProjectsPagination />
   </div>
