@@ -17,7 +17,7 @@
 export default {
   data() {
     return {
-      sorts: ['新着順', '人気順'],
+      sorts: ['新着順', '人気順', 'ウデマエ順'],
     }
   },
 }
