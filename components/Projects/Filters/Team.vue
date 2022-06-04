@@ -16,7 +16,7 @@
 <script>
 export default {
   props: {
-    modelValue: { type: [String, Number, Boolean, Array], default: null },
+    modelValue: { type: Object, default: null },
   },
   data() {
     return {
