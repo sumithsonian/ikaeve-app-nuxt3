@@ -15,12 +15,22 @@
       </tr>
       <tr>
         <th>主催者</th>
-        <td><ElementsFormSelect :items="['イカイベ運営チーム']" /></td>
+        <td>
+          <ElementsFormSelect
+            :items="[{ value: 1, name: 'イカイベ運営チーム' }]"
+          />
+        </td>
       </tr>
       <tr>
         <th>大会シリーズ</th>
         <td>
-          <ElementsFormSelect :items="['エリア杯', 'ヤグラ杯', 'ホコ杯']" />
+          <ElementsFormSelect
+            :items="[
+              { value: 1, name: 'エリア杯' },
+              { value: 2, name: 'ヤグラ杯' },
+              { value: 3, name: 'ホコ杯' },
+            ]"
+          />
         </td>
       </tr>
       <tr>
@@ -149,7 +159,14 @@
             <tr>
               <th>組み合わせ</th>
               <td>
-                <ElementsFormSelect /><br />
+                <ElementsFormSelect
+                  :items="[
+                    { value: 1, name: '自動（1位抜け降順、2位抜け昇順）' },
+                    { value: 2, name: '申請順' },
+                    { value: 3, name: '平均Xパワー順' },
+                    { value: 4, name: 'シャッフル' },
+                  ]"
+                /><br />
                 <ElementsFormSelectButton
                   >ベスト8シャッフル</ElementsFormSelectButton
                 >
@@ -195,7 +212,9 @@
           }}</ElementsButton>
         </li>
         <li v-if="kind === 'edit'">
-          <ElementsButton @click="modalState = true" class="-link">大会を削除する</ElementsButton>
+          <ElementsButton @click="modalState = true" class="-link"
+            >大会を削除する</ElementsButton
+          >
         </li></BlocksList
       >
     </BlocksInformation>
