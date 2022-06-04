@@ -44,7 +44,7 @@
         <BlocksList class="-horizontal -center">
           <li>
             <ElementsButton class="-primary"
-              >大会へのエントリーを募集する</ElementsButton
+              >大会へのエントリーリンクをコピーする</ElementsButton
             >
           </li>
         </BlocksList>
