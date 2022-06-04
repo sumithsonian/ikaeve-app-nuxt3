@@ -63,7 +63,7 @@
           </li>
           <li>
             <nuxt-link to="/players/"
-              ><ElementsIcon> person </ElementsIcon> ユーザー一覧</nuxt-link
+              ><ElementsIcon> person </ElementsIcon> プレイヤー一覧</nuxt-link
             >
           </li>
         </ul>
