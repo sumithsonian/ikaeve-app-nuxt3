@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-const isActive = useDeleteTeamModalState()
+const isActive = useEntryTeamModalState()
 </script>
 
 <script>

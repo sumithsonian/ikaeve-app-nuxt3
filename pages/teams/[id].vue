@@ -21,6 +21,13 @@
             >
           </li>
         </BlocksList>
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton @click="modalState = true" class="-primary"
+              >チームにエントリーする</ElementsButton
+            >
+          </li>
+        </BlocksList>
       </BlocksInformation>
     </template>
   </div>
@@ -28,6 +35,7 @@
 
 <script setup>
 const route = useRoute()
+const modalState = useEntryTeamModalState()
 const team = (await $fetch(`/api/teams/${route.params.id}`)).data
 const title = team.name
 useHead({
