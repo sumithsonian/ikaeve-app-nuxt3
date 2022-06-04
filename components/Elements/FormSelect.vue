@@ -22,7 +22,9 @@ export default {
   data() {
     return {
       isActive: false,
-      selectedItem: this.items[0],
+      selectedItem:
+        this.items.find((item) => (item.value === this.modelValue)) ||
+        this.items[0],
     }
   },
   methods: {
