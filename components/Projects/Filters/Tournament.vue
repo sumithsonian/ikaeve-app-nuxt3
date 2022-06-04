@@ -16,7 +16,7 @@
 <script>
 export default {
   props: {
-    modelValue: { type: [String, Number, Boolean, Array], default: null },
+    modelValue: { type: Object, default: null },
   },
   data() {
     return {
@@ -28,14 +28,11 @@ export default {
     }
   },
   computed: {
-    // @memo: deepな変化がとれてない
     localValue: {
-      get: () => {
+      get() {
         return this.modelValue
       },
-      set: (value) => {
-        console.log(1)
-        console.log(value)
+      set(value) {
         this.$emit('update:modelValue', value)
       },
     },
