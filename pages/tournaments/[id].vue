@@ -11,7 +11,7 @@
     </template>
     <NuxtPage :tournament="tournament" />
     <template v-if="!route.path.includes('edit')">
-      <BlocksInformation v-if="!route.path.includes('edit')">
+      <BlocksInformation>
         <BlocksParagraph class="-center"
           >募集チームが揃いました</BlocksParagraph
         >
@@ -39,6 +39,8 @@
             >
           </li>
         </BlocksList>
+      </BlocksInformation>
+      <BlocksInformation>
         <BlocksList class="-horizontal -center">
           <li>
             <ElementsButton class="-primary"
