@@ -11,6 +11,8 @@
     <ProjectsModalsEntryTournament />
     <ProjectsModalsEntryTeam />
     <ProjectsModalsDeleteTeam />
+    <ProjectsModalsApprovalTeamMember />
+    <ProjectsModalsDeleteTeamMember />
     <ProjectsModalsDeletePlayer />
   </div>
 </template>

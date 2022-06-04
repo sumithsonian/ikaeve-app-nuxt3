@@ -61,6 +61,10 @@ export default {
   background: $color-gray-09;
   color: $color-primary;
 
+
+  &.-small {
+    padding: $space-xsmall $space;
+  }
   &.-large {
     padding: $space $space-xlarge;
   }

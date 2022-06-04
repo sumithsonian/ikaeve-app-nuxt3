@@ -40,13 +40,23 @@
       <tr>
         <th>メンバー</th>
         <td>
-          <ElementsPlayer
-            v-for="(player, i) of players"
-            :name="player.name"
-            :image-url="player.image_url"
-            :twitter-url="player.twitter_url"
-            :key="i"
-          />
+          <div v-for="(player, i) of players" :key="i">
+            <ElementsPlayer
+              :name="player.name"
+              :image-url="player.image_url"
+              :twitter-url="player.twitter_url"
+            />
+            <ElementsButton
+              @click="approvalTeamMemberModalState = true"
+              class="-primary -small"
+              >承認する</ElementsButton
+            >
+            <ElementsButton
+              @click="deleteTeamMemberModalState = true"
+              class="-small"
+              >削除する</ElementsButton
+            >
+          </div>
           <ElementsText class="-sub -xsmall"
             >登録後にメンバー募集リンクが表示されます。メンバーにリンクを送り、チーム参加申請をお願いしましょう。</ElementsText
           >
@@ -73,7 +83,7 @@
           }}</ElementsButton>
         </li>
         <li v-if="kind === 'edit'">
-          <ElementsButton @click="modalState = true" class="-link"
+          <ElementsButton @click="deleteTeamModalState = true" class="-link"
             >チームを削除する</ElementsButton
           >
         </li></BlocksList
@@ -84,7 +94,9 @@
 
 <script setup>
 const players = (await $fetch('/api/users')).data
-const modalState = useDeleteTeamModalState()
+const deleteTeamModalState = useDeleteTeamModalState()
+const approvalTeamMemberModalState = useApprovalTeamMemberModalState()
+const deleteTeamMemberModalState = useDeleteTeamMemberModalState()
 </script>
 
 <script>
