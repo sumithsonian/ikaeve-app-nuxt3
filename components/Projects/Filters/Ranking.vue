@@ -16,7 +16,13 @@ export default {
     return {
       gameTitles: ['Splatoon 3', 'Splatoon 2'],
       years: ['2022'],
-      seasons: ['初春シーズン', '春シーズン', '夏シーズン', '秋シーズン'],
+      seasons: [
+        '初春シーズン',
+        '春シーズン',
+        '夏シーズン',
+        '秋シーズン',
+        '年間',
+      ],
     }
   },
 }
