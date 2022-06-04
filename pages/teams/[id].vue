@@ -12,6 +12,17 @@
       <ProjectsTabsTeam :id="team.id" />
     </template>
     <NuxtPage :team="team" />
+    <template v-if="!route.path.includes('edit')">
+      <BlocksInformation>
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton class="-primary"
+              >メンバー募集リンクを<br />コピー</ElementsButton
+            >
+          </li>
+        </BlocksList>
+      </BlocksInformation>
+    </template>
   </div>
 </template>
 
