@@ -61,7 +61,6 @@ export default {
   background: $color-gray-09;
   color: $color-primary;
 
-
   &.-small {
     padding: $space-xsmall $space;
   }
@@ -72,6 +71,7 @@ export default {
   &.-primary {
     background: $color-primary;
     color: $color-black;
+    border-color: transparent;
   }
   &.-twitter {
     background: $color-twitter;
@@ -102,6 +102,10 @@ export default {
       align-items: center;
       line-height: 1;
     }
+  }
+  &:disabled {
+    background-color: rgba($color-primary, 0.4);
+    color: rgba($color-black, 0.4)
   }
 }
 </style>

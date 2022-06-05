@@ -71,5 +71,13 @@ export default {
   &.-block {
     width: 100%;
   }
+
+  &.-large &__input {
+    font-size: $font-large;
+  }
+
+  &.-center &__input {
+    text-align: center;
+  }
 }
 </style>
