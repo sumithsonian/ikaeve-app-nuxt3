@@ -1,6 +1,6 @@
 <template>
   <div class="dropdown">
-    <button class="dropdown__actionBtn" @click.stop="doDropdown">
+    <button class="dropdown__actionBtns" @click.stop="doDropdown">
       {{ selectedItem }}<ElementsIcon> keyboard_arrow_down </ElementsIcon>
     </button>
     <div v-if="isActive" class="dropdown__contents">
@@ -49,7 +49,7 @@ export default {
 
 .dropdown {
   position: relative;
-  &__actionBtn {
+  &__actionBtns {
     font-size: $font-small;
     display: inline-flex;
     align-items: center;

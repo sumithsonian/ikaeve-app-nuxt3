@@ -1,7 +1,8 @@
 <template>
   <div class="formSelect">
-    <button class="formSelect__actionBtn" @click.stop="doFormSelect">
-      {{ selectedItem.name }}<ElementsIcon> unfold_more </ElementsIcon>
+    <button class="formSelect__actionBtns" @click.stop="doFormSelect">
+      <span>{{ selectedItem.name }}</span
+      ><ElementsIcon> unfold_more </ElementsIcon>
     </button>
     <div v-if="isActive" class="formSelect__contents">
       <ul>
@@ -54,7 +55,7 @@ export default {
 .formSelect {
   position: relative;
 
-  &__actionBtn {
+  &__actionBtns {
     font-size: $font-small;
     display: inline-flex;
     align-items: center;

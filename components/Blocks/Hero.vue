@@ -8,7 +8,7 @@
         :name="name"
         :image-url="imageUrl"
       />
-      <ul class="hero__text__actions">
+      <ul class="hero__text__actionBtns">
         <li v-if="twitterUrl">
           <nuxt-link :to="twitterUrl" target="_blank">
             <img
@@ -38,7 +38,7 @@
           <ElementsTag class="-xsmall -tip">{{ tag.name }}</ElementsTag>
         </li>
       </ul>
-      <ul class="hero__image__actions">
+      <ul class="hero__image__actionBtns">
         <li>
           <button @click="$router.go(-1)">
             <ElementsIcon> arrow_back_ios </ElementsIcon>
@@ -86,7 +86,7 @@ export default {
       margin: $space;
       font-size: $font-large;
     }
-    &__actions {
+    &__actionBtns {
       position: absolute;
       display: flex;
       justify-content: space-between;
@@ -108,7 +108,7 @@ export default {
       gap: $space-small;
       padding: $space-small;
     }
-    &__actions {
+    &__actionBtns {
       width: 100%;
       position: absolute;
       display: flex;

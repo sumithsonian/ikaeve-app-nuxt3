@@ -2,7 +2,7 @@
   <div class="modal">
     <BlocksOverlay @click="close" />
     <div class="modal__wrapper">
-      <div class="modal__wrapper__actions">
+      <div class="modal__wrapper__actionBtns">
         <button @click="close"><ElementsIcon>close</ElementsIcon></button>
       </div>
       <div class="modal__wrapper__contents">
@@ -32,7 +32,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    &__actions {
+    &__actionBtns {
       text-align: right;
     }
     &__contents {

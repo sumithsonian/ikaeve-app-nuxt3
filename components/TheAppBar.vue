@@ -36,7 +36,7 @@
     </nav>
     <BlocksOverlay @click="close" v-if="isActive" />
     <div v-if="isActive" class="appNav__drawer">
-      <div class="appNav__drawer__actions">
+      <div class="appNav__drawer__actionBtns">
         <button @click="close"><ElementsIcon>close</ElementsIcon></button>
       </div>
       <div class="appNav__drawer__menu">
