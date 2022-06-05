@@ -5,12 +5,18 @@
       <tr>
         <th>チーム種別</th>
         <td>
-          <ElementsFormSelectButton type="radio"
-            >プレイヤーチーム</ElementsFormSelectButton
-          >
-          <ElementsFormSelectButton type="radio"
-            >大会主催団体</ElementsFormSelectButton
-          >
+          <ul>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >プレイヤーチーム</ElementsFormSelectButton
+              >
+            </li>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >大会主催団体</ElementsFormSelectButton
+              >
+            </li>
+          </ul>
         </td>
       </tr>
       <tr>
@@ -61,21 +67,31 @@
               </div>
             </li>
           </ul>
-          <ElementsText class="-sub -xsmall"
-            >登録後にメンバー募集リンクが表示されます。メンバーにリンクを送り、チーム参加申請をお願いしましょう。</ElementsText
+          <ElementsAttention class="form__entryMemberAttention"
+            >チーム作成後にメンバー募集リンクが表示されます。メンバーにリンクを送り、チーム参加申請をお願いしましょう。</ElementsAttention
           >
         </td>
       </tr>
       <tr>
         <th>公開設定</th>
         <td>
-          <ElementsFormSelectButton type="radio">公開</ElementsFormSelectButton>
-          <ElementsFormSelectButton type="radio"
-            >限定公開</ElementsFormSelectButton
-          >
-          <ElementsFormSelectButton type="radio"
-            >非公開</ElementsFormSelectButton
-          >
+          <ul>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >公開</ElementsFormSelectButton
+              >
+            </li>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >限定公開</ElementsFormSelectButton
+              >
+            </li>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >非公開</ElementsFormSelectButton
+              >
+            </li>
+          </ul>
         </td>
       </tr>
     </BlocksFormTable>
@@ -132,6 +148,9 @@ export default {
       display: flex;
       gap: $space-small;
     }
+  }
+  &__entryMemberAttention {
+    margin-top: $space;
   }
 }
 </style>
