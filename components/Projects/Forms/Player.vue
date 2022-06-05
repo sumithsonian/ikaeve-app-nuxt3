@@ -25,10 +25,18 @@
       <tr>
         <th>公開設定</th>
         <td>
-          <ElementsFormSelectButton type="radio">公開</ElementsFormSelectButton>
-          <ElementsFormSelectButton type="radio"
-            >限定公開</ElementsFormSelectButton
-          >
+          <ul>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >公開</ElementsFormSelectButton
+              >
+            </li>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >限定公開</ElementsFormSelectButton
+              >
+            </li>
+          </ul>
         </td>
       </tr>
     </BlocksFormTable>
