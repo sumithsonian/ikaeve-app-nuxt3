@@ -24,7 +24,7 @@ export default {
     return {
       isActive: false,
       selectedItem:
-        this.items.find((item) => (item.value === this.modelValue)) ||
+        this.items.find((item) => item.value === this.modelValue) ||
         this.items[0],
     }
   },
@@ -59,7 +59,15 @@ export default {
     font-size: $font-small;
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
+    gap: $space;
+    .-button & {
+      padding: $space;
+      background: $color-gray-07;
+      border-radius: $radius-small;
+    }
   }
+
   &__contents {
     z-index: 1;
     position: absolute;

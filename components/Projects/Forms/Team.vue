@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form">
     <BlocksHeading>基本情報</BlocksHeading>
     <BlocksFormTable>
       <tr>
@@ -15,7 +15,7 @@
       </tr>
       <tr>
         <th>チーム名</th>
-        <td><ElementsFormInput /></td>
+        <td><ElementsFormInput class="-block" /></td>
       </tr>
       <tr>
         <th>チーム画像</th>
@@ -27,36 +27,40 @@
       </tr>
       <tr>
         <th>チーム概要</th>
-        <td><ElementsFormInput rows="5" /></td>
+        <td><ElementsFormInput rows="5" class="-block" /></td>
       </tr>
       <tr>
         <th>Twitter</th>
-        <td><ElementsFormInput /></td>
+        <td><ElementsFormInput class="-block" /></td>
       </tr>
       <tr>
         <th>Discorn</th>
-        <td><ElementsFormInput /></td>
+        <td><ElementsFormInput class="-block" /></td>
       </tr>
       <tr>
         <th>メンバー</th>
         <td>
-          <div v-for="(player, i) of players" :key="i">
-            <ElementsPlayer
-              :name="player.name"
-              :image-url="player.image_url"
-              :twitter-url="player.twitter_url"
-            />
-            <ElementsButton
-              @click="approvalTeamMemberModalState = true"
-              class="-primary -small"
-              >承認する</ElementsButton
-            >
-            <ElementsButton
-              @click="deleteTeamMemberModalState = true"
-              class="-small"
-              >削除する</ElementsButton
-            >
-          </div>
+          <ul class="form__memberList">
+            <li v-for="(player, i) of players" :key="i">
+              <ElementsPlayer
+                :name="player.name"
+                :image-url="player.image_url"
+                :twitter-url="player.twitter_url"
+              />
+              <div class="form__memberList__actionBtns">
+                <ElementsButton
+                  @click="approvalTeamMemberModalState = true"
+                  class="-primary -small"
+                  >承認する</ElementsButton
+                >
+                <ElementsButton
+                  @click="deleteTeamMemberModalState = true"
+                  class="-small"
+                  >削除する</ElementsButton
+                >
+              </div>
+            </li>
+          </ul>
           <ElementsText class="-sub -xsmall"
             >登録後にメンバー募集リンクが表示されます。メンバーにリンクを送り、チーム参加申請をお願いしましょう。</ElementsText
           >
@@ -111,3 +115,23 @@ export default {
   },
 }
 </script>
+
+<style scoped lang="scss">
+@import '@/assets/scss/_variables';
+
+.form {
+  &__memberList {
+    display: flex;
+    flex-direction: column;
+    gap: $space-small;
+    li {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__actionBtns {
+      display: flex;
+      gap: $space-small;
+    }
+  }
+}
+</style>

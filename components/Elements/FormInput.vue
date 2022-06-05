@@ -60,6 +60,7 @@ export default {
     border: none;
     padding: $space;
     background: $color-gray-07;
+    color: $color-white;
   }
 
   input:-webkit-autofill {

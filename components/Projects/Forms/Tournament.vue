@@ -5,12 +5,18 @@
       <tr>
         <th>対象タイトル</th>
         <td>
-          <ElementsFormSelectButton type="radio"
-            >スプラトゥーン3</ElementsFormSelectButton
-          >
-          <ElementsFormSelectButton type="radio"
-            >スプラトゥーン2</ElementsFormSelectButton
-          >
+          <ul>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >スプラトゥーン3</ElementsFormSelectButton
+              >
+            </li>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >スプラトゥーン2</ElementsFormSelectButton
+              >
+            </li>
+          </ul>
         </td>
       </tr>
       <tr>
@@ -18,6 +24,7 @@
         <td>
           <ElementsFormSelect
             :items="[{ value: 1, name: 'イカイベ運営チーム' }]"
+            class="-button"
           />
         </td>
       </tr>
@@ -30,6 +37,7 @@
               { value: 2, name: 'ヤグラ杯' },
               { value: 3, name: 'ホコ杯' },
             ]"
+            class="-button"
           />
         </td>
       </tr>
@@ -50,112 +58,125 @@
         <td><ElementsFormInput />〜<ElementsFormInput /></td>
       </tr>
       <tr>
-        <th>大会概要</th>
-        <td><ElementsFormInput rows="5" class="-block" /></td>
-      </tr>
-      <tr>
         <th>募集チーム数</th>
         <td><ElementsFormInput />〜<ElementsFormInput /></td>
       </tr>
       <tr>
         <th>チーム人数</th>
-        <td><ElementsFormInput /></td>
+        <td>
+          <ElementsFormSelect
+            :items="[
+              { value: 4, name: '4名' },
+              { value: 2, name: '2名' },
+            ]"
+            class="-button"
+          />
+        </td>
       </tr>
       <tr>
         <th>配信URL</th>
         <td><ElementsFormInput class="-block" /></td>
       </tr>
+      <tr>
+        <th>大会概要</th>
+        <td><ElementsFormInput rows="10" class="-block" /></td>
+      </tr>
     </BlocksFormTable>
-    <BlocksHeading>試合形式</BlocksHeading>
+    <BlocksHeading>大会ルール</BlocksHeading>
+    <BlocksFormTable>
+      <tr>
+        <th>形式</th>
+        <td>
+          <ElementsFormSelectButton
+            >予選リーグを開催する</ElementsFormSelectButton
+          >
+        </td>
+      </tr>
+    </BlocksFormTable>
     <BlocksFormTable>
       <tr>
         <th>予選</th>
         <td>
-          <ElementsFormSelectButton>予選リーグを開催</ElementsFormSelectButton>
           <BlocksFormTable>
             <tr>
-              <th>先取点</th>
-              <td><ElementsFormInput /></td>
+              <th>方式</th>
+              <td>
+                <ElementsFormSelectButton type="radio"
+                  >リーグ戦（ラウンドロビン）</ElementsFormSelectButton
+                >
+              </td>
             </tr>
             <tr>
-              <th>第1セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-            <tr>
-              <th>第2セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-            <tr>
-              <th>第3セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-          </BlocksFormTable>
-          <hr />
-          <BlocksFormTable>
-            <tr>
-              <th>1ブロックの最大チーム数</th>
-              <td><ElementsFormInput /></td>
+              <th>1ブロックの<wbr />チーム数</th>
+              <td><ElementsFormInput />（最大8チーム）</td>
             </tr>
             <tr>
               <th>予選通過順位</th>
-              <td><ElementsFormInput /></td>
+              <td><ElementsFormInput type="number" /></td>
             </tr>
             <tr>
               <th>予選規模</th>
-              <td>16〜24ブロック、決勝進出32〜48チームの予選になります。</td>
+              <td>
+                <ElementsAttention
+                  >16〜24ブロック、決勝進出32〜48チームの予選になります。</ElementsAttention
+                >
+              </td>
+            </tr>
+          </BlocksFormTable>
+
+          <BlocksFormTable>
+            <tr>
+              <th>先取点</th>
+              <td><ElementsFormInput type="number" />（BO3）</td>
+            </tr>
+            <tr v-for="(set, i) of [1, 2, 3]" :key="i">
+              <th>第{{ set }}セットルール</th>
+              <td>
+                <ElementsFormSelect
+                  :items="[
+                    { value: 1, name: 'エリア' },
+                    { value: 2, name: 'ホコバトル' },
+                    { value: 3, name: 'ヤグラ' },
+                    { value: 4, name: 'アサリ' },
+                    { value: 5, name: 'ナワバリ' },
+                  ]"
+                  class="-button"
+                />
+                <ElementsFormSelect
+                  :items="[
+                    { value: 1, name: '全ステージおまかせ（ロストあり）' },
+                    { value: 2, name: '全ステージおまかせ（ロストなし）' },
+                  ]"
+                  class="-button"
+                />
+              </td>
             </tr>
           </BlocksFormTable>
         </td>
       </tr>
+    </BlocksFormTable>
+    <BlocksFormTable>
       <tr>
         <th>本戦</th>
         <td>
-          <ElementsFormSelectButton type="radio"
-            >シングルエリミネーション</ElementsFormSelectButton
-          >
-          <ElementsFormSelectButton type="radio"
-            >ダブルエリミネーション</ElementsFormSelectButton
-          >
           <BlocksFormTable>
             <tr>
-              <th>先取点</th>
-              <td><ElementsFormInput /></td>
+              <th>方式</th>
+              <td>
+                <ul>
+                  <li>
+                    <ElementsFormSelectButton type="radio"
+                      >シングルエリミネーション</ElementsFormSelectButton
+                    >
+                  </li>
+                  <li>
+                    <ElementsFormSelectButton type="radio"
+                      >ダブルエリミネーション</ElementsFormSelectButton
+                    >
+                  </li>
+                </ul>
+              </td>
             </tr>
-            <tr>
-              <th>第1セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-            <tr>
-              <th>第2セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-            <tr>
-              <th>第3セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-          </BlocksFormTable>
-          <ElementsFormSelectButton
-            >決勝戦のルールだけ変更する</ElementsFormSelectButton
-          >
-          <BlocksFormTable>
-            <tr>
-              <th>先取点</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-            <tr>
-              <th>第1セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-            <tr>
-              <th>第2セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-            <tr>
-              <th>第3セット</th>
-              <td><ElementsFormInput /></td>
-            </tr>
-          </BlocksFormTable>
-          <BlocksFormTable>
             <tr>
               <th>組み合わせ</th>
               <td>
@@ -166,6 +187,7 @@
                     { value: 3, name: '平均Xパワー順' },
                     { value: 4, name: 'シャッフル' },
                   ]"
+                  class="-button"
                 /><br />
                 <ElementsFormSelectButton
                   >ベスト8シャッフル</ElementsFormSelectButton
@@ -173,34 +195,107 @@
               </td>
             </tr>
             <tr>
-              <th>3位決定選</th>
+              <th>3位決定戦</th>
               <td>
-                <ElementsFormSelectButton>実施する</ElementsFormSelectButton>
+                <ElementsFormSelectButton
+                  >3位決定戦を実施する</ElementsFormSelectButton
+                >
+              </td>
+            </tr>
+            <tr>
+              <th>決勝戦</th>
+              <td>
+                <ElementsFormSelectButton
+                  >決勝戦のルールだけ変更する</ElementsFormSelectButton
+                >
+              </td>
+            </tr>
+          </BlocksFormTable>
+          <BlocksFormTable>
+            <tr>
+              <th>先取点</th>
+              <td><ElementsFormInput />（BO3）</td>
+            </tr>
+            <tr v-for="(set, i) of [1, 2, 3]" :key="i">
+              <th>第{{ set }}セットルール</th>
+              <td>
+                <ElementsFormSelect
+                  :items="[
+                    { value: 1, name: 'エリア' },
+                    { value: 2, name: 'ホコバトル' },
+                    { value: 3, name: 'ヤグラ' },
+                    { value: 4, name: 'アサリ' },
+                    { value: 5, name: 'ナワバリ' },
+                  ]"
+                  class="-button"
+                />
+                <ElementsFormSelect
+                  :items="[
+                    { value: 1, name: '全ステージおまかせ（ロストあり）' },
+                    { value: 2, name: '全ステージおまかせ（ロストなし）' },
+                  ]"
+                  class="-button"
+                />
+              </td>
+            </tr>
+          </BlocksFormTable>
+          <BlocksFormTable>
+            <tr>
+              <th>先取点</th>
+              <td><ElementsFormInput />（BO3）</td>
+            </tr>
+            <tr v-for="(set, i) of [1, 2, 3]" :key="i">
+              <th>第{{ set }}セットルール</th>
+              <td>
+                <ElementsFormSelect
+                  :items="[
+                    { value: 1, name: 'エリア' },
+                    { value: 2, name: 'ホコバトル' },
+                    { value: 3, name: 'ヤグラ' },
+                    { value: 4, name: 'アサリ' },
+                    { value: 5, name: 'ナワバリ' },
+                  ]"
+                  class="-button"
+                />
+                <ElementsFormSelect
+                  :items="[
+                    { value: 1, name: '全ステージおまかせ（ロストあり）' },
+                    { value: 2, name: '全ステージおまかせ（ロストなし）' },
+                  ]"
+                  class="-button"
+                />
               </td>
             </tr>
           </BlocksFormTable>
         </td>
       </tr>
     </BlocksFormTable>
-    <BlocksHeading>公認大会申請</BlocksHeading>
+    <BlocksHeading>その他</BlocksHeading>
     <BlocksFormTable>
       <tr>
-        <th>申請</th>
-        <td></td>
+        <th>公認大会申請</th>
+        <td><ElementsFormSelectButton>申請する</ElementsFormSelectButton></td>
       </tr>
-    </BlocksFormTable>
-    <BlocksHeading>公開設定</BlocksHeading>
-    <BlocksFormTable>
       <tr>
         <th>公開設定</th>
         <td>
-          <ElementsFormSelectButton type="radio">公開</ElementsFormSelectButton>
-          <ElementsFormSelectButton type="radio"
-            >限定公開</ElementsFormSelectButton
-          >
-          <ElementsFormSelectButton type="radio"
-            >非公開</ElementsFormSelectButton
-          >
+          <ul>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >公開</ElementsFormSelectButton
+              >
+            </li>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >限定公開</ElementsFormSelectButton
+              >
+            </li>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >非公開</ElementsFormSelectButton
+              >
+            </li>
+          </ul>
         </td>
       </tr>
     </BlocksFormTable>

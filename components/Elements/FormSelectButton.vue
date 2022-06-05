@@ -64,13 +64,10 @@ export default {
   label {
     display: inline-flex;
     align-items: center;
+    gap: $space-xsmall;
   }
   :checked + label .material-icons {
     color: $color-secondary;
-  }
-
-  .material-icons {
-    width: 24px;
   }
 }
 </style>

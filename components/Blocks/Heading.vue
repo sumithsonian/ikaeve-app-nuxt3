@@ -12,7 +12,7 @@ h3 {
   font-size: $font;
   text-align: center;
   padding: $space;
-  margin-top: $space-large;
+  margin: $space-large $space $space;
   color: $color-gray-05;
 }
 </style>

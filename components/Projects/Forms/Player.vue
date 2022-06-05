@@ -4,7 +4,7 @@
     <BlocksFormTable>
       <tr>
         <th>ユーザー名</th>
-        <td><ElementsFormInput /></td>
+        <td><ElementsFormInput class="-block" /></td>
       </tr>
       <tr>
         <th>プロフィール画像</th>
@@ -16,11 +16,11 @@
       </tr>
       <tr>
         <th>コメント</th>
-        <td><ElementsFormInput :rows="6" /></td>
+        <td><ElementsFormInput :rows="6" class="-block" /></td>
       </tr>
       <tr>
         <th>フレンドコード</th>
-        <td><ElementsFormInput /></td>
+        <td><ElementsFormInput class="-block" /></td>
       </tr>
       <tr>
         <th>公開設定</th>
