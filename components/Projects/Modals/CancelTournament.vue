@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-const isActive = useDeletePlayerModalState()
+const isActive = useCancelTournamentModalState()
 </script>
 
 <script>

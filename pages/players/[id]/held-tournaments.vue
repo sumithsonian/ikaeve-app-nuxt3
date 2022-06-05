@@ -2,6 +2,7 @@
   <div>
     <BlocksHeading>開催した大会・5</BlocksHeading>
     <ProjectsCardsTournament :items="tournaments" />
+    <ProjectsPagination />
   </div>
 </template>
 

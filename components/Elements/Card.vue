@@ -37,7 +37,7 @@ export default {
       top: $space-small;
       right: $space-small;
       display: flex;
-      gap: $space-small;
+      gap: $space-xsmall;
     }
   }
   &__text {
@@ -50,6 +50,7 @@ export default {
       display: flex;
       flex-wrap: wrap;
       gap: $space-xsmall 0;
+
       dt,
       dd {
         font-size: $font-xsmall;
@@ -60,6 +61,14 @@ export default {
       }
       dd {
         width: calc(100% - 5em);
+      }
+
+      @include breakpointDown(small) {
+        display: block;
+        dt,
+        dd {
+          width: auto;
+        }
       }
     }
   }

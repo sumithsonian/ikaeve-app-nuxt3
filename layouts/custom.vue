@@ -7,7 +7,14 @@
     <ProjectsModalsLogin />
     <ProjectsModalsTournamentResultReport />
     <ProjectsModalsTournamentRule />
+    <ProjectsModalsDeleteTournament />
     <ProjectsModalsEntryTournament />
+    <ProjectsModalsCancelTournament />
+    <ProjectsModalsEntryTeam />
+    <ProjectsModalsDeleteTeam />
+    <ProjectsModalsApprovalTeamMember />
+    <ProjectsModalsDeleteTeamMember />
+    <ProjectsModalsDeletePlayer />
   </div>
 </template>
 

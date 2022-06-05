@@ -26,8 +26,8 @@
     <BlocksHeading>エレメント: ナビ系</BlocksHeading>
     <ProjectsTabsTournament />
     <BlocksIndexNav />
-    <ProjectsFiltersRanking />
-    <ProjectsFiltersTournament />
+    <ProjectsFiltersRanking v-model="query" />
+    <ProjectsFiltersTournament v-model="query2" />
     <BlocksHeading>エレメント: ボタン系</BlocksHeading>
     <BlocksList>
       <li><ElementsButton class="-primary">大会を開催する</ElementsButton></li>
@@ -137,7 +137,18 @@
       </tr>
       <tr>
         <th>大会概要</th>
-        <td><ElementsFormSelect /></td>
+        <td>
+          <ElementsFormSelect
+            :items="[
+              { value: 1, name: 'エリア' },
+              { value: 2, name: 'ホコバトル' },
+              { value: 3, name: 'ヤグラ' },
+              { value: 4, name: 'アサリ' },
+              { value: 5, name: 'ナワバリ' },
+            ]"
+            class="-button"
+          />
+        </td>
       </tr>
       <tr>
         <th>大会画像</th>
@@ -173,7 +184,7 @@
     </BlocksTable>
     <BlocksHeading>特殊系</BlocksHeading>
     <BlocksHeading>モーダル系</BlocksHeading>
-    <BlocksModal>
+    <BlocksModal v-if="false">
       <BlocksParagraph
         >通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト通常テキスト</BlocksParagraph
       >
@@ -182,9 +193,22 @@
 </template>
 
 <script setup>
+const route = useRoute()
 const players = (await $fetch('/api/users')).data
 const tournaments = (await $fetch('/api/tournaments')).data
 const teams = (await $fetch('/api/teams')).data
+
+const query = {
+  game_title: route.query.game_title || null,
+  year: route.query.year || null,
+  season: route.query.season || null,
+}
+
+const query2 = {
+  status: route.query.status || null,
+  sort: route.query.sort || null,
+  page: route.query.page || null,
+}
 </script>
 
 <script>

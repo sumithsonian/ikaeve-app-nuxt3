@@ -1,5 +1,5 @@
 <template>
-  <div class="formInput">
+  <div class="formInput" :class="$attrs.class">
     <template v-if="rows === 1">
       <input
         v-model="localValue"
@@ -27,6 +27,7 @@
 export default {
   inheritAttrs: false,
   props: {
+    modelValue: { type: [String, Number], default: null },
     type: { type: String, default: 'text' },
     value: { type: [String, Number], default: null },
     rows: { type: Number, default: 1 },
@@ -34,18 +35,11 @@ export default {
   computed: {
     localValue: {
       get() {
-        return this.value
+        return this.modelValue
       },
-    },
-    // フォーカスイベントを使うために必要
-    // see: https://jp.vuejs.org/v2/guide/components-custom-events.html
-    inputListeners() {
-      const vm = this
-      return Object.assign({}, this.$listeners, {
-        input(event) {
-          vm.$emit('input', event.target.value)
-        },
-      })
+      set(value) {
+        this.$emit('update:modelValue', value)
+      },
     },
   },
 }
@@ -65,13 +59,25 @@ export default {
     flex: 1;
     border: none;
     padding: $space;
-    background: $color-gray-05;
+    background: $color-gray-07;
+    color: $color-white;
   }
 
   input:-webkit-autofill {
     // 色が変わらないように、変化までの時間を長くした
     transition: background-color 86400s ease-in-out 0s,
       color 86400s ease-in-out 0s;
+  }
+  &.-block {
+    width: 100%;
+  }
+
+  &.-large &__input {
+    font-size: $font-large;
+  }
+
+  &.-center &__input {
+    text-align: center;
   }
 }
 </style>

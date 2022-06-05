@@ -1,12 +1,12 @@
 <template>
   <div class="dropdown">
-    <button class="dropdown__actionBtn" @click.stop="doDropdown">
-      {{ items[0] }}<ElementsIcon> keyboard_arrow_down </ElementsIcon>
+    <button class="dropdown__actionBtns" @click.stop="doDropdown">
+      {{ selectedItem }}<ElementsIcon> keyboard_arrow_down </ElementsIcon>
     </button>
     <div v-if="isActive" class="dropdown__contents">
       <ul>
         <li v-for="(item, i) of items" :key="i">
-          <button>{{ item }}</button>
+          <button @click="selectItem(i)">{{ item }}</button>
         </li>
       </ul>
     </div>
@@ -21,6 +21,7 @@ export default {
   data() {
     return {
       isActive: false,
+      selectedItem: this.items[0],
     }
   },
   methods: {
@@ -29,6 +30,9 @@ export default {
     },
     hideDropdown() {
       this.isActive = false
+    },
+    selectItem(i) {
+      this.selectedItem = this.items[i]
     },
   },
   mounted() {
@@ -45,7 +49,7 @@ export default {
 
 .dropdown {
   position: relative;
-  &__actionBtn {
+  &__actionBtns {
     font-size: $font-small;
     display: inline-flex;
     align-items: center;

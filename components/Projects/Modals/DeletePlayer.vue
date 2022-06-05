@@ -2,15 +2,17 @@
   <BlocksModal v-if="isActive" @close-from-child="close">
     <template #heading>退会する</template>
     <template #contents>
-      <BlocksParagraph class="-center">チームを削除しますか？</BlocksParagraph>
+      <BlocksParagraph class="-center">イカイベから退会しますか？</BlocksParagraph>
       <BlocksList class="-center">
         <li>
           <ElementsButton class="-primary -large"
-            >イカイベから退会しますか？</ElementsButton
+            >退会する</ElementsButton
           >
         </li>
         <li>
-          <ElementsButton class="-large">キャンセル</ElementsButton>
+          <ElementsButton @click="close" class="-large"
+            >キャンセル</ElementsButton
+          >
         </li>
       </BlocksList>
       <BlocksParagraph class="-center"

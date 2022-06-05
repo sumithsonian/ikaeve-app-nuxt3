@@ -5,8 +5,10 @@
         <template #image>
           <img :src="item.background_image_url" :alt="item.name" />
           <ul>
-            <li><span>イカイベ公式</span></li>
-            <li><span>募集中</span></li>
+            <li>
+              <ElementsTag class="-xxsmall -tip">イカイベ公式</ElementsTag>
+            </li>
+            <li><ElementsTag class="-xxsmall -tip">募集中</ElementsTag></li>
           </ul>
         </template>
         <template #text>
@@ -45,6 +47,16 @@ export default {
   margin: $space;
   > li {
     width: calc(50% - #{$space} / 2);
+  }
+  &.-scroll {
+    > li {
+      width: 60%;
+      flex-shrink: 0;
+    }
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 </style>

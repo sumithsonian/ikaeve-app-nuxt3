@@ -8,7 +8,7 @@
           <ElementsButton class="-primary -large">削除する</ElementsButton>
         </li>
         <li>
-          <ElementsButton class="-large">申請する</ElementsButton>
+          <ElementsButton @click="close" class="-large">キャンセル</ElementsButton>
         </li>
       </BlocksList>
       <BlocksParagraph class="-center"

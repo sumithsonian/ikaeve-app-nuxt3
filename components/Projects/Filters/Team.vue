@@ -3,9 +3,9 @@
     <li>
       <ElementsIcon> filter_alt </ElementsIcon>
       <ElementsTag tag="button" class="-xsmall is-active">全て</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">募集中</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">開催中</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">終了</ElementsTag>
+      <ElementsTag tag="button" class="-xsmall">メンバー募集中</ElementsTag>
+      <ElementsTag tag="button" class="-xsmall">ガチ</ElementsTag>
+      <ElementsTag tag="button" class="-xsmall">エンジョイ</ElementsTag>
     </li>
     <li>
       <ElementsFormSelect v-model="localValue.sort" :items="sorts" />
@@ -22,8 +22,8 @@ export default {
     return {
       sorts: [
         { value: null, name: '新着順' },
-        { value: 'popular', name: '人気順' },
         { value: 'udemae', name: 'ウデマエ順' },
+        { value: 'point', name: 'ポイント順' },
       ],
     }
   },

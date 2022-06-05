@@ -58,7 +58,12 @@ export default {
   border-radius: $radius-xlarge;
   display: inline-block;
   line-height: 1.2;
+  background: $color-gray-09;
+  color: $color-primary;
 
+  &.-small {
+    padding: $space-xsmall $space;
+  }
   &.-large {
     padding: $space $space-xlarge;
   }
@@ -66,16 +71,19 @@ export default {
   &.-primary {
     background: $color-primary;
     color: $color-black;
+    border-color: transparent;
   }
   &.-twitter {
     background: $color-twitter;
     border-color: $color-twitter;
+    color: $color-white;
   }
 
   &.-link {
     border: none;
     padding: 0 $space-xsmall;
     color: $color-primary;
+    background: transparent;
   }
   &.-circle {
     line-height: 0;
@@ -94,6 +102,10 @@ export default {
       align-items: center;
       line-height: 1;
     }
+  }
+  &:disabled {
+    background-color: rgba($color-primary, 0.4);
+    color: rgba($color-black, 0.4)
   }
 }
 </style>

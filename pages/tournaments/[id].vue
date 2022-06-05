@@ -1,70 +1,76 @@
 <template>
   <div>
-    <BlocksHero
-      v-if="!route.path.includes('edit')"
-      :name="tournament.name"
-      :background-image-url="tournament.background_image_url"
-      :tags="tournament.tags"
-      :detail-url="`/tournaments/${tournament.id}`"
-    />
-    <ProjectsTabsTournament
-      v-if="!route.path.includes('edit')"
-      :id="tournament.id"
-    />
-    <NuxtPage :page-key="route.path" :tournament="tournament" />
-    <BlocksInformation>
-      <BlocksParagraph class="-center">募集チームが揃いました</BlocksParagraph>
-      <BlocksList class="-horizontal -center">
-        <li>
-          <ElementsButton class="-primary">大会を開始する</ElementsButton>
-        </li>
-      </BlocksList>
-    </BlocksInformation>
-    <BlocksInformation>
-      <BlocksParagraph class="-center"
-        >募集チームが定員に達しませんでした</BlocksParagraph
-      >
-      <BlocksList class="-horizontal -center">
-        <li>
-          <ElementsButton
-            class="-primary"
-            :to="`/tournaments/${tournament.id}/edit`"
-            >期限を延ばす</ElementsButton
-          >
-        </li>
-        <li>
-          <ElementsButton
-            class="-primary"
-            :to="`/tournaments/${tournament.id}/edit`"
-            >大会を中止する</ElementsButton
-          >
-        </li>
-      </BlocksList>
-    </BlocksInformation>
-    <BlocksInformation>
-      <BlocksList class="-horizontal -center">
-        <li>
-          <ElementsButton class="-primary"
-            >大会へのエントリーを募集する</ElementsButton
-          >
-        </li>
-      </BlocksList>
-    </BlocksInformation>
-    <BlocksInformation>
-      <BlocksList class="-horizontal -center">
-        <li>
-          <ElementsButton @click="modalState = true" class="-primary"
-            >大会にエントリーする</ElementsButton
-          >
-        </li>
-      </BlocksList>
-    </BlocksInformation>
+    <template v-if="!route.path.includes('edit')">
+      <BlocksHero
+        :name="tournament.name"
+        :background-image-url="tournament.background_image_url"
+        :tags="tournament.tags"
+        :detail-url="`/tournaments/${tournament.id}`"
+      />
+      <ProjectsTabsTournament :id="tournament.id" />
+    </template>
+    <NuxtPage :tournament="tournament" />
+    <template v-if="!route.path.includes('edit')">
+      <BlocksInformation>
+        <BlocksParagraph class="-center"
+          >募集チームが揃いました</BlocksParagraph
+        >
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton class="-primary">大会を開始する</ElementsButton>
+          </li>
+        </BlocksList>
+        <BlocksParagraph class="-center"
+          >募集チームが定員に達しませんでした</BlocksParagraph
+        >
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton
+              class="-primary"
+              :to="`/tournaments/${tournament.id}/edit`"
+              >期限を延ばす</ElementsButton
+            >
+          </li>
+          <li>
+            <ElementsButton
+              class="-primary"
+              :to="`/tournaments/${tournament.id}/edit`"
+              >大会を中止する</ElementsButton
+            >
+          </li>
+        </BlocksList>
+      </BlocksInformation>
+      <BlocksInformation>
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton class="-primary"
+              >大会へのエントリーリンクをコピーする</ElementsButton
+            >
+          </li>
+        </BlocksList>
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton @click="entryTournamentModalState = true" class="-primary"
+              >大会にエントリーする</ElementsButton
+            >
+          </li>
+        </BlocksList>
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton @click="cancelTournamentModalState = true" class="-primary"
+              >大会のエントリーを取り消す</ElementsButton
+            >
+          </li>
+        </BlocksList>
+      </BlocksInformation>
+    </template>
   </div>
 </template>
 
 <script setup>
 const route = useRoute()
-const modalState = useEntryTournamentModalState()
+const entryTournamentModalState = useEntryTournamentModalState()
+const cancelTournamentModalState = useCancelTournamentModalState()
 const tournament = (await $fetch(`/api/tournaments/${route.params.id}`)).data
 const title = tournament.name
 useHead({

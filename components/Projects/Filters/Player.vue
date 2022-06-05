@@ -1,11 +1,11 @@
 <template>
   <BlocksFilter>
-    <li><ElementsDropdown :items="gameTitles" /></li>
     <li>
-      <ElementsDropdown :items="years" />
+      <ElementsIcon> filter_alt </ElementsIcon>
+      <ElementsTag tag="button" class="-xsmall is-active">全て</ElementsTag>
     </li>
     <li>
-      <ElementsDropdown :items="seasons" />
+      <ElementsFormSelect v-model="localValue.sort" :items="sorts" />
     </li>
   </BlocksFilter>
 </template>
@@ -17,14 +17,10 @@ export default {
   },
   data() {
     return {
-      gameTitles: ['Splatoon 3', 'Splatoon 2'],
-      years: ['2022'],
-      seasons: [
-        '初春シーズン',
-        '春シーズン',
-        '夏シーズン',
-        '秋シーズン',
-        '年間',
+      sorts: [
+        { value: null, name: '新着順' },
+        { value: 'udemae', name: 'ウデマエ順' },
+        { value: 'point', name: 'ポイント順' },
       ],
     }
   },

@@ -1,4 +1,5 @@
 export default defineEventHandler((event) => {
+  const query = useQuery(event)
   const tournaments = []
 
   for (let i = 1; i <= 6; i++) {

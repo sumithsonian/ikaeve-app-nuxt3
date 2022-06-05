@@ -1,18 +1,26 @@
 <template>
   <div>
     <TheHero />
+    <BlocksHeading>主催大会</BlocksHeading>
+    <ProjectsCardsTournament :items="tournaments" class="-scroll" />
+    <BlocksHeading>エントリ中の大会</BlocksHeading>
+    <ProjectsCardsTournament :items="tournaments" class="-scroll" />
     <BlocksHeading>募集中の大会</BlocksHeading>
-    <ProjectsCardsTournament :items="tournaments" />
+    <ProjectsCardsTournament :items="tournaments" class="-scroll" />
     <BlocksList class="-center">
       <li>
-        <ElementsButton to="/tournaments">全ての大会をみる</ElementsButton>
+        <ElementsButton to="/tournaments/?status=recruiting"
+          >全ての大会をみる</ElementsButton
+        >
       </li>
     </BlocksList>
     <BlocksHeading>開催中の大会</BlocksHeading>
-    <ProjectsCardsTournament :items="tournaments" />
+    <ProjectsCardsTournament :items="tournaments" class="-scroll" />
     <BlocksList class="-center">
       <li>
-        <ElementsButton to="/tournaments">全ての大会をみる</ElementsButton>
+        <ElementsButton to="/tournaments/?status=ongoing"
+          >全ての大会をみる</ElementsButton
+        >
       </li>
     </BlocksList>
   </div>

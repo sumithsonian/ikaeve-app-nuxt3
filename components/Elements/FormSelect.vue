@@ -1,12 +1,13 @@
 <template>
   <div class="formSelect">
-    <button class="formSelect__actionBtn" @click.stop="doFormSelect">
-      {{ items[0] }}<ElementsIcon> unfold_more </ElementsIcon>
+    <button class="formSelect__actionBtns" @click.stop="doFormSelect">
+      <span>{{ selectedItem.name }}</span
+      ><ElementsIcon> unfold_more </ElementsIcon>
     </button>
     <div v-if="isActive" class="formSelect__contents">
       <ul>
         <li v-for="(item, i) of items" :key="i">
-          <button>{{ item }}</button>
+          <button @click="selectItem(i)">{{ item.name }}</button>
         </li>
       </ul>
     </div>
@@ -16,11 +17,15 @@
 <script>
 export default {
   props: {
+    modelValue: { type: [String, Number], default: null },
     items: { type: Array, default: [] },
   },
   data() {
     return {
       isActive: false,
+      selectedItem:
+        this.items.find((item) => item.value === this.modelValue) ||
+        this.items[0],
     }
   },
   methods: {
@@ -29,6 +34,10 @@ export default {
     },
     hideFormSelect() {
       this.isActive = false
+    },
+    selectItem(i) {
+      this.selectedItem = this.items[i]
+      this.$emit('update:modelValue', this.items[i].value)
     },
   },
   mounted() {
@@ -46,11 +55,19 @@ export default {
 .formSelect {
   position: relative;
 
-  &__actionBtn {
+  &__actionBtns {
     font-size: $font-small;
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
+    gap: $space;
+    .-button & {
+      padding: $space;
+      background: $color-gray-07;
+      border-radius: $radius-small;
+    }
   }
+
   &__contents {
     z-index: 1;
     position: absolute;
