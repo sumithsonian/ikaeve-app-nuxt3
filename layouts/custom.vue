@@ -9,6 +9,7 @@
     <ProjectsModalsTournamentRule />
     <ProjectsModalsDeleteTournament />
     <ProjectsModalsEntryTournament />
+    <ProjectsModalsCancelTournament />
     <ProjectsModalsEntryTeam />
     <ProjectsModalsDeleteTeam />
     <ProjectsModalsApprovalTeamMember />

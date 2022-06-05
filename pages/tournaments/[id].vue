@@ -50,8 +50,15 @@
         </BlocksList>
         <BlocksList class="-horizontal -center">
           <li>
-            <ElementsButton @click="modalState = true" class="-primary"
+            <ElementsButton @click="entryTournamentModalState = true" class="-primary"
               >大会にエントリーする</ElementsButton
+            >
+          </li>
+        </BlocksList>
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton @click="cancelTournamentModalState = true" class="-primary"
+              >大会のエントリーを取り消す</ElementsButton
             >
           </li>
         </BlocksList>
@@ -62,7 +69,8 @@
 
 <script setup>
 const route = useRoute()
-const modalState = useEntryTournamentModalState()
+const entryTournamentModalState = useEntryTournamentModalState()
+const cancelTournamentModalState = useCancelTournamentModalState()
 const tournament = (await $fetch(`/api/tournaments/${route.params.id}`)).data
 const title = tournament.name
 useHead({
