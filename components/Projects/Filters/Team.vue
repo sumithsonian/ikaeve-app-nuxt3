@@ -4,6 +4,8 @@
       <ElementsIcon> filter_alt </ElementsIcon>
       <ElementsTag tag="button" class="-xsmall is-active">全て</ElementsTag>
       <ElementsTag tag="button" class="-xsmall">メンバー募集中</ElementsTag>
+      <ElementsTag tag="button" class="-xsmall">プレイヤーチーム</ElementsTag>
+      <ElementsTag tag="button" class="-xsmall">主催団体</ElementsTag>
       <ElementsTag tag="button" class="-xsmall">ガチ</ElementsTag>
       <ElementsTag tag="button" class="-xsmall">エンジョイ</ElementsTag>
     </li>
