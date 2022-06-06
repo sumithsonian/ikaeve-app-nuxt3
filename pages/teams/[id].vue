@@ -9,7 +9,7 @@
         :discord-url="team.discord_url"
         :detail-url="`/teams/${team.id}`"
       />
-      <ProjectsTabsTeam :id="team.id" />
+      <ProjectsTabsTeam :id="team.id" :type="team.type" />
     </template>
     <NuxtPage :team="team" />
     <template v-if="!route.path.includes('edit')">
