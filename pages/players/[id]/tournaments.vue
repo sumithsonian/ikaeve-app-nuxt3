@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BlocksHeading>参加した大会・5</BlocksHeading>
+    <BlocksHeading>エントリ大会・5</BlocksHeading>
     <ProjectsCardsTournament :items="tournaments" />
     <ProjectsPagination />
   </div>
