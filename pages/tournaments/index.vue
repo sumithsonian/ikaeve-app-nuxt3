@@ -14,11 +14,11 @@ useHead({
 })
 
 const route = useRoute()
-const query = {
-  status: route.query.status || null,
+const query = reactive({
+  statuses: route.query.statuses || [],
   sort: route.query.sort || null,
   page: route.query.page || null,
-}
+})
 
 const tournaments = (await $fetch('/api/tournaments')).data
 </script>

@@ -13,11 +13,11 @@ useHead({
 })
 
 const route = useRoute()
-const query = {
+const query = reactive({
   game_title: route.query.game_title || null,
   year: route.query.year || null,
   season: route.query.season || null,
-}
+})
 
 const players = (await $fetch('/api/users')).data
 </script>

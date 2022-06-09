@@ -14,12 +14,12 @@ useHead({
 })
 
 const route = useRoute()
-const query = {
+const query = reactive({
   is_recruited: route.query.is_recruited || null,
   atmospheres: route.query.atmospheres || [],
   sort: route.query.sort || null,
   page: route.query.page || null,
-}
+})
 
 const teams = (await $fetch('/api/teams')).data
 </script>

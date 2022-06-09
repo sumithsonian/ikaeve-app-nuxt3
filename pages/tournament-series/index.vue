@@ -14,10 +14,10 @@ useHead({
 })
 
 const route = useRoute()
-const query = {
+const query = reactive({
   sort: route.query.sort || null,
   page: route.query.page || null,
-}
+})
 
 const tournamentSeries = (await $fetch('/api/tournament-series')).data
 </script>
