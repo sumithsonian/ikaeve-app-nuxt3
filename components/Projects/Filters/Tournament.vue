@@ -2,10 +2,15 @@
   <BlocksFilter>
     <li>
       <ElementsIcon> filter_alt </ElementsIcon>
-      <ElementsTag tag="button" class="-xsmall is-active">全て</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">募集中</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">開催中</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">終了</ElementsTag>
+      <ElementsTag
+        v-for="(status, i) of statuses"
+        :key="i"
+        @click="selectStatus(status.value)"
+        tag="button"
+        class="-xsmall"
+        :class="{ 'is-active': status.value === localValue.status }"
+        >{{ status.name }}</ElementsTag
+      >
     </li>
     <li>
       <ElementsFormSelect v-model="localValue.sort" :items="sorts" />
@@ -25,6 +30,12 @@ export default {
         { value: 'popular', name: '人気順' },
         { value: 'udemae', name: 'ウデマエ順' },
       ],
+      statuses: [
+        { value: null, name: '全て' },
+        { value: 'recruiting', name: '募集中' },
+        { value: 'in_progress', name: '開催中' },
+        { value: 'finished', name: '終了' },
+      ],
     }
   },
   computed: {
@@ -35,6 +46,11 @@ export default {
       set(value) {
         this.$emit('update:modelValue', value)
       },
+    },
+  },
+  methods: {
+    selectStatus(status) {
+      this.localValue.status = status
     },
   },
 }

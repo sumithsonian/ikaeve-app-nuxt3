@@ -15,10 +15,23 @@ useHead({
 
 const route = useRoute()
 const query = reactive({
-  statuses: route.query.statuses || [],
+  status: route.query.status || [],
   sort: route.query.sort || null,
   page: route.query.page || null,
 })
 
 const tournaments = (await $fetch('/api/tournaments')).data
+
+watch(
+  () => query,
+  () => search(),
+  { deep: true },
+)
+
+function search() {
+  return navigateTo({
+    path: '/tournaments/',
+    query: query,
+  })
+}
 </script>
