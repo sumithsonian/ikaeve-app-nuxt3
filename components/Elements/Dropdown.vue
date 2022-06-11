@@ -1,12 +1,12 @@
 <template>
   <div class="dropdown">
     <button class="dropdown__actionBtns" @click.stop="doDropdown">
-      {{ selectedItem }}<ElementsIcon> keyboard_arrow_down </ElementsIcon>
+      {{ selectedItem.name }}<ElementsIcon> keyboard_arrow_down </ElementsIcon>
     </button>
     <div v-if="isActive" class="dropdown__contents">
       <ul>
         <li v-for="(item, i) of items" :key="i">
-          <button @click="selectItem(i)">{{ item }}</button>
+          <button @click="selectItem(i)">{{ item.name }}</button>
         </li>
       </ul>
     </div>
@@ -16,12 +16,15 @@
 <script>
 export default {
   props: {
+    modelValue: { type: [String, Number], default: null },
     items: { type: Array, default: [] },
   },
   data() {
     return {
       isActive: false,
-      selectedItem: this.items[0],
+      selectedItem:
+        this.items.find((item) => item.value === this.modelValue) ||
+        this.items[0],
     }
   },
   methods: {
@@ -33,6 +36,7 @@ export default {
     },
     selectItem(i) {
       this.selectedItem = this.items[i]
+      this.$emit('update:modelValue', this.items[i].value)
     },
   },
   mounted() {

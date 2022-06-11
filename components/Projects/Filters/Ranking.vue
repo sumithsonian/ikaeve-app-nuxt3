@@ -1,11 +1,13 @@
 <template>
   <BlocksFilter>
-    <li><ElementsDropdown :items="gameTitles" /></li>
     <li>
-      <ElementsDropdown :items="years" />
+      <ElementsDropdown :items="gameTitles" v-model="localValue.game_title" />
     </li>
     <li>
-      <ElementsDropdown :items="seasons" />
+      <ElementsDropdown :items="years" v-model="localValue.year" />
+    </li>
+    <li>
+      <ElementsDropdown :items="seasons" v-model="localValue.season" />
     </li>
   </BlocksFilter>
 </template>
@@ -17,14 +19,17 @@ export default {
   },
   data() {
     return {
-      gameTitles: ['Splatoon 3', 'Splatoon 2'],
-      years: ['2022'],
+      gameTitles: [
+        { value: 'splatoon_3', name: 'Splatoon 3' },
+        { value: 'splatoon_2', name: 'Splatoon 2' },
+      ],
+      years: [{ value: 2022, name: 2022 }],
       seasons: [
-        '初春シーズン',
-        '春シーズン',
-        '夏シーズン',
-        '秋シーズン',
-        '年間',
+        { value: 'early_spring', name: '初春シーズン' },
+        { value: 'spring', name: '春シーズン' },
+        { value: 'summer', name: '夏シーズン' },
+        { value: 'autumn', name: '秋シーズン' },
+        { value: 'annual', name: '年間' },
       ],
     }
   },
