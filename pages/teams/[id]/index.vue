@@ -29,10 +29,11 @@
       </BlocksList>
     </template>
     <template v-if="team.type === 'organizer'">
-      <template v-if="false">
-        <BlocksHeading>主催大会シリーズ</BlocksHeading>
-        <ProjectsCardsTournament :items="tournaments" class="-scroll" />
-      </template>
+      <BlocksHeading>主催大会シリーズ</BlocksHeading>
+      <ProjectsCardsTournamentSeries
+        :items="tournamentSeries"
+        class="-scroll"
+      />
       <BlocksHeading>最近の主催大会</BlocksHeading>
       <ProjectsCardsTournament :items="tournaments" class="-scroll" />
       <BlocksList class="-center">
@@ -56,6 +57,7 @@ const team = props.team
 const title = team.name
 const players = (await $fetch('/api/users')).data
 const tournaments = (await $fetch('/api/tournaments')).data
+const tournamentSeries = (await $fetch('/api/tournament-series')).data
 
 useHead({
   title: title,
