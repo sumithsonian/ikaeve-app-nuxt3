@@ -3,6 +3,8 @@
     <TheHero />
     <BlocksHeading>主催大会</BlocksHeading>
     <ProjectsCardsTournament :items="tournaments" class="-scroll" />
+    <BlocksHeading>主催大会シリーズ</BlocksHeading>
+    <ProjectsCardsTournamentSeries :items="tournamentSeries" class="-scroll" />
     <BlocksHeading>エントリ中の大会</BlocksHeading>
     <ProjectsCardsTournament :items="tournaments" class="-scroll" />
     <BlocksHeading>募集中の大会</BlocksHeading>
@@ -33,4 +35,5 @@ useHead({
 })
 
 const tournaments = (await $fetch('/api/tournaments')).data
+const tournamentSeries = (await $fetch('/api/tournament-series')).data
 </script>
