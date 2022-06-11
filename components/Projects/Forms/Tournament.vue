@@ -39,6 +39,10 @@
             ]"
             class="-button"
           />
+          <ElementsAttention
+            >大会シリーズは、大会をまとめて表示したり、ランキング対象となる公認大会の申請が可能になる機能です。<br />
+            <nuxt-link to="/tournament-series/create" target="_blank">大会シリーズ作成はこちら</nuxt-link></ElementsAttention
+          >
         </td>
       </tr>
       <tr>
@@ -272,10 +276,6 @@
     </BlocksFormTable>
     <BlocksHeading>その他</BlocksHeading>
     <BlocksFormTable>
-      <tr>
-        <th>公認大会申請</th>
-        <td><ElementsFormSelectButton>申請する</ElementsFormSelectButton></td>
-      </tr>
       <tr>
         <th>公開設定</th>
         <td>
