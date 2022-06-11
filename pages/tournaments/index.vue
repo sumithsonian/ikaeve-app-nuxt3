@@ -15,7 +15,7 @@ useHead({
 
 const route = useRoute()
 const query = reactive({
-  status: route.query.status || [],
+  status: route.query.status || null,
   sort: route.query.sort || null,
   page: route.query.page || null,
 })
