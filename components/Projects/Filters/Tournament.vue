@@ -5,7 +5,7 @@
       <ElementsTag
         v-for="(status, i) of statuses"
         :key="i"
-        @click="selectStatus(status.value)"
+        @click="selectFilter(status.value)"
         tag="button"
         class="-xsmall"
         :class="{ 'is-active': status.value === localValue.status }"
@@ -49,8 +49,8 @@ export default {
     },
   },
   methods: {
-    selectStatus(status) {
-      this.localValue.status = status
+    selectFilter(value) {
+      this.localValue.status = value
     },
   },
 }
