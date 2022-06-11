@@ -57,6 +57,11 @@
             >
           </li>
           <li>
+            <nuxt-link to="/tournament-series/"
+              ><ElementsIcon> military_tech </ElementsIcon> 大会シリーズ一覧</nuxt-link
+            >
+          </li>
+          <li>
             <nuxt-link to="/teams/"
               ><ElementsIcon> people </ElementsIcon> チーム/団体一覧</nuxt-link
             >

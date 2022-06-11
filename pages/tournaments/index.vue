@@ -1,6 +1,7 @@
 <template>
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
+    <ProjectsTabsTournaments />
     <ProjectsFiltersTournament v-model="query" />
     <ProjectsCardsTournament :items="tournaments" />
     <ProjectsPagination />
