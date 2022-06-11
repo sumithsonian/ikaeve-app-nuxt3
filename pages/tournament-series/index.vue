@@ -20,4 +20,17 @@ const query = reactive({
 })
 
 const tournamentSeries = (await $fetch('/api/tournament-series')).data
+
+watch(
+  () => query,
+  () => search(),
+  { deep: true },
+)
+
+function search() {
+  return navigateTo({
+    path: '/tournament-series/',
+    query: query,
+  })
+}
 </script>
