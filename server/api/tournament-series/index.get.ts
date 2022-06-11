@@ -21,7 +21,7 @@ export default defineEventHandler((event) => {
       id: i,
       name: names[i - 1],
       background_image_url: images[i - 1],
-      comment:
+      description:
         '紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。',
       created_at: '2022-07-21 09:00',
       updated_at: '2022-07-21 09:00',
