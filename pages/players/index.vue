@@ -20,4 +20,17 @@ const query = reactive({
 })
 
 const players = (await $fetch('/api/users')).data
+
+watch(
+  () => query,
+  () => search(),
+  { deep: true },
+)
+
+function search() {
+  return navigateTo({
+    path: '/players/',
+    query: query,
+  })
+}
 </script>
