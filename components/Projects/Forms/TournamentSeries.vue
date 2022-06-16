@@ -46,6 +46,7 @@ const modalState = useDeleteTournamentModalState()
 <script>
 export default {
   props: {
+    modelValue: { type: Object, default: {} },
     kind: { type: String, default: null },
   },
   computed: {

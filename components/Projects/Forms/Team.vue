@@ -67,7 +67,9 @@
               </div>
             </li>
           </ul>
-          <ElementsAttention v-if="kind !== 'edit'" class="form__entryMemberAttention"
+          <ElementsAttention
+            v-if="kind !== 'edit'"
+            class="form__entryMemberAttention"
             >チーム作成後にメンバー募集リンクが表示されます。メンバーにリンクを送り、チーム参加申請をお願いしましょう。</ElementsAttention
           >
         </td>
@@ -122,6 +124,7 @@ const deleteTeamMemberModalState = useDeleteTeamMemberModalState()
 <script>
 export default {
   props: {
+    modelValue: { type: Object, default: {} },
     kind: { type: String, default: null },
   },
   computed: {

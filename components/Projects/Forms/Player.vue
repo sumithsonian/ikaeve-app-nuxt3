@@ -58,3 +58,11 @@
 <script setup>
 const modalState = useDeletePlayerModalState()
 </script>
+
+<script>
+export default {
+  props: {
+    modelValue: { type: Object, default: {} },
+  },
+}
+</script>
