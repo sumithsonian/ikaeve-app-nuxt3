@@ -11,7 +11,39 @@
     </template>
     <NuxtPage :tournament="tournament" />
     <template v-if="!route.path.includes('edit')">
-      <BlocksInformation>
+      <BlocksInformation v-if="tournament.status === 'recruiting'">
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton class="-primary"
+              >大会へのエントリーリンクをコピーする</ElementsButton
+            >
+          </li>
+        </BlocksList>
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton
+              @click="entryTournamentModalState = true"
+              class="-primary"
+              >大会にエントリーする</ElementsButton
+            >
+          </li>
+        </BlocksList>
+        <BlocksList class="-horizontal -center">
+          <li>
+            <ElementsButton
+              @click="cancelTournamentModalState = true"
+              class="-primary"
+              >大会のエントリーを取り消す</ElementsButton
+            >
+          </li>
+        </BlocksList>
+        <BlocksParagraph class="-center"
+          ><ElementsText class="-small"
+            >現在のエントリ数：12 / 128</ElementsText
+          ></BlocksParagraph
+        >
+      </BlocksInformation>
+      <BlocksInformation v-else-if="tournament.status === 'recruitment_closed'">
         <BlocksParagraph class="-center"
           >募集チームが揃いました</BlocksParagraph
         >
@@ -43,38 +75,6 @@
             >
           </li>
         </BlocksList>
-      </BlocksInformation>
-      <BlocksInformation>
-        <BlocksList class="-horizontal -center">
-          <li>
-            <ElementsButton class="-primary"
-              >大会へのエントリーリンクをコピーする</ElementsButton
-            >
-          </li>
-        </BlocksList>
-        <BlocksList class="-horizontal -center">
-          <li>
-            <ElementsButton
-              @click="entryTournamentModalState = true"
-              class="-primary"
-              >大会にエントリーする</ElementsButton
-            >
-          </li>
-        </BlocksList>
-        <BlocksList class="-horizontal -center">
-          <li>
-            <ElementsButton
-              @click="cancelTournamentModalState = true"
-              class="-primary"
-              >大会のエントリーを取り消す</ElementsButton
-            >
-          </li>
-        </BlocksList>
-        <BlocksParagraph class="-center"
-          ><ElementsText class="-small"
-            >現在のエントリ数：12 / 128</ElementsText
-          ></BlocksParagraph
-        >
       </BlocksInformation>
     </template>
   </div>
