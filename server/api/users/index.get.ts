@@ -2,11 +2,24 @@ export default defineEventHandler((event) => {
   const query = useQuery(event)
   const users = []
 
-  for (let i = 1; i <= 5; i++) {
+  const names = [
+    'イカイベ管理者',
+    '大会運営管理者',
+    '大会運営メンバー',
+    'プレイヤーチーム管理者',
+    'プレイヤーチームメンバー',
+    'A（一般ユーザー）',
+    'B（一般ユーザー）',
+    'C（一般ユーザー）',
+    'D（一般ユーザー）',
+    'E（一般ユーザー）',
+  ]
+
+  for (let i = 1; i <= 10; i++) {
     users.push({
       kind: 'user',
       id: i,
-      name: `プレイヤー${i}さん`,
+      name: names[i - 1],
       image_url: 'https://placehold.jp/150x150.png',
       background_image_url: 'https://placehold.jp/1080x360.png',
       comment:
@@ -21,6 +34,7 @@ export default defineEventHandler((event) => {
         rank: i,
         position: 'keep',
       },
+      is_administrator: i === 1,
       created_at: '2022-07-21 09:00',
       updated_at: '2022-07-21 09:00',
     })
