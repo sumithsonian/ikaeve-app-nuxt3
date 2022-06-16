@@ -1,7 +1,7 @@
 <template>
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
-    <ProjectsFormsTournament kind="edit" />
+    <ProjectsFormsTournament v-model="formData" kind="edit" />
   </div>
 </template>
 
@@ -9,5 +9,9 @@
 const title = '大会の編集'
 useHead({
   title: title,
+})
+
+const formData = reactive({
+  questions: [],
 })
 </script>

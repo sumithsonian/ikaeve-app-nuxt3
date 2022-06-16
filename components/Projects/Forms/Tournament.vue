@@ -41,7 +41,9 @@
           />
           <ElementsAttention
             >大会シリーズは、大会をまとめて表示したり、ランキング対象となる公認大会の申請が可能になる機能です。<br />
-            <nuxt-link to="/tournament-series/create" target="_blank">大会シリーズ作成はこちら</nuxt-link></ElementsAttention
+            <nuxt-link to="/tournament-series/create" target="_blank"
+              >大会シリーズ作成はこちら</nuxt-link
+            ></ElementsAttention
           >
         </td>
       </tr>
@@ -63,7 +65,12 @@
       </tr>
       <tr>
         <th>募集チーム数</th>
-        <td><ElementsFormInput />〜<ElementsFormInput /></td>
+        <td>
+          <ElementsFormInput />〜<ElementsFormInput />
+          <ElementsAttention
+            >募集上限をこえた場合は、エントリー順で参加が確定されます。</ElementsAttention
+          >
+        </td>
       </tr>
       <tr>
         <th>チーム人数</th>
@@ -84,6 +91,20 @@
       <tr>
         <th>大会概要</th>
         <td><ElementsFormInput rows="10" class="-block" /></td>
+      </tr>
+    </BlocksFormTable>
+    <BlocksHeading>大会エントリ方法</BlocksHeading>
+    <BlocksFormTable>
+      <tr>
+        <th>エントリ時の質問</th>
+        <td>
+          <ElementsFormInput
+            v-for="(question, i) of modelValue.questions"
+            v-model="modelValue.questions[i]"
+            class="-block"
+            :key="i"
+          />
+        </td>
       </tr>
     </BlocksFormTable>
     <BlocksHeading>大会ルール</BlocksHeading>
@@ -108,6 +129,18 @@
                 <ElementsFormSelectButton type="radio"
                   >リーグ戦（ラウンドロビン）</ElementsFormSelectButton
                 >
+              </td>
+            </tr>
+            <tr>
+              <th>組み合わせ</th>
+              <td>
+                <ElementsFormSelect
+                  :items="[
+                    { value: 1, name: 'シャッフル' },
+                    { value: 2, name: 'レーティング順' },
+                  ]"
+                  class="-button"
+                />
               </td>
             </tr>
             <tr>
@@ -187,12 +220,11 @@
                 <ElementsFormSelect
                   :items="[
                     { value: 1, name: '自動（1位抜け降順、2位抜け昇順）' },
-                    { value: 2, name: '申請順' },
-                    { value: 3, name: '平均Xパワー順' },
-                    { value: 4, name: 'シャッフル' },
+                    { value: 2, name: 'シャッフル' },
+                    { value: 3, name: 'レーティング順' }, // 予選があるときは表示されない
                   ]"
                   class="-button"
-                /><br />
+                />
                 <ElementsFormSelectButton
                   >ベスト8シャッフル</ElementsFormSelectButton
                 >
@@ -225,10 +257,10 @@
               <td>
                 <ElementsFormSelect
                   :items="[
-                    { value: 1, name: 'エリア' },
-                    { value: 2, name: 'ホコバトル' },
-                    { value: 3, name: 'ヤグラ' },
-                    { value: 4, name: 'アサリ' },
+                    { value: 1, name: 'ガチエリア' },
+                    { value: 2, name: 'ガチホコバトル' },
+                    { value: 3, name: 'ガチヤグラ' },
+                    { value: 4, name: 'ガチアサリ' },
                     { value: 5, name: 'ナワバリ' },
                   ]"
                   class="-button"

@@ -62,6 +62,7 @@ export default defineEventHandler((event) => {
           },
         },
       },
+      questions: ['イキゴミ', '好きなブキ'],
     })
   }
 
