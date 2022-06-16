@@ -58,7 +58,8 @@
           </li>
           <li>
             <nuxt-link to="/tournament-series/"
-              ><ElementsIcon> military_tech </ElementsIcon> 大会シリーズ一覧</nuxt-link
+              ><ElementsIcon> military_tech </ElementsIcon>
+              大会シリーズ一覧</nuxt-link
             >
           </li>
           <li>
@@ -102,11 +103,16 @@
             >
           </li>
           <li>
-            <nuxt-link to="/"
+            <nuxt-link to="/tournament-series/create"
+              ><ElementsIcon> add </ElementsIcon> シリーズ作成</nuxt-link
+            >
+          </li>
+          <li v-if="isLoggedIn">
+            <nuxt-link to="/logout"
               ><ElementsIcon> logout </ElementsIcon> ログアウト</nuxt-link
             >
           </li>
-          <li>
+          <li v-else>
             <nuxt-link to="/"
               ><ElementsIcon> login </ElementsIcon>
               新規会員登録/ログイン</nuxt-link
@@ -117,6 +123,10 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const isLoggedIn = useIsLoggedInState()
+</script>
 
 <script>
 export default {
