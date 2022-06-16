@@ -96,6 +96,23 @@
     <BlocksHeading>大会エントリ方法</BlocksHeading>
     <BlocksFormTable>
       <tr>
+        <th>エントリ方法</th>
+        <td>
+          <ul>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >エントリ</ElementsFormSelectButton
+              >
+            </li>
+            <li>
+              <ElementsFormSelectButton type="radio"
+                >招待（主催者にてリスト登録）</ElementsFormSelectButton
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
         <th>エントリ時の質問</th>
         <td>
           <ElementsFormInput
