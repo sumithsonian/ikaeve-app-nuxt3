@@ -10,6 +10,16 @@
         ></BlocksParagraph
       >
     </section>
+    <BlocksInformation>
+      <BlocksList class="-horizontal -center">
+        <li>
+          <ElementsButton>シャッフルし直す</ElementsButton>
+        </li>
+        <li>
+          <ElementsButton class="-primary">組み合わせを決定する</ElementsButton>
+        </li>
+      </BlocksList>
+    </BlocksInformation>
   </div>
 </template>
 

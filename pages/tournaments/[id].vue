@@ -17,7 +17,11 @@
         >
         <BlocksList class="-horizontal -center">
           <li>
-            <ElementsButton class="-primary">大会を開始する</ElementsButton>
+            <ElementsButton
+              :to="`/tournaments/${tournament.id}/qualifying`"
+              class="-primary"
+              >組み合わせの決定に進む</ElementsButton
+            >
           </li>
         </BlocksList>
         <BlocksParagraph class="-center"
@@ -50,14 +54,18 @@
         </BlocksList>
         <BlocksList class="-horizontal -center">
           <li>
-            <ElementsButton @click="entryTournamentModalState = true" class="-primary"
+            <ElementsButton
+              @click="entryTournamentModalState = true"
+              class="-primary"
               >大会にエントリーする</ElementsButton
             >
           </li>
         </BlocksList>
         <BlocksList class="-horizontal -center">
           <li>
-            <ElementsButton @click="cancelTournamentModalState = true" class="-primary"
+            <ElementsButton
+              @click="cancelTournamentModalState = true"
+              class="-primary"
               >大会のエントリーを取り消す</ElementsButton
             >
           </li>
