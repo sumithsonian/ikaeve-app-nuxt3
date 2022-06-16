@@ -70,6 +70,11 @@
             >
           </li>
         </BlocksList>
+        <BlocksParagraph class="-center"
+          ><ElementsText class="-small"
+            >現在のエントリ数：12 / 128</ElementsText
+          ></BlocksParagraph
+        >
       </BlocksInformation>
     </template>
   </div>
