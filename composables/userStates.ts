@@ -3,6 +3,6 @@ export const useIsLoggedInState = () =>
   useState<boolean>('isLoggedInState', () => false)
 
 // me
-const initialMe = {}
+const initialMe = { id: null }
 export const useMeState = () =>
   useState<typeof initialMe>('meState', () => initialMe)
