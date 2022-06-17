@@ -1,23 +1,25 @@
 <template>
   <div>
     <BlocksParagraph class="-center"
-      ><ElementsButton to="/">リダイレクト</ElementsButton></BlocksParagraph
+      ><ElementsButton to="/">HOME</ElementsButton></BlocksParagraph
     >
   </div>
 </template>
 
 <script setup>
+const route = useRoute()
+
 // トークン保存
-const token = (await $fetch(`/api/token?code=&state=`)).data
+// const token = (await $fetch(`/api/token?code=&state=`)).data
+const token = route.query.token
 const accessToken = useCookie('access_token')
 accessToken.value = token
 
 // ログイン: モックAPI用
-const route = useRoute()
 const isLoggedIn = useIsLoggedInState()
 const me = useMeState()
-if (route.query.id > 0 && route.query.id <= 6) {
-  const user = (await $fetch(`/api/users/${route.query.id}`)).data
+if (route.query.token) {
+  const user = (await $fetch(`/api/users/me?token=${token}`)).data
   me.value = user
   isLoggedIn.value = true
 }

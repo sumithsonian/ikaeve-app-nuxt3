@@ -1,32 +1,32 @@
 <template>
   <div>
     <BlocksParagraph class="-center"
-      ><ElementsButton to="/auth/callback?id=1"
+      ><ElementsButton to="/auth/callback?token=aaaaa"
         >イカイベ管理者</ElementsButton
       ></BlocksParagraph
     >
     <BlocksParagraph class="-center"
-      ><ElementsButton to="/auth/callback?id=2"
+      ><ElementsButton to="/auth/callback?token=bbbbb"
         >大会運営管理者</ElementsButton
       ></BlocksParagraph
     >
     <BlocksParagraph class="-center"
-      ><ElementsButton to="/auth/callback?id=3"
+      ><ElementsButton to="/auth/callback?token=ccccc"
         >大会運営メンバー</ElementsButton
       ></BlocksParagraph
     >
     <BlocksParagraph class="-center"
-      ><ElementsButton to="/auth/callback?id=4"
+      ><ElementsButton to="/auth/callback?token=ddddd"
         >プレイヤーチーム管理者</ElementsButton
       ></BlocksParagraph
     >
     <BlocksParagraph class="-center"
-      ><ElementsButton to="/auth/callback?id=5"
+      ><ElementsButton to="/auth/callback?token=eeeee"
         >プレイヤーチームメンバー</ElementsButton
       ></BlocksParagraph
     >
     <BlocksParagraph class="-center"
-      ><ElementsButton to="/auth/callback?id=6"
+      ><ElementsButton to="/auth/callback?token=fffff"
         >一般ユーザ</ElementsButton
       ></BlocksParagraph
     >
