@@ -6,6 +6,7 @@
         :background-image-url="tournament.background_image_url"
         :tags="tournament.tags"
         :detail-url="`/tournaments/${tournament.id}`"
+        :is-owner="tournament.is_owner"
       />
       <ProjectsTabsTournament :id="tournament.id" />
     </template>

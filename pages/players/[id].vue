@@ -7,6 +7,7 @@
         :background-image-url="player.background_image_url"
         :twitter-url="player.twitter_url"
         :detail-url="`/players/${player.id}`"
+        :is-owner="player.is_me"
       />
       <ProjectsTabsPlayer :id="player.id" />
     </template>

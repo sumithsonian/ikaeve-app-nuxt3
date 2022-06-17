@@ -8,6 +8,7 @@
         :twitter-url="team.twitter_url"
         :discord-url="team.discord_url"
         :detail-url="`/teams/${team.id}`"
+        :is-owner="team.is_owner"
       />
       <ProjectsTabsTeam :id="team.id" :type="team.type" />
     </template>

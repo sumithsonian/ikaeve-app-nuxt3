@@ -4,6 +4,7 @@
       :name="tournamentSeries.name"
       :background-image-url="tournamentSeries.background_image_url"
       :detail-url="`/tournament-series/${tournamentSeries.id}`"
+      :is-owner="team.is_owner"
     />
     <BlocksHeading>大会シリーズ概要</BlocksHeading>
     <BlocksParagraph>{{ tournamentSeries.description }}</BlocksParagraph>
