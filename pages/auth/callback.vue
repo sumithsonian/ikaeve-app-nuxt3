@@ -12,7 +12,10 @@ const route = useRoute()
 // トークン保存
 // const token = (await $fetch(`/api/token?code=&state=`)).data
 const token = route.query.token
-const accessToken = useCookie('access_token')
+const accessToken = useCookie('access_token', {
+  path: '/',
+  maxAge: 60 * 60 * 24 * 365,
+})
 accessToken.value = token
 
 // ログイン: モックAPI用
