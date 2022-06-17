@@ -25,6 +25,7 @@ export default defineEventHandler((event) => {
         season: Math.floor(Math.random() * 10) * 10,
         annual: Math.floor(Math.random() * 100) * 10,
       },
+      is_owner: true,
     })
   }
 

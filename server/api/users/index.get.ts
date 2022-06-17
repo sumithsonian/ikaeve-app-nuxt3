@@ -35,6 +35,7 @@ export default defineEventHandler((event) => {
         position: 'keep',
       },
       is_administrator: i === 1,
+      is_me: i === 1,
       created_at: '2022-07-21 09:00',
       updated_at: '2022-07-21 09:00',
     })

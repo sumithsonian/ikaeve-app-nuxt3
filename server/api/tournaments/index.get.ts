@@ -26,8 +26,6 @@ export default defineEventHandler((event) => {
       team_num_max: 128,
       member_num: 4,
       status: enStatuses[(i - 1) % 4],
-      created_at: '2022-07-21 09:00',
-      updated_at: '2022-07-21 09:00',
       tags: [{ name: 'イカイベ公認' }, { name: statuses[(i - 1) % 4] }],
       team: {
         kind: 'team',
@@ -66,6 +64,10 @@ export default defineEventHandler((event) => {
         },
       },
       questions: ['イキゴミ', '好きなブキ'],
+      is_owner: i === 1,
+      is_entered: i === 1,
+      created_at: '2022-07-21 09:00',
+      updated_at: '2022-07-21 09:00',
     })
   }
 
