@@ -20,8 +20,8 @@
               :discord-url="item.discord"
           /></nuxt-link>
         </td>
-        <td>{{ item.representatived_user.name }}</td>
-        <td>{{ item.representatived_user.friend_code }}</td>
+        <td>{{ item.owner_user.name }}</td>
+        <td>{{ item.owner_user.friend_code }}</td>
       </tr>
     </template>
   </BlocksListTable>

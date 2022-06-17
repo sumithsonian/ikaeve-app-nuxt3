@@ -14,10 +14,8 @@ export default defineEventHandler((event) => {
         '紹介文紹介文紹介文紹介文紹介文紹介文紹介文紹介文紹介文紹介文紹介文紹介文。',
       twitter_url: 'https://twitter.com/splatoonJP',
       discord_url: 'https://discord.com/',
-      created_at: '2022-07-21 09:00',
-      updated_at: '2022-07-21 09:00',
-      representatived_user: {
-        id: 1,
+      owner_user: {
+        id: i,
         name: 'ほげ',
         friend_code: Math.random().toString(32).substring(2),
       },
@@ -26,6 +24,8 @@ export default defineEventHandler((event) => {
         annual: Math.floor(Math.random() * 100) * 10,
       },
       is_owner: true,
+      created_at: '2022-07-21 09:00',
+      updated_at: '2022-07-21 09:00',
     })
   }
 
