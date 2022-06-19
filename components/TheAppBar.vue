@@ -42,50 +42,50 @@
       <div class="appNav__drawer__menu">
         <ul>
           <li>
-            <nuxt-link to="/"
+            <nuxt-link @click="close" to="/"
               ><ElementsIcon> home </ElementsIcon> ホーム</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link to="/ranking/"
+            <nuxt-link @click="close" to="/ranking/"
               ><ElementsIcon> insights </ElementsIcon> ランキング</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link to="/tournaments/"
+            <nuxt-link @click="close" to="/tournaments/"
               ><ElementsIcon> military_tech </ElementsIcon> 大会一覧</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link to="/tournament-series/"
+            <nuxt-link @click="close" to="/tournament-series/"
               ><ElementsIcon> military_tech </ElementsIcon>
               大会シリーズ一覧</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link to="/teams/"
+            <nuxt-link @click="close" to="/teams/"
               ><ElementsIcon> people </ElementsIcon> チーム/団体一覧</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link to="/players/"
+            <nuxt-link @click="close" to="/players/"
               ><ElementsIcon> person </ElementsIcon> プレイヤー一覧</nuxt-link
             >
           </li>
         </ul>
         <ul>
           <li>
-            <nuxt-link class="-small" to="/about"
+            <nuxt-link @click="close" class="-small" to="/about"
               ><ElementsIcon> link </ElementsIcon>イカイベとは？</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link class="-small" to="/terms"
+            <nuxt-link @click="close" class="-small" to="/terms"
               ><ElementsIcon> link </ElementsIcon>ご利用規約</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link class="-small" to="/privacy"
+            <nuxt-link @click="close" class="-small" to="/privacy"
               ><ElementsIcon> link </ElementsIcon>
               プライバシーポリシー</nuxt-link
             >
@@ -93,27 +93,27 @@
         </ul>
         <ul>
           <li>
-            <nuxt-link to="/tournaments/create"
+            <nuxt-link @click="close" to="/tournaments/create"
               ><ElementsIcon> add </ElementsIcon> 大会作成</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link to="/teams/create"
+            <nuxt-link @click="close" to="/teams/create"
               ><ElementsIcon> add </ElementsIcon> チーム/団体作成</nuxt-link
             >
           </li>
           <li>
-            <nuxt-link to="/tournament-series/create"
+            <nuxt-link @click="close" to="/tournament-series/create"
               ><ElementsIcon> add </ElementsIcon> シリーズ作成</nuxt-link
             >
           </li>
           <li v-if="isLoggedIn">
-            <nuxt-link to="/logout"
+            <nuxt-link @click="close" to="/logout"
               ><ElementsIcon> logout </ElementsIcon> ログアウト</nuxt-link
             >
           </li>
           <li v-else>
-            <nuxt-link to="/"
+            <nuxt-link @click="close" to="/"
               ><ElementsIcon> login </ElementsIcon>
               新規会員登録/ログイン</nuxt-link
             >
