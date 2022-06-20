@@ -31,6 +31,14 @@
           <td>{{ tournament.team.name }}</td>
         </tr>
         <tr>
+          <th>ティア</th>
+          <td>
+            ティア{{ tournament.tear }}（配布ポイント：{{
+              tournament.distribution_point
+            }}）
+          </td>
+        </tr>
+        <tr>
           <th>配信</th>
           <td></td>
         </tr>
