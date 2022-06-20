@@ -2,15 +2,12 @@
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsFiltersRanking v-model="query" />
-    <ProjectsListsPlayers :items="players" kind="ranking" />
+    <ProjectsListsPlayers :items="players.data" kind="ranking" />
   </div>
 </template>
 
 <script setup>
-const title = '2022 - 春シーズンランキング'
-useHead({
-  title: title,
-})
+const { $fetch2 } = useNuxtApp()
 
 const route = useRoute()
 const query = reactive({
@@ -19,7 +16,7 @@ const query = reactive({
   season: route.query.season || null,
 })
 
-const players = (await $fetch('/api/users')).data
+const { data: players } = await $fetch2(`/api/users`, query)
 
 watch(
   () => query,
@@ -33,4 +30,9 @@ function search() {
     query: query,
   })
 }
+
+const title = '2022初春シーズンランキング'
+useHead({
+  title: title,
+})
 </script>
