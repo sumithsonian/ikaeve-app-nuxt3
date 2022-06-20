@@ -24,15 +24,16 @@
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const modalState = useTournamentRuleModalState()
 const route = useRoute()
+const { data: teams } = await $fetch2(
+  `/api/tournaments/${route.params.id}/matchs_by_team`,
+)
 const title = '予選'
 useHead({
   title: title,
 })
-const teams = (
-  await $fetch(`/api/tournaments/${route.params.id}/matchs_by_team`)
-).data
 </script>
 
 <script>
@@ -43,7 +44,7 @@ export default {
   computed: {
     blocks() {
       const blocks = []
-      this.teams.forEach((team) => blocks.push(team.block))
+      this.teams.data.forEach((team) => blocks.push(team.block))
       return [...new Set(blocks)] // 重複削除
     },
     teamsByBlock() {
@@ -51,7 +52,7 @@ export default {
       this.blocks.forEach((block) => {
         teamsByBlock.push({
           block: block,
-          teams: this.teams.filter((team) => team.block === block),
+          teams: this.teams.data.filter((team) => team.block === block),
         })
       })
       return teamsByBlock
