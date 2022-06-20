@@ -1,5 +1,11 @@
 export default defineEventHandler(async (event) => {
-  const query = useQuery(event)
+  let BearerToken = event.req.headers.Authorization
+
+  if (!BearerToken) {
+    return {}
+  }
+
+  BearerToken = (BearerToken as string).replace('Bearer ', '')
 
   const tokens = [
     'aaaaa',
@@ -14,9 +20,8 @@ export default defineEventHandler(async (event) => {
     'jjjjj',
   ]
 
-  const index = tokens.findIndex((token) => token === query.token)
-  const items = await $fetch('/api/users')
-  const item = items.data.find((row) => row.id === index + 1)
+  const index = tokens.findIndex((token) => token === BearerToken)
+  const item = await $fetch(`/api/users/${index + 1}`)
 
-  return { data: item }
+  return { data: item.data }
 })

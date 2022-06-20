@@ -18,12 +18,12 @@ const accessToken = useCookie('access_token', {
 })
 accessToken.value = token
 
-// ログイン: モックAPI用
+// ログイン判定
 const isLoggedIn = useIsLoggedInState()
 const me = useMeState()
-if (route.query.token) {
-  const user = (await $fetch(`/api/users/me?token=${token}`)).data
-  me.value = user
-  isLoggedIn.value = true
-}
+const { data: user } = await useFetch('/api/users/me', {
+  headers: { Authorization: `Bearer ${route.query.token}` },
+})
+isLoggedIn.value = true
+me.value = Object.assign({}, me.value, user.value.data)
 </script>
