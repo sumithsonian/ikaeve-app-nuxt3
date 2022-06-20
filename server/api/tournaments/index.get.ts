@@ -19,7 +19,6 @@ export default defineEventHandler((event) => {
         '大会概要がはいります。大会概要がはいります。大会概要がはいります。大会概要がはいります。大会概要がはいります。大会概要がはいります。',
       game_title: 'splatoon_2',
       series_id: null,
-      // user_id: 1,
       team_id: 1,
       streaming_url: null,
       team_num_min: 16,
@@ -27,6 +26,9 @@ export default defineEventHandler((event) => {
       member_num: 4,
       status: enStatuses[(i - 1) % 4],
       tags: [{ name: 'イカイベ公認' }, { name: statuses[(i - 1) % 4] }],
+      series: {
+        id: 1,
+      },
       team: {
         kind: 'team',
         id: i,
