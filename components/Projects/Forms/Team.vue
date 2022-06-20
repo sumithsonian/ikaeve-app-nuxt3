@@ -47,7 +47,7 @@
         <th>メンバー</th>
         <td>
           <ul class="form__memberList">
-            <li v-for="(player, i) of players" :key="i">
+            <li v-for="(player, i) of players.data" :key="i">
               <ElementsPlayer
                 :name="player.name"
                 :image-url="player.image_url"
@@ -115,7 +115,8 @@
 </template>
 
 <script setup>
-const players = (await $fetch('/api/users')).data
+const { $fetch2 } = useNuxtApp()
+const { data: players } = await $fetch2('/api/users')
 const deleteTeamModalState = useDeleteTeamModalState()
 const approvalTeamMemberModalState = useApprovalTeamMemberModalState()
 const deleteTeamMemberModalState = useDeleteTeamMemberModalState()
