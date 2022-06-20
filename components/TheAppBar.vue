@@ -3,7 +3,7 @@
     <nav>
       <ul>
         <li>
-          <nuxt-link to="/" exact
+          <nuxt-link :to="isLoggedIn ? '/home' : '/'" exact
             ><ElementsIcon> home </ElementsIcon
             ><ElementsText class="-xsmall">ホーム</ElementsText></nuxt-link
           >
@@ -42,7 +42,7 @@
       <div class="appNav__drawer__menu">
         <ul>
           <li>
-            <nuxt-link @click="close" to="/"
+            <nuxt-link @click="close" :to="isLoggedIn ? '/home' : '/'"
               ><ElementsIcon> home </ElementsIcon> ホーム</nuxt-link
             >
           </li>
@@ -113,7 +113,7 @@
             >
           </li>
           <li v-else>
-            <nuxt-link @click="close" to="/"
+            <nuxt-link @click="close"
               ><ElementsIcon> login </ElementsIcon>
               新規会員登録/ログイン</nuxt-link
             >

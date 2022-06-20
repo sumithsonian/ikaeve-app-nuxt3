@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1><nuxt-link to="/">ロゴマーク</nuxt-link></h1>
+    <h1><nuxt-link :to="isLoggedIn ? '/home' : '/'">ロゴマーク</nuxt-link></h1>
     <ul>
       <li v-if="!isLoggedIn">
         <button @click="modalState = true">
