@@ -19,6 +19,18 @@ export default defineEventHandler((event) => {
         name: 'ほげ',
         friend_code: Math.random().toString(32).substring(2),
       },
+      member_users: [
+        {
+          id: i + 1,
+          name: 'ほげ',
+          friend_code: Math.random().toString(32).substring(2),
+        },
+        {
+          id: i + 2,
+          name: 'ほげ',
+          friend_code: Math.random().toString(32).substring(2),
+        },
+      ],
       points: {
         season: Math.floor(Math.random() * 10) * 10,
         annual: Math.floor(Math.random() * 100) * 10,

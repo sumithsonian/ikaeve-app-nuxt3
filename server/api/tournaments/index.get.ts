@@ -33,6 +33,9 @@ export default defineEventHandler((event) => {
         name: `チーム${i}`,
         image_url: 'https://placehold.jp/150x150.png',
         background_image_url: 'https://placehold.jp/1080x360.png',
+        owner_user: {
+          id: 1,
+        },
       },
       rules: {
         qualifying: {
