@@ -25,6 +25,16 @@
           ></ElementsButton
         >
       </li>
+      <li>
+        <ElementsButton
+          class="-circle -primary -withText"
+          to="/tournament-series/create"
+          ><span class="material-icons"> add </span
+          ><ElementsText class="-xxsmall"
+            >シリーズ<br />作成</ElementsText
+          ></ElementsButton
+        >
+      </li>
     </ul>
   </div>
 </template>

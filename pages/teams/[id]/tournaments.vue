@@ -1,23 +1,23 @@
 <template>
   <div>
-    <BlocksHeading>最近参加した大会・2</BlocksHeading>
-    <ProjectsCardsTournament :items="tournaments" />
+    <BlocksHeading>{{ title }}・{{ tournaments.data.length }}</BlocksHeading>
+    <ProjectsCardsTournament :items="tournaments.data" />
     <ProjectsPagination />
   </div>
 </template>
 
 <script setup>
-const title = '開催した大会｜チーム詳細'
-useHead({
-  title: title,
+const { $fetch2 } = useNuxtApp()
+const route = useRoute()
+const props = defineProps({
+  team: Object,
 })
-const tournaments = (await $fetch('/api/tournaments')).data
-</script>
-
-<script>
-export default {
-  props: {
-    team: { type: Object, required: true },
-  },
-}
+const team = props.team
+const title = team.type === 'player' ? 'エントリ大会' : '主催大会'
+const { data: tournaments } = await $fetch2(
+  `/api/teams/${route.params.id}/tournaments`,
+)
+useHead({
+  title: `${title}｜${team.name}`,
+})
 </script>

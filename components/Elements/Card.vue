@@ -1,9 +1,15 @@
 <template>
   <nuxt-link :to="to" class="card">
-    <div class="card__image">
+    <div
+      v-if="typeof $slots.image === 'function' && $slots.image()"
+      class="card__image"
+    >
       <slot name="image" />
     </div>
-    <div class="card__text">
+    <div
+      v-if="typeof $slots.text === 'function' && $slots.text()"
+      class="card__text"
+    >
       <slot name="text" />
     </div>
   </nuxt-link>

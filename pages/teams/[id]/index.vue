@@ -17,9 +17,9 @@
         </template>
       </BlocksTable>
       <BlocksHeading>所属メンバー</BlocksHeading>
-      <ProjectsListsPlayers :items="players" />
-      <BlocksHeading>最近参加した大会</BlocksHeading>
-      <ProjectsCardsTournament :items="tournaments" class="-scroll" />
+      <ProjectsListsPlayers :items="players.data" />
+      <BlocksHeading>最近のエントリ大会</BlocksHeading>
+      <ProjectsCardsTournament :items="tournaments.data" class="-scroll" />
       <BlocksList class="-center">
         <li>
           <ElementsButton :to="`/teams/${team.id}/tournaments`"
@@ -29,10 +29,13 @@
       </BlocksList>
     </template>
     <template v-if="team.type === 'organizer'">
-      <BlocksHeading>主催大会</BlocksHeading>
-      <ProjectsCardsTournament :items="tournaments" class="-scroll" />
-      <BlocksHeading>最近開催した大会</BlocksHeading>
-      <ProjectsCardsTournament :items="tournaments" class="-scroll" />
+      <BlocksHeading>主催大会シリーズ</BlocksHeading>
+      <ProjectsCardsTournamentSeries
+        :items="tournamentSeries.data"
+        class="-scroll"
+      />
+      <BlocksHeading>最近の主催大会</BlocksHeading>
+      <ProjectsCardsTournament :items="tournaments.data" class="-scroll" />
       <BlocksList class="-center">
         <li>
           <ElementsButton :to="`/teams/${team.id}/tournaments`"
@@ -41,25 +44,29 @@
         </li>
       </BlocksList>
       <BlocksHeading>所属メンバー</BlocksHeading>
-      <ProjectsListsPlayers :items="players" kind="list" />
+      <ProjectsListsPlayers :items="players.data" kind="list" />
     </template>
   </div>
 </template>
 
 <script setup>
-const title = 'チーム詳細'
-const players = (await $fetch('/api/users')).data
-const tournaments = (await $fetch('/api/tournaments')).data
+const { $fetch2 } = useNuxtApp()
+const route = useRoute()
+const props = defineProps({
+  team: Object,
+})
+const team = props.team
+const { data: players } = await $fetch2(`/api/teams/${route.params.id}/users`)
+const { data: tournaments } = await $fetch2(
+  `/api/teams/${route.params.id}/tournaments`,
+  { per_page: 10 },
+)
+const { data: tournamentSeries } = await $fetch2(
+  `/api/teams/${route.params.id}/tournament-series`,
+  { per_page: 10 },
+)
 
 useHead({
-  title: title,
+  title: team.name,
 })
-</script>
-
-<script>
-export default {
-  props: {
-    team: { type: Object, required: true },
-  },
-}
 </script>

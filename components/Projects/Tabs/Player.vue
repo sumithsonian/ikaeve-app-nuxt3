@@ -2,13 +2,8 @@
   <BlocksTab>
     <li><nuxt-link :to="`/players/${id}/`">プロフィール</nuxt-link></li>
     <li>
-      <nuxt-link :to="`/players/${id}/entered-tournaments`"
-        >参加した大会</nuxt-link
-      >
-    </li>
-    <li>
-      <nuxt-link :to="`/players/${id}/held-tournaments`"
-        >開催した大会</nuxt-link
+      <nuxt-link :to="`/players/${id}/tournaments`"
+        >エントリ大会</nuxt-link
       >
     </li>
   </BlocksTab>

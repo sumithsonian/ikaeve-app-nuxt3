@@ -1,11 +1,13 @@
 <template>
   <div>
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
+    <ProjectsFormsTournamentSeries />
   </div>
 </template>
 
 <script setup>
-const title = 'シリーズ一覧'
+const route = useRoute()
+const title = '大会シリーズ作成'
 useHead({
   title: title,
 })

@@ -10,19 +10,30 @@
         ></BlocksParagraph
       >
     </section>
+    <BlocksInformation>
+      <BlocksList class="-horizontal -center">
+        <li>
+          <ElementsButton>シャッフルし直す</ElementsButton>
+        </li>
+        <li>
+          <ElementsButton class="-primary">組み合わせを決定する</ElementsButton>
+        </li>
+      </BlocksList>
+    </BlocksInformation>
   </div>
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const modalState = useTournamentRuleModalState()
 const route = useRoute()
-const title = '予選｜大会'
+const { data: teams } = await $fetch2(
+  `/api/tournaments/${route.params.id}/matchs_by_team`,
+)
+const title = '予選'
 useHead({
   title: title,
 })
-const teams = (
-  await $fetch(`/api/tournaments/${route.params.id}/matchs_by_team`)
-).data
 </script>
 
 <script>
@@ -33,7 +44,7 @@ export default {
   computed: {
     blocks() {
       const blocks = []
-      this.teams.forEach((team) => blocks.push(team.block))
+      this.teams.data.forEach((team) => blocks.push(team.block))
       return [...new Set(blocks)] // 重複削除
     },
     teamsByBlock() {
@@ -41,7 +52,7 @@ export default {
       this.blocks.forEach((block) => {
         teamsByBlock.push({
           block: block,
-          teams: this.teams.filter((team) => team.block === block),
+          teams: this.teams.data.filter((team) => team.block === block),
         })
       })
       return teamsByBlock

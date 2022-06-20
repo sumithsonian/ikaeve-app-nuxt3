@@ -1,7 +1,7 @@
 <template>
   <div>
     <BlocksHeading>試合結果</BlocksHeading>
-    <ProjectsListsTeams :items="teams" kind="result" />
+    <ProjectsListsTeams :items="teams.data" kind="result" />
     <BlocksHeading>大会概要</BlocksHeading>
     <BlocksTable>
       <template #tbody>
@@ -29,6 +29,14 @@
         <tr>
           <th>主催</th>
           <td>{{ tournament.team.name }}</td>
+        </tr>
+        <tr>
+          <th>ティア</th>
+          <td>
+            ティア{{ tournament.tear }}（配布ポイント：{{
+              tournament.distribution_point
+            }}）
+          </td>
         </tr>
         <tr>
           <th>配信</th>
@@ -79,12 +87,19 @@
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const route = useRoute()
-const title = '大会詳細'
+const props = defineProps({
+  tournament: Object,
+})
+const tournament = props.tournament
+const { data: teams } = await $fetch2(`/api/tournaments/${route.params.id}/teams`)
+
+const title = tournament.name
 useHead({
   title: title,
+  titleTemplate: `%s｜イカイベ`
 })
-const teams = (await $fetch('/api/teams')).data
 </script>
 
 <script>

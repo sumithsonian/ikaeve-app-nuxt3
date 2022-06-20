@@ -1,14 +1,18 @@
 <template>
   <div>
-    <ProjectsListsProgress :items="matchs" />
+    <ProjectsListsProgress :items="matchs.data" />
   </div>
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const route = useRoute()
-const title = '進行表｜大会'
+const { data: matchs } = await $fetch2(
+  `/api/tournaments/${route.params.id}/matchs`,
+)
+
+const title = '進行表'
 useHead({
   title: title,
 })
-const matchs = (await $fetch('/api/tournaments/1/matchs')).data
 </script>

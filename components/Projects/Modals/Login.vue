@@ -8,7 +8,7 @@
       >
       <BlocksList class="-center">
         <li>
-          <ElementsButton class="-twitter -large"
+          <ElementsButton to="/auth/redirect" class="-twitter -large" @click="close"
             >Twitterで新規会員登録/ログイン</ElementsButton
           >
         </li>

@@ -2,14 +2,20 @@
   <header>
     <h1><nuxt-link to="/">ロゴマーク</nuxt-link></h1>
     <ul>
-      <li>
+      <li v-if="!isLoggedIn">
         <button @click="modalState = true">
           <ElementsIcon> login </ElementsIcon
           ><ElementsText class="-xsmall">登録/ログイン</ElementsText>
         </button>
       </li>
-      <li>
-        <nuxt-link to="/players/1"
+      <li v-if="isLoggedIn && me.is_administrator">
+        <nuxt-link :to="`/admin/`"
+          ><ElementsIcon> admin_panel_settings </ElementsIcon
+          ><ElementsText class="-xsmall">管理者</ElementsText></nuxt-link
+        >
+      </li>
+      <li v-if="isLoggedIn">
+        <nuxt-link :to="`/players/${me.id}`"
           ><ElementsIcon> account_circle </ElementsIcon
           ><ElementsText class="-xsmall">マイページ</ElementsText></nuxt-link
         >
@@ -20,6 +26,8 @@
 
 <script setup>
 const modalState = useLoginModalState()
+const isLoggedIn = useIsLoggedInState()
+const me = useMeState()
 </script>
 
 <style lang="scss" scoped>

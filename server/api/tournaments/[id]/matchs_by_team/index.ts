@@ -28,7 +28,11 @@ export default defineEventHandler((event) => {
       })
 
       res.push({
-        team: { name: team, image_url: 'https://placehold.jp/150x150.png' },
+        team: {
+          id: 1,
+          name: team,
+          image_url: 'https://placehold.jp/150x150.png',
+        },
         block: block,
         matchs: matchs,
         win: 2,

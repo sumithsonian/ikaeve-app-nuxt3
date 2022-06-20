@@ -22,6 +22,11 @@ export default {}
   ::v-deep(li) {
     display: flex;
     gap: $space-small;
+
+    > ul {
+      display: flex;
+      gap: $space-small;
+    }
   }
 }
 </style>

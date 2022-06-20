@@ -2,10 +2,23 @@
   <BlocksFilter>
     <li>
       <ElementsIcon> filter_alt </ElementsIcon>
-      <ElementsTag tag="button" class="-xsmall is-active">全て</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">募集中</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">開催中</ElementsTag>
-      <ElementsTag tag="button" class="-xsmall">終了</ElementsTag>
+      <ul>
+        <li v-for="(filterGroup, i) of filterGroups" :key="i">
+          <ElementsTag
+            v-for="(filter, j) of filterGroup"
+            :key="j"
+            @click="
+              filter.key === null
+                ? resetFilter()
+                : selectFilter(filter.key, filter.value)
+            "
+            tag="button"
+            class="-xsmall"
+            :class="{ 'is-active': isActive(filter.key, filter.value) }"
+            >{{ filter.name }}</ElementsTag
+          >
+        </li>
+      </ul>
     </li>
     <li>
       <ElementsFormSelect v-model="localValue.sort" :items="sorts" />
@@ -25,6 +38,14 @@ export default {
         { value: 'popular', name: '人気順' },
         { value: 'udemae', name: 'ウデマエ順' },
       ],
+      filterGroups: [
+        [{ key: null, value: null, name: '全て' }],
+        [
+          { key: 'status', value: 'recruiting', name: '募集中' },
+          { key: 'status', value: 'in_progress', name: '開催中' },
+          { key: 'status', value: 'finished', name: '終了' },
+        ],
+      ],
     }
   },
   computed: {
@@ -35,6 +56,30 @@ export default {
       set(value) {
         this.$emit('update:modelValue', value)
       },
+    },
+  },
+  methods: {
+    selectFilter(key, value) {
+      if (this.localValue[key] === value) {
+        this.localValue[key] = null
+      } else {
+        this.localValue[key] = value
+      }
+    },
+    resetFilter() {
+      Object.keys(this.localValue).forEach((key) => {
+        if (key === 'sort' || key === 'page') {
+          return
+        }
+        this.localValue[key] = null
+      })
+    },
+    isActive(key, value) {
+      if (key === null) {
+        return this.localValue.status === null
+      } else {
+        return this.localValue[key] === value
+      }
     },
   },
 }

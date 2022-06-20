@@ -47,7 +47,7 @@
         <th>メンバー</th>
         <td>
           <ul class="form__memberList">
-            <li v-for="(player, i) of players" :key="i">
+            <li v-for="(player, i) of players.data" :key="i">
               <ElementsPlayer
                 :name="player.name"
                 :image-url="player.image_url"
@@ -67,7 +67,9 @@
               </div>
             </li>
           </ul>
-          <ElementsAttention v-if="kind !== 'edit'" class="form__entryMemberAttention"
+          <ElementsAttention
+            v-if="kind !== 'edit'"
+            class="form__entryMemberAttention"
             >チーム作成後にメンバー募集リンクが表示されます。メンバーにリンクを送り、チーム参加申請をお願いしましょう。</ElementsAttention
           >
         </td>
@@ -113,7 +115,8 @@
 </template>
 
 <script setup>
-const players = (await $fetch('/api/users')).data
+const { $fetch2 } = useNuxtApp()
+const { data: players } = await $fetch2('/api/users')
 const deleteTeamModalState = useDeleteTeamModalState()
 const approvalTeamMemberModalState = useApprovalTeamMemberModalState()
 const deleteTeamMemberModalState = useDeleteTeamMemberModalState()
@@ -122,6 +125,7 @@ const deleteTeamMemberModalState = useDeleteTeamMemberModalState()
 <script>
 export default {
   props: {
+    modelValue: { type: Object, default: {} },
     kind: { type: String, default: null },
   },
   computed: {

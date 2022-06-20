@@ -5,10 +5,9 @@
         <template #image>
           <img :src="item.background_image_url" :alt="item.name" />
           <ul>
-            <li>
-              <ElementsTag class="-xxsmall -tip">イカイベ公式</ElementsTag>
+            <li v-for="(tag, i) of item.tags" :key="i">
+              <ElementsTag class="-xxsmall -tip">{{ tag.name }}</ElementsTag>
             </li>
-            <li><ElementsTag class="-xxsmall -tip">募集中</ElementsTag></li>
           </ul>
         </template>
         <template #text>

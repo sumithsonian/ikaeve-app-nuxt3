@@ -2,16 +2,17 @@
   <div>
     <template v-if="!route.path.includes('edit')">
       <BlocksHero
-        :name="team.name"
-        :image-url="team.image_url"
-        :background-image-url="team.background_image_url"
-        :twitter-url="team.twitter_url"
-        :discord-url="team.discord_url"
-        :detail-url="`/teams/${team.id}`"
+        :name="team.data.name"
+        :image-url="team.data.image_url"
+        :background-image-url="team.data.background_image_url"
+        :twitter-url="team.data.twitter_url"
+        :discord-url="team.data.discord_url"
+        :detail-url="`/teams/${team.data.id}`"
+        :is-owner="team.data.is_owner"
       />
-      <ProjectsTabsTeam :id="team.id" />
+      <ProjectsTabsTeam :id="team.data.id" :type="team.data.type" />
     </template>
-    <NuxtPage :team="team" />
+    <NuxtPage :team="team.data" />
     <template v-if="!route.path.includes('edit')">
       <BlocksInformation>
         <BlocksList class="-horizontal -center">
@@ -34,11 +35,12 @@
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
+
 const route = useRoute()
 const modalState = useEntryTeamModalState()
-const team = (await $fetch(`/api/teams/${route.params.id}`)).data
-const title = team.name
+const { data: team } = await $fetch2(`/api/teams/${route.params.id}`)
 useHead({
-  title: title,
+  title: team.value.data.name,
 })
 </script>

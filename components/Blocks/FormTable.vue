@@ -62,6 +62,10 @@ export default {}
       font-size: $font-small;
       width: calc(100% - 8em);
       padding-right: 0;
+
+      > * + * {
+        margin-top: $space-small;
+      }
     }
   }
 }

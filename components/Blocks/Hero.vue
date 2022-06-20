@@ -44,7 +44,7 @@
             <ElementsIcon> arrow_back_ios </ElementsIcon>
           </button>
         </li>
-        <li>
+        <li v-if="isOwner">
           <nuxt-link v-if="detailUrl" :to="`${detailUrl}/edit`"
             ><ElementsIcon> settings </ElementsIcon></nuxt-link
           >
@@ -64,6 +64,7 @@ export default {
     discordUrl: { type: String, default: null },
     detailUrl: { type: String, default: null },
     tags: { type: Array, default: null },
+    isOwner: { type: Boolean, default: false },
   },
 }
 </script>
