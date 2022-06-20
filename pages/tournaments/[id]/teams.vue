@@ -1,14 +1,16 @@
 <template>
   <div>
-    <ProjectsListsTeams :items="teams" kind="list" />
+    <ProjectsListsTeams :items="teams.data" kind="list" />
   </div>
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const route = useRoute()
+const { data: teams } = await $fetch2(`/api/tournaments/${route.params.id}/teams`)
+
 const title = '参加チーム一覧｜大会'
 useHead({
   title: title,
 })
-const teams = (await $fetch('/api/teams')).data
 </script>

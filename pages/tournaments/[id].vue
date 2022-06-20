@@ -2,18 +2,18 @@
   <div>
     <template v-if="!route.path.includes('edit')">
       <BlocksHero
-        :name="tournament.name"
-        :background-image-url="tournament.background_image_url"
-        :tags="tournament.tags"
-        :detail-url="`/tournaments/${tournament.id}`"
-        :is-owner="tournament.is_owner"
+        :name="tournament.data.name"
+        :background-image-url="tournament.data.background_image_url"
+        :tags="tournament.data.tags"
+        :detail-url="`/tournaments/${tournament.data.id}`"
+        :is-owner="tournament.data.is_owner"
       />
-      <ProjectsTabsTournament :id="tournament.id" />
+      <ProjectsTabsTournament :id="tournament.data.id" />
     </template>
-    <NuxtPage :tournament="tournament" />
+    <NuxtPage :tournament="tournament.data" />
     <template v-if="!route.path.includes('edit')">
       <BlocksInformation>
-        <template v-if="tournament.status === 'recruiting'">
+        <template v-if="tournament.data.status === 'recruiting'">
           <BlocksList class="-horizontal -center">
             <li>
               <ElementsButton class="-primary"
@@ -45,14 +45,14 @@
             ></BlocksParagraph
           >
         </template>
-        <template v-else-if="tournament.status === 'recruitment_closed'">
+        <template v-else-if="tournament.data.status === 'recruitment_closed'">
           <BlocksParagraph class="-center"
             >募集チームが揃いました</BlocksParagraph
           >
           <BlocksList class="-horizontal -center">
             <li>
               <ElementsButton
-                :to="`/tournaments/${tournament.id}/qualifying`"
+                :to="`/tournaments/${tournament.data.id}/qualifying`"
                 class="-primary"
                 >組み合わせの決定に進む</ElementsButton
               >
@@ -65,14 +65,14 @@
             <li>
               <ElementsButton
                 class="-primary"
-                :to="`/tournaments/${tournament.id}/edit`"
+                :to="`/tournaments/${tournament.data.id}/edit`"
                 >期限を延ばす</ElementsButton
               >
             </li>
             <li>
               <ElementsButton
                 class="-primary"
-                :to="`/tournaments/${tournament.id}/edit`"
+                :to="`/tournaments/${tournament.data.id}/edit`"
                 >大会を中止する</ElementsButton
               >
             </li>
@@ -84,11 +84,12 @@
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const route = useRoute()
 const entryTournamentModalState = useEntryTournamentModalState()
 const cancelTournamentModalState = useCancelTournamentModalState()
-const tournament = (await $fetch(`/api/tournaments/${route.params.id}`)).data
-const title = tournament.name
+const { data: tournament } = await $fetch2(`/api/tournaments/${route.params.id}`)
+const title = tournament.value.data.name
 useHead({
   title: title,
 })
