@@ -10,7 +10,7 @@
 
 <script setup>
 const route = useRoute()
-const title = '本戦｜大会'
+const title = '本戦'
 useHead({
   title: title,
 })

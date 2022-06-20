@@ -95,9 +95,10 @@ const props = defineProps({
 const tournament = props.tournament
 const { data: teams } = await $fetch2(`/api/tournaments/${route.params.id}/teams`)
 
-const title = 'hoge'
+const title = tournament.name
 useHead({
   title: title,
+  titleTemplate: `%s｜イカイベ`
 })
 </script>
 

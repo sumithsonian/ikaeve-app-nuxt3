@@ -6,7 +6,7 @@
 
 <script setup>
 const route = useRoute()
-const title = '進行表｜大会'
+const title = '進行表'
 useHead({
   title: title,
 })

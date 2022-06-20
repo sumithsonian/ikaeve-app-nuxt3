@@ -26,7 +26,7 @@
 <script setup>
 const modalState = useTournamentRuleModalState()
 const route = useRoute()
-const title = '予選｜大会'
+const title = '予選'
 useHead({
   title: title,
 })
