@@ -41,6 +41,10 @@ export default {
       filterGroups: [
         [{ key: null, value: null, name: '全て' }],
         [
+          { key: 'game_title', value: 'splatoon_3', name: 'Splatoon 3' },
+          { key: 'game_title', value: 'splatoon_2', name: 'Splatoon 2' },
+        ],
+        [
           { key: 'status', value: 'recruiting', name: '募集中' },
           { key: 'status', value: 'in_progress', name: '開催中' },
           { key: 'status', value: 'finished', name: '終了' },
@@ -76,7 +80,9 @@ export default {
     },
     isActive(key, value) {
       if (key === null) {
-        return this.localValue.status === null
+        return (
+          this.localValue.game_title === null && this.localValue.status === null
+        )
       } else {
         return this.localValue[key] === value
       }

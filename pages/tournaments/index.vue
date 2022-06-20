@@ -13,6 +13,7 @@ const { $fetch2 } = useNuxtApp()
 const route = useRoute()
 
 const query = reactive({
+  game_title: route.query.game_title || null,
   status: route.query.status || null,
   sort: route.query.sort || null,
   page: route.query.page || null,
