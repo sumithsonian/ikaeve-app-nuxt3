@@ -23,6 +23,16 @@ export default defineEventHandler((event) => {
       background_image_url: images[i - 1],
       description:
         '紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。紹介文がはいります。',
+      team: {
+        kind: 'team',
+        id: i,
+        name: `チーム${i}`,
+        image_url: 'https://placehold.jp/150x150.png',
+        background_image_url: 'https://placehold.jp/1080x360.png',
+        owner_user: {
+          id: 1,
+        },
+      },
       is_owner: i === 1,
       created_at: '2022-07-21 09:00',
       updated_at: '2022-07-21 09:00',
