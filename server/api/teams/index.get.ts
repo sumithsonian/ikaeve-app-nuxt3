@@ -21,12 +21,22 @@ export default defineEventHandler((event) => {
       },
       member_users: [
         {
+          id: i,
+          name: 'ほげ',
+          friend_code: Math.random().toString(32).substring(2),
+        },
+        {
           id: i + 1,
           name: 'ほげ',
           friend_code: Math.random().toString(32).substring(2),
         },
         {
           id: i + 2,
+          name: 'ほげ',
+          friend_code: Math.random().toString(32).substring(2),
+        },
+        {
+          id: i + 3,
           name: 'ほげ',
           friend_code: Math.random().toString(32).substring(2),
         },
