@@ -1,16 +1,19 @@
 <template>
   <div>
     <BlocksHeading>エントリ大会・5</BlocksHeading>
-    <ProjectsCardsTournament :items="tournaments" />
+    <ProjectsCardsTournament :items="tournaments.data" />
     <ProjectsPagination />
   </div>
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const route = useRoute()
-const title = '参加した大会｜プレイヤー詳細'
+const { data: tournaments } = await $fetch2(
+  `/api/users/${route.params.id}/tournaments`,
+)
+
 useHead({
-  title: title,
+  title: 'エントリ大会｜プレイヤー詳細',
 })
-const tournaments = (await $fetch('/api/tournaments')).data
 </script>

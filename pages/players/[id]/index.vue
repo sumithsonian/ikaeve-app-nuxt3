@@ -16,12 +16,12 @@
       </template>
     </BlocksTable>
     <BlocksHeading>所属チーム/団体</BlocksHeading>
-    <ProjectsListsTeams :items="teams" />
+    <ProjectsListsTeams :items="teams.data" />
     <BlocksHeading>最近エントリした大会</BlocksHeading>
-    <ProjectsCardsTournament :items="tournaments" class="-scroll" />
+    <ProjectsCardsTournament :items="tournaments.data" class="-scroll" />
     <BlocksList class="-center">
       <li>
-        <ElementsButton :to="`/players/${player.id}/entered-tournaments`"
+        <ElementsButton :to="`/players/${player.id}/tournaments`"
           >全ての大会をみる</ElementsButton
         >
       </li>
@@ -30,13 +30,19 @@
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const route = useRoute()
+const { data: tournaments } = await $fetch2(
+  `/api/users/${route.params.id}/tournaments`,
+  {
+    per_page: 10,
+  },
+)
+const { data: teams } = $fetch2(`/api/users/${route.params.id}/teams`)
 const title = 'プレイヤー詳細'
 useHead({
   title: title,
 })
-const tournaments = (await $fetch('/api/tournaments')).data
-const teams = (await $fetch('/api/teams')).data
 </script>
 
 <script>
