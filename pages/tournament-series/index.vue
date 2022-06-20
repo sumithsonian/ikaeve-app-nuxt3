@@ -3,16 +3,13 @@
     <BlocksLocalHeader>{{ title }}</BlocksLocalHeader>
     <ProjectsTabsTournaments />
     <ProjectsFiltersTournamentSeries v-model="query" />
-    <ProjectsCardsTournamentSeries :items="tournamentSeries" />
+    <ProjectsCardsTournamentSeries :items="tournamentSeries.data" />
     <ProjectsPagination />
   </div>
 </template>
 
 <script setup>
-const title = '大会シリーズ一覧'
-useHead({
-  title: title,
-})
+const { $fetch2 } = useNuxtApp()
 
 const route = useRoute()
 const query = reactive({
@@ -20,7 +17,7 @@ const query = reactive({
   page: route.query.page || null,
 })
 
-const tournamentSeries = (await $fetch('/api/tournament-series')).data
+const { data: tournamentSeries } = $fetch2('/api/tournament-series')
 
 watch(
   () => query,
@@ -34,4 +31,9 @@ function search() {
     query: query,
   })
 }
+
+const title = '大会シリーズ一覧'
+useHead({
+  title: title,
+})
 </script>
