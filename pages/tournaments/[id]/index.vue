@@ -57,7 +57,7 @@
             通過順位：{{ tournament.rules.qualifying.pass_order }}<br />
             先取点：{{ tournament.rules.qualifying.first_to }}<br />
             <template v-for="(rule, key) of tournament.rules.qualifying.rules">
-              第{{ key }}ゲーム：{{ rule }}<br />
+              第{{ key }}セット：{{ rule }}<br />
             </template>
           </td>
         </tr>
@@ -68,7 +68,7 @@
             試合形式：{{ tournament.rules.finals.system }}<br />
             先取点：{{ tournament.rules.finals.first_to }}<br />
             <template v-for="(rule, key) of tournament.rules.finals.rules">
-              第{{ key }}ゲーム：{{ rule }}<br />
+              第{{ key }}セット：{{ rule }}<br />
             </template>
           </td>
         </tr>
@@ -77,7 +77,7 @@
           <td>
             先取点：{{ tournament.rules.final.first_to }}<br />
             <template v-for="(rule, key) of tournament.rules.final.rules">
-              第{{ key }}ゲーム：{{ rule }}<br />
+              第{{ key }}セット：{{ rule }}<br />
             </template>
           </td>
         </tr>
