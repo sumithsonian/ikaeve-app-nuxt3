@@ -1,5 +1,5 @@
 <template>
-  <table class="ranking">
+  <table class="listTable">
     <thead v-if="typeof $slots.thead === 'function' && $slots.thead()">
       <slot name="thead" />
     </thead>
@@ -16,9 +16,9 @@ export default {}
 <style scoped lang="scss">
 @import '@/assets/scss/_variables';
 
-.ranking {
+.listTable {
   margin: $space;
-  width: calc(100% -#{$space * 2});
+  width: calc(100% - #{$space * 2});
   ::v-deep(th),
   ::v-deep(td) {
     padding: $space-xsmall;
