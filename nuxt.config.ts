@@ -2,6 +2,11 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    BASIC_AUTH_USERNAME: process.env.BASIC_AUTH_USERNAME,
+    BASIC_AUTH_PASSWORD: process.env.BASIC_AUTH_PASSWORD,
+    BASIC_AUTH_ENABLED: process.env.BASIC_AUTH_ENABLED,
+  },
   app: {
     /*
      ** Headers of the page
