@@ -130,7 +130,7 @@
         <th>形式</th>
         <td>
           <ElementsFormSelectButton
-            >予選リーグを開催する</ElementsFormSelectButton
+            >予選を開催する</ElementsFormSelectButton
           >
         </td>
       </tr>
