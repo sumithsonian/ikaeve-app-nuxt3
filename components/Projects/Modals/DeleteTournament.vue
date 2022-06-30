@@ -2,7 +2,7 @@
   <BlocksModal v-if="isActive" @close-from-child="close">
     <template #heading>大会を削除する</template>
     <template #contents>
-      <BlocksParagraph class="-center">大会に削除しますか？</BlocksParagraph>
+      <BlocksParagraph class="-center">大会を削除しますか？</BlocksParagraph>
       <BlocksList class="-center">
         <li>
           <ElementsButton class="-primary -large">削除する</ElementsButton>
