@@ -10,6 +10,10 @@ export const useDeleteTournamentModalState = () =>
 export const useCancelTournamentModalState = () =>
   useState<boolean>('cancelTournamentModalState', () => false)
 
+// 大会シリーズ関連
+export const useDeleteTournamentSeriesModalState = () =>
+  useState<boolean>('deleteTournamentSeriesModalState', () => false)
+
 // team関連
 export const useEntryTeamModalState = () =>
   useState<boolean>('entryTeamModalState', () => false)

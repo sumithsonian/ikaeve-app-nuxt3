@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-const modalState = useDeleteTournamentModalState()
+const modalState = useDeleteTournamentSeriesModalState()
 </script>
 
 <script>

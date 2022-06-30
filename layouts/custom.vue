@@ -8,6 +8,7 @@
     <ProjectsModalsTournamentResultReport />
     <ProjectsModalsTournamentRule />
     <ProjectsModalsDeleteTournament />
+    <ProjectsModalsDeleteTournamentSeries />
     <ProjectsModalsEntryTournament />
     <ProjectsModalsCancelTournament />
     <ProjectsModalsEntryTeam />
