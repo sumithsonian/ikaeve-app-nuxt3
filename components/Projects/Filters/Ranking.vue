@@ -1,13 +1,13 @@
 <template>
   <BlocksFilter>
     <li>
-      <ElementsDropdown :items="gameTitles" v-model="localValue.game_title" />
+      <ElementsFormSelect :items="gameTitles" v-model="localValue.game_title" />
     </li>
     <li>
-      <ElementsDropdown :items="years" v-model="localValue.year" />
+      <ElementsFormSelect :items="years" v-model="localValue.year" />
     </li>
     <li>
-      <ElementsDropdown :items="seasons" v-model="localValue.season" />
+      <ElementsFormSelect :items="seasons" v-model="localValue.season" />
     </li>
   </BlocksFilter>
 </template>
