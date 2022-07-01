@@ -7,7 +7,12 @@
     <div v-if="isActive" class="formSelect__contents">
       <ul>
         <li v-for="(item, i) of items" :key="i">
-          <button @click="selectItem(i)">{{ item.name }}</button>
+          <button @click="selectItem(i)">
+            <ElementsIcon v-if="selectedItem.name === item.name">
+              done </ElementsIcon
+            >
+            <span v-else></span>{{ item.name }}
+          </button>
         </li>
       </ul>
     </div>
@@ -76,12 +81,19 @@ export default {
     box-shadow: 0 0 $space-large rgba(0, 0, 0, 0.4);
     li {
       border-bottom: 1px solid $color-gray-07;
+      min-width: 160px;
       &:last-child {
         border: none;
       }
       button {
         white-space: nowrap;
         padding: $space;
+        display: flex;
+        align-items: center;
+        span {
+          margin-right: $space-small;
+          width: 24px;
+        }
       }
     }
   }
