@@ -1,7 +1,10 @@
 <template>
   <header>
     <h1>
-      <nuxt-link :to="isLoggedIn ? '/home' : '/'"><ElementsLogo /></nuxt-link>
+      <nuxt-link :to="isLoggedIn ? '/home' : '/'"
+        ><ElementsLogo />
+        <span class="logo-text">イカイベ</span>
+      </nuxt-link>
     </h1>
     <ul>
       <li v-if="!isLoggedIn">
@@ -42,6 +45,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  h1 {
+    a {
+      display: flex;
+      align-items: flex-end;
+      gap: $space-xsmall;
+      color: $color-black;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .logo-text {
+      position: relative;
+      top: -2px;
+      font-family: ikamodoki;
+      font-size: 38px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
+  }
   ul {
     display: flex;
     gap: $space;
