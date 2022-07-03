@@ -5,7 +5,7 @@
     <ProjectsCardsTournament :items="tournaments.data" class="-scroll" />
     <BlocksList class="-center">
       <li>
-        <ElementsButton to="/tournaments/?status=recruiting"
+        <ElementsButton class="-large" to="/tournaments/?status=recruiting"
           >全ての大会をみる</ElementsButton
         >
       </li>
@@ -14,7 +14,7 @@
     <ProjectsCardsTournament :items="tournaments2.data" class="-scroll" />
     <BlocksList class="-center">
       <li>
-        <ElementsButton to="/tournaments/?status=ongoing"
+        <ElementsButton class="-large" to="/tournaments/?status=ongoing"
           >全ての大会をみる</ElementsButton
         >
       </li>

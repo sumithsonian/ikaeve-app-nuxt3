@@ -7,14 +7,14 @@
     </BlocksParagraph>
     <BlocksList class="-horizontal -center">
       <li>
-        <ElementsButton class="-primary -large" to="/tournaments/create"
+        <ElementsButton class="-primary -withIcon" to="/tournaments/create"
           ><ElementsIcon> add </ElementsIcon><br /><span
             >大会を開催する</span
           ></ElementsButton
         >
       </li>
       <li>
-        <ElementsButton class="-primary -large" to="/ranking/"
+        <ElementsButton class="-primary -withIcon" to="/ranking/"
           ><ElementsIcon> insights </ElementsIcon><br /><span
             >ランキングをみる</span
           ></ElementsButton
@@ -28,7 +28,7 @@
 @import '@/assets/scss/_variables';
 
 header {
-  background: $color-black;
+  background: url('@/assets/images/hero/hero_top.svg') no-repeat 50% 50% / cover;
   color: $color-black;
   padding: $space;
   text-align: center;

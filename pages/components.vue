@@ -31,7 +31,12 @@
     <BlocksHeading>エレメント: ボタン系</BlocksHeading>
     <BlocksList>
       <li><ElementsButton class="-primary">大会を開催する</ElementsButton></li>
-      <li><ElementsButton>全ての大会をみる</ElementsButton></li>
+      <li>
+        <ElementsButton class="-primary"
+          >勝利数を入力すると<br />確定できます</ElementsButton
+        >
+      </li>
+      <li><ElementsButton class="-large">全ての大会をみる</ElementsButton></li>
       <li>
         <ElementsButton class="-twitter"
           >Twitterで新規会員登録 / ログイン</ElementsButton
