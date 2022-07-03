@@ -3,7 +3,7 @@
     <h1>
       <nuxt-link :to="isLoggedIn ? '/home' : '/'"
         ><ElementsLogo />
-        <span class="logo-text">イカイベ</span>
+        <span class="logoText">イカイベ</span>
       </nuxt-link>
     </h1>
     <ul>
@@ -55,7 +55,7 @@ header {
         text-decoration: none;
       }
     }
-    .logo-text {
+    .logoText {
       position: relative;
       top: -2px;
       font-family: ikamodoki;
