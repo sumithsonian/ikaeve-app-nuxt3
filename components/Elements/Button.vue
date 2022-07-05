@@ -53,19 +53,25 @@ export default {
 @import '@/assets/scss/_variables';
 
 .button {
+  min-width: 158px;
+  min-height: 44px;
   border: 1px solid $color-primary;
-  padding: $space-small $space-large;
-  border-radius: $radius-xlarge;
-  display: inline-block;
+  padding: $space-xsmall $space-large;
+  border-radius: $radius-large;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1.2;
   background: $color-gray-09;
   color: $color-primary;
+  box-sizing: border-box;
+  text-align: center;
 
   &.-small {
     padding: $space-xsmall $space;
   }
   &.-large {
-    padding: $space $space-xlarge;
+    min-width: 215px;
   }
 
   &.-primary {
@@ -74,6 +80,7 @@ export default {
     border-color: transparent;
   }
   &.-twitter {
+    padding: $space-large $space-xlarge;
     background: $color-twitter;
     border-color: $color-twitter;
     color: $color-white;
@@ -85,7 +92,12 @@ export default {
     color: $color-primary;
     background: transparent;
   }
+  &.-withIcon {
+    display: inline-block;
+    padding: $space-xsmall $space-large $space-small;
+  }
   &.-circle {
+    min-width: 0;
     line-height: 0;
     padding: 0;
     height: $img;
@@ -100,12 +112,17 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 56px;
+      width: 56px;
       line-height: 1;
     }
   }
   &:disabled {
     background-color: rgba($color-primary, 0.4);
-    color: rgba($color-black, 0.4)
+    color: rgba($color-black, 0.4);
+  }
+  &:hover {
+    text-decoration: none;
   }
 }
 </style>
