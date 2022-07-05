@@ -53,7 +53,7 @@ export default {
 @import '@/assets/scss/_variables';
 
 .button {
-  min-width: $btn;
+  min-width: 158px;
   min-height: 44px;
   border: 1px solid $color-primary;
   padding: $space-xsmall $space-large;
@@ -67,8 +67,11 @@ export default {
   box-sizing: border-box;
   text-align: center;
 
+  &.-small {
+    padding: $space-xsmall $space;
+  }
   &.-large {
-    min-width: $btn-large;
+    min-width: 215px;
   }
 
   &.-primary {
@@ -109,8 +112,8 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: $btn-small;
-      width: $btn-small;
+      height: 56px;
+      width: 56px;
       line-height: 1;
     }
   }
