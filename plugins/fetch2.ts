@@ -6,7 +6,7 @@ export default defineNuxtPlugin(() => {
       fetch2: (path: string, params: object) =>
         useFetch(path, {
           headers: { Authorization: `Bearer ${accessToken}` },
-          params: { params },
+          params,
         }),
     },
   }
