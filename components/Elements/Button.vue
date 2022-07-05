@@ -68,6 +68,8 @@ export default {
   text-align: center;
 
   &.-small {
+    min-width: 0;
+    min-height: 0;
     padding: $space-xsmall $space;
   }
   &.-large {
