@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  let BearerToken = event.req.headers.Authorization
+  let BearerToken = event.req.headers.authorization
 
   if (!BearerToken) {
     return {}
