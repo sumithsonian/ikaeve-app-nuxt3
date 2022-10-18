@@ -150,6 +150,7 @@ export default {
   nav ul {
     display: flex;
     background: $color-gray-10;
+    padding-bottom: env(safe-area-inset-bottom);
     li {
       flex: 1;
       display: flex;
