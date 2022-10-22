@@ -17,7 +17,7 @@ const query = reactive({
   page: route.query.page || null,
 })
 
-const { data: tournamentSeries } = $fetch2('/api/tournament-series')
+const { data: tournamentSeries } = $fetch2(`/tournaments`)
 
 watch(
   () => query,

@@ -116,7 +116,7 @@
 
 <script setup>
 const { $fetch2 } = useNuxtApp()
-const { data: players } = await $fetch2('/api/users')
+const { data: players } = await $fetch2('/users')
 const deleteTeamModalState = useDeleteTeamModalState()
 const approvalTeamMemberModalState = useApprovalTeamMemberModalState()
 const deleteTeamMemberModalState = useDeleteTeamMemberModalState()

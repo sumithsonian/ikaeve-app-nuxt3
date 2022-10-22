@@ -56,7 +56,7 @@ const props = defineProps({
   team: Object,
 })
 const team = props.team
-const { data: players } = await $fetch2(`/api/teams/${route.params.id}/users`)
+const { data: players } = await $fetch2(`/teams/${route.params.id}/users`)
 const { data: tournaments } = await $fetch2(
   `/api/teams/${route.params.id}/tournaments`,
   { per_page: 10 },

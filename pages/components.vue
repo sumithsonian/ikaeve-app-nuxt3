@@ -198,10 +198,11 @@
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const route = useRoute()
-const players = (await $fetch('/api/users')).data
-const tournaments = (await $fetch('/api/tournaments')).data
-const teams = (await $fetch('/api/teams')).data
+const players = (await $fetch2(`/users`)).data
+const tournaments = (await $fetch2(`/events`)).data
+const teams = (await $fetch2(`/teams`)).data
 
 const query = {
   game_title: route.query.game_title || null,

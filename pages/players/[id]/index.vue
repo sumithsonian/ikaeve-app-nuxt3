@@ -38,7 +38,7 @@ const { data: tournaments } = await $fetch2(
     per_page: 10,
   },
 )
-const { data: teams } = $fetch2(`/api/users/${route.params.id}/teams`)
+const { data: teams } = $fetch2(`/users/${route.params.id}/teams`)
 const title = 'プレイヤー詳細'
 useHead({
   title: title,

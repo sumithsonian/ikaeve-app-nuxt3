@@ -25,10 +25,10 @@
 <script setup>
 const { $fetch2 } = useNuxtApp()
 
-const { data: tournaments } = await $fetch2('/api/tournaments', {
+const { data: tournaments } = await $fetch2(`/events`, {
   per_page: 10,
 })
-const { data: tournaments2 } = await $fetch2('/api/tournaments', {
+const { data: tournaments2 } = await $fetch2(`/events`, {
   per_page: 10,
 })
 

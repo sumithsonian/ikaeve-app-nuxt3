@@ -16,7 +16,7 @@ const query = reactive({
   season: route.query.season || null,
 })
 
-const { data: players } = await $fetch2(`/api/users`, query)
+const { data: players } = await $fetch2(`/users`, query)
 
 watch(
   () => query,

@@ -28,7 +28,7 @@ const { $fetch2 } = useNuxtApp()
 const modalState = useTournamentRuleModalState()
 const route = useRoute()
 const { data: teams } = await $fetch2(
-  `/api/tournaments/${route.params.id}/matchs_by_team`,
+  `/events/${route.params.id}/matchs_by_team`,
 )
 const title = '予選'
 useHead({
