@@ -8,7 +8,7 @@
 const { $fetch2 } = useNuxtApp()
 const route = useRoute()
 const { data: matchs } = await $fetch2(
-  `/api/tournaments/${route.params.id}/matchs`,
+  `/events/${route.params.id}/matchs`,
 )
 
 const title = '進行表'

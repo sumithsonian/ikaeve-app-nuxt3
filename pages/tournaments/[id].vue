@@ -89,7 +89,7 @@ const route = useRoute()
 const entryTournamentModalState = useEntryTournamentModalState()
 const cancelTournamentModalState = useCancelTournamentModalState()
 const { data: tournament } = await $fetch2(
-  `/api/tournaments/${route.params.id}`,
+  `/events/${route.params.id}`,
 )
 const title = tournament.value.data.name
 useHead({

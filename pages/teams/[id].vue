@@ -39,7 +39,7 @@ const { $fetch2 } = useNuxtApp()
 
 const route = useRoute()
 const modalState = useEntryTeamModalState()
-const { data: team } = await $fetch2(`/api/teams/${route.params.id}`)
+const { data: team } = await $fetch2(`/teams/${route.params.id}`)
 useHead({
   title: team.value.data.name,
 })

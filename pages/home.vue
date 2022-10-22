@@ -16,13 +16,13 @@
 const { $fetch2 } = useNuxtApp()
 const me = useMeState()
 
-const { data: tournaments } = await $fetch2(`/api/users/${me.value.id}/tournaments`, {
+const { data: tournaments } = await $fetch2(`/users/${me.value.id}/tournaments`, {
   per_page: 10,
 })
-const { data: tournaments2 } = await $fetch2(`/api/users/${me.value.id}/tournaments`, {
+const { data: tournaments2 } = await $fetch2(`/users/${me.value.id}/tournaments`, {
   per_page: 10,
 })
-const { data: tournamentSeries } = await $fetch2(`/api/users/${me.value.id}/tournament-series`, {
+const { data: tournamentSeries } = await $fetch2(`/users/${me.value.id}/tournament-series`, {
   per_page: 10,
 })
 

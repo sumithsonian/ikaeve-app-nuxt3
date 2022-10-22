@@ -19,7 +19,7 @@ const query = reactive({
   page: route.query.page || null,
 })
 
-const { data: teams } = await $fetch2('/api/teams', query)
+const { data: teams } = await $fetch2(`/teams`, query)
 
 watch(
   () => query,

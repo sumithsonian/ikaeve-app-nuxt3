@@ -1,5 +1,6 @@
 export default defineNuxtPlugin(() => {
   const accessToken = useCookie('access_token')
+  const config = useRuntimeConfig().public
 
   return {
     provide: {
@@ -7,6 +8,7 @@ export default defineNuxtPlugin(() => {
         useFetch(path, {
           headers: { Authorization: `Bearer ${accessToken}` },
           params,
+          baseURL: config.API_URL,
         }),
     },
   }

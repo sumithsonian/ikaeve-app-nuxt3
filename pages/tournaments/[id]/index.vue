@@ -93,7 +93,7 @@ const props = defineProps({
   tournament: Object,
 })
 const tournament = props.tournament
-const { data: teams } = await $fetch2(`/api/tournaments/${route.params.id}/teams`)
+const { data: teams } = await $fetch2(`/events/${route.params.id}/teams`)
 
 const title = tournament.name
 useHead({

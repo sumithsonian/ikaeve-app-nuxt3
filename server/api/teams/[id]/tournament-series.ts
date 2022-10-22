@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const items = await $fetch('/api/tournament-series')
+  const items = await $fetch('/api/tournaments')
   const item = items.data.filter(
     (row) => row.team.id === Number(event.context.params.id),
   )

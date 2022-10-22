@@ -7,10 +7,11 @@
 </template>
 
 <script setup>
+const { $fetch2 } = useNuxtApp()
 const route = useRoute()
 
 // トークン保存
-// const token = (await $fetch(`/api/token?code=&state=`)).data
+// const token = (await $fetch2(`/token?code=&state=`)).data
 const token = route.query.token
 const accessToken = useCookie('access_token', {
   path: '/',

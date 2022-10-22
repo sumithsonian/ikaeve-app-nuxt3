@@ -26,10 +26,10 @@
 const { $fetch2 } = useNuxtApp()
 const route = useRoute()
 const { data: tournamentSeries } = await $fetch2(
-  `/api/tournament-series/${route.params.id}`,
+  `/tournaments/${route.params.id}`,
 )
 const { data: tournaments } = await $fetch2(
-  `/api/tournament-series/${route.params.id}/tournaments`,
+  `/tournaments/${route.params.id}/tournaments`,
 )
 
 const title = tournamentSeries.value.data.name

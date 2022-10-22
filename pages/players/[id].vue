@@ -18,7 +18,7 @@
 <script setup>
 const { $fetch2 } = useNuxtApp()
 const route = useRoute()
-const { data: player } = await $fetch2(`/api/users/${route.params.id}`)
+const { data: player } = await $fetch2(`/users/${route.params.id}`)
 useHead({
   title: player.value.data.name,
 })
