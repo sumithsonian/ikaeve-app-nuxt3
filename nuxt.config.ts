@@ -6,6 +6,10 @@ export default defineNuxtConfig({
     BASIC_AUTH_USERNAME: process.env.BASIC_AUTH_USERNAME,
     BASIC_AUTH_PASSWORD: process.env.BASIC_AUTH_PASSWORD,
     BASIC_AUTH_ENABLED: process.env.BASIC_AUTH_ENABLED,
+    public: {
+      APP_URL: process.env.APP_URL,
+      API_URL: process.env.API_URL || '/api',
+    },
   },
   app: {
     /*
