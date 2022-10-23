@@ -33,7 +33,7 @@
         <tr>
           <th>ティア</th>
           <td>
-            ティア{{ tournament.tear }}（配布ポイント：{{
+            ティア{{ tournament.tier }}（配布ポイント：{{
               tournament.distribution_point
             }}）
           </td>

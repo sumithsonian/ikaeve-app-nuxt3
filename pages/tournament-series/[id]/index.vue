@@ -13,7 +13,7 @@
       <template #tbody>
         <tr>
           <th>ティア</th>
-          <td>{{ tournamentSeries.data.tear }}</td>
+          <td>{{ tournamentSeries.data.tier }}</td>
         </tr>
       </template>
     </BlocksTable>

@@ -69,7 +69,7 @@ export default defineEventHandler((event) => {
         },
       },
       questions: ['イキゴミ', '好きなブキ'],
-      tear: ((i - 1) % 4) + 1,
+      tier: ((i - 1) % 4) + 1,
       distribution_point: 192,
       is_owner: i === 1,
       is_entered: i === 1,
