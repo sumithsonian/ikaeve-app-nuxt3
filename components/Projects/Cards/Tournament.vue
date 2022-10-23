@@ -19,7 +19,7 @@
             <dd>{{ item.opened_at }} 〜 {{ item.closed_at }}</dd>
             <dt>募集数</dt>
             <dd>
-              {{ item.team_num_min }} 〜 {{ item.team_num_max }}（1チーム：{{
+              {{ item.min_team_num }} 〜 {{ item.max_team_num }}（1チーム：{{
                 item.member_num
               }}名）
             </dd>

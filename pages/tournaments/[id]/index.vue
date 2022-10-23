@@ -20,8 +20,8 @@
         <tr>
           <th>募集数</th>
           <td>
-            {{ tournament.team_num_min }} 〜
-            {{ tournament.team_num_max }}（1チーム：{{
+            {{ tournament.min_team_num }} 〜
+            {{ tournament.max_team_num }}（1チーム：{{
               tournament.member_num
             }}名）
           </td>
@@ -33,7 +33,7 @@
         <tr>
           <th>ティア</th>
           <td>
-            ティア{{ tournament.tear }}（配布ポイント：{{
+            ティア{{ tournament.tier }}（配布ポイント：{{
               tournament.distribution_point
             }}）
           </td>

@@ -7,7 +7,7 @@ export default defineEventHandler((event) => {
 
   for (let i = 1; i <= 6; i++) {
     tournaments.push({
-      kind: 'tournament',
+      kind: 'events',
       id: i,
       name: `第${i}回○○杯`,
       background_image_url: 'https://placehold.jp/1080x360.png',
@@ -21,8 +21,8 @@ export default defineEventHandler((event) => {
       series_id: null,
       team_id: 1,
       streaming_url: null,
-      team_num_min: 16,
-      team_num_max: 128,
+      min_team_num: 16,
+      max_team_num: 128,
       member_num: 4,
       status: enStatuses[(i - 1) % 4],
       tags: [{ name: 'イカイベ公認' }, { name: statuses[(i - 1) % 4] }],
@@ -69,7 +69,7 @@ export default defineEventHandler((event) => {
         },
       },
       questions: ['イキゴミ', '好きなブキ'],
-      tear: ((i - 1) % 4) + 1,
+      tier: ((i - 1) % 4) + 1,
       distribution_point: 192,
       is_owner: i === 1,
       is_entered: i === 1,
