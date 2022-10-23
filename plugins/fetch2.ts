@@ -8,7 +8,8 @@ export default defineNuxtPlugin(() => {
         useFetch(path, {
           headers: { Authorization: `Bearer ${accessToken}` },
           params,
-          baseURL: config.API_URL,
+          baseURL:
+            config.API_URL === '/api' ? config.API_URL : `${config.API_URL}/v1`,
         }),
     },
   }
