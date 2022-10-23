@@ -7,7 +7,7 @@ export default defineEventHandler((event) => {
 
   for (let i = 1; i <= 6; i++) {
     tournaments.push({
-      kind: 'tournament',
+      kind: 'events',
       id: i,
       name: `第${i}回○○杯`,
       background_image_url: 'https://placehold.jp/1080x360.png',
