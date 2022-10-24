@@ -1,5 +1,5 @@
 export default defineNuxtPlugin(() => {
-  const accessToken = useCookie('access_token')
+  const accessToken = <any>useCookie('access_token') // @todo: 型暫定
   const config = useRuntimeConfig().public
 
   return {

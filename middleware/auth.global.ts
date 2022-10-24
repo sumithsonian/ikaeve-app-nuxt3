@@ -1,6 +1,6 @@
 export default defineNuxtRouteMiddleware(async () => {
   const { $fetch2 } = useNuxtApp()
-  const accessToken = useCookie('access_token')
+  const accessToken = <any>useCookie('access_token') // @todo: 型暫定
   const isLoggedIn = useIsLoggedInState()
   const me = useMeState()
   if (accessToken.value) {
