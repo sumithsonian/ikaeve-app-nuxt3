@@ -10,21 +10,30 @@
 const { $fetch2 } = useNuxtApp()
 const route = useRoute()
 
+// エラー
+if (route.query.error) {
+}
+
+// クエリなし
+if (!route.query.code && !route.query.state) {
+  navigateTo({ path: '/' })
+}
+
+// Token取得
+const { data: token } = await $fetch2(`/token`, {
+  code: route.query.code,
+  state: route.query.state,
+})
+
 // トークン保存
-// const token = (await $fetch2(`/token?code=&state=`)).data
-const token = route.query.token
 const accessToken = useCookie('access_token', {
   path: '/',
-  maxAge: 60 * 60 * 24 * 365,
+  maxAge: token.value.expires_in,
 })
-accessToken.value = token
+accessToken.value = token.value.access_token
 
-// ログイン判定
-const isLoggedIn = useIsLoggedInState()
-const me = useMeState()
-const { data: user } = await useFetch('/api/users/me', {
-  headers: { Authorization: `Bearer ${route.query.token}` },
-})
-isLoggedIn.value = true
-me.value = Object.assign({}, me.value, user.value.data)
+// ログイン判定はredirectしてmiddleでするので不要
+
+// リダイレクト
+navigateTo({ path: '/' })
 </script>
